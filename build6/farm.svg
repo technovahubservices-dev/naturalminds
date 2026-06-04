@@ -1,0 +1,50 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Organic farm landscape</title>
+  <desc id="desc">A warm illustrated farm scene with hills, sun, trees, a barn, and fields.</desc>
+  <defs>
+    <linearGradient id="sky" x1="600" y1="0" x2="600" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F3E8"/>
+      <stop offset="1" stop-color="#DCEDE0"/>
+    </linearGradient>
+    <linearGradient id="hill1" x1="0" y1="470" x2="1200" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8BC08A"/>
+      <stop offset="1" stop-color="#4C7C57"/>
+    </linearGradient>
+    <linearGradient id="hill2" x1="0" y1="560" x2="1200" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6FA56F"/>
+      <stop offset="1" stop-color="#355C3C"/>
+    </linearGradient>
+    <linearGradient id="barn" x1="380" y1="420" x2="620" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C86A4A"/>
+      <stop offset="1" stop-color="#8D3F2A"/>
+    </linearGradient>
+    <linearGradient id="roof" x1="360" y1="350" x2="640" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7F4B2F"/>
+      <stop offset="1" stop-color="#4E2C1B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#sky)"/>
+  <circle cx="945" cy="170" r="70" fill="#F4C85A"/>
+  <circle cx="945" cy="170" r="106" fill="#F4C85A" opacity="0.18"/>
+  <path d="M0 500C140 430 250 430 390 490C520 545 650 560 780 510C920 455 1040 430 1200 490V900H0V500Z" fill="url(#hill1)"/>
+  <path d="M0 605C180 540 290 540 430 600C560 655 690 680 840 625C980 570 1080 555 1200 610V900H0V605Z" fill="url(#hill2)"/>
+  <path d="M350 725H850V540C850 505 822 477 787 477H413C378 477 350 505 350 540V725Z" fill="url(#barn)"/>
+  <path d="M320 560L600 355L880 560H320Z" fill="url(#roof)"/>
+  <rect x="552" y="605" width="96" height="120" rx="8" fill="#4D2C1D"/>
+  <rect x="410" y="610" width="92" height="86" rx="10" fill="#F4E3C8"/>
+  <rect x="698" y="610" width="92" height="86" rx="10" fill="#F4E3C8"/>
+  <rect x="592" y="525" width="16" height="50" rx="8" fill="#F4E3C8"/>
+  <circle cx="600" cy="500" r="28" fill="#F4E3C8"/>
+  <rect x="108" y="565" width="26" height="155" rx="13" fill="#70492E"/>
+  <circle cx="122" cy="535" r="58" fill="#4A7A49"/>
+  <circle cx="95" cy="550" r="42" fill="#3E6740"/>
+  <circle cx="150" cy="550" r="42" fill="#5F8F5C"/>
+  <rect x="980" y="540" width="22" height="170" rx="11" fill="#70492E"/>
+  <circle cx="991" cy="505" r="62" fill="#4A7A49"/>
+  <circle cx="962" cy="520" r="45" fill="#3E6740"/>
+  <circle cx="1020" cy="522" r="45" fill="#5F8F5C"/>
+  <path d="M0 780C160 740 290 735 430 770C580 808 710 820 850 790C980 765 1080 755 1200 785V900H0V780Z" fill="#E8D8B8"/>
+  <path d="M170 780C240 760 340 760 420 785" stroke="#C7B089" stroke-width="10" stroke-linecap="round"/>
+  <path d="M470 790C560 760 660 760 760 790" stroke="#C7B089" stroke-width="10" stroke-linecap="round"/>
+  <path d="M820 780C890 760 1000 758 1090 788" stroke="#C7B089" stroke-width="10" stroke-linecap="round"/>
+</svg>
