@@ -38,8 +38,8 @@ export default function Hero({ register, onOfferClick }) {
         style={{
           backgroundImage:
             `linear-gradient(90deg, rgba(248,247,243,0.98) 0%, rgba(248,247,243,0.76) 36%, rgba(248,247,243,0.2) 100%), url('${heroImage}')`,
-          backgroundSize: 'cover, 86% auto',
-          backgroundPosition: 'center, right center',
+          backgroundSize: 'cover, cover',
+          backgroundPosition: 'center, center 38%',
           backgroundRepeat: 'no-repeat, no-repeat',
         }}
       />
