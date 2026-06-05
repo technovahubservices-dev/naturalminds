@@ -47,8 +47,8 @@ const data = [
 
 export default function FoodCards() {
   return (
-    <section className="section">
-      <div className="container">
+    <section className="section food-guide">
+      <div className="container food-guide__inner">
         <div className="section-heading center">
           <p className="eyebrow">Fresh Food Guide</p>
           <h2>Everyday staples from our farm</h2>

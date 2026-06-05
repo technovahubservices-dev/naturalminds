@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function Navbar() {
+export default function Navbar({ theme, onToggleTheme }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeMenu = () => setIsOpen(false);
@@ -11,6 +11,20 @@ export default function Navbar() {
         <a className="brand" href="#top">
           Nature&apos;s Fresh
         </a>
+        <button
+          className="theme-toggle"
+          type="button"
+          aria-pressed={theme === 'dark'}
+          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          onClick={onToggleTheme}
+        >
+          <span className="theme-toggle__label">
+            {theme === 'light' ? 'Light' : 'Dark'}
+          </span>
+          <span className="theme-toggle__track" aria-hidden="true">
+            <span className="theme-toggle__thumb" />
+          </span>
+        </button>
         <button
           className="nav-toggle"
           type="button"

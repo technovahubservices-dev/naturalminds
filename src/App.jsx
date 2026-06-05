@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import './App.css';
 import { categories, features, gallery, products, testimonials } from './data/siteContent';
 import { useReveal } from './hooks/useReveal';
@@ -16,10 +17,26 @@ import Footer from './components/Footer';
 
 function App() {
   const { register } = useReveal();
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === 'undefined') {
+      return 'light';
+    }
+
+    return window.localStorage.getItem('naturalminds-theme') || 'light';
+  });
+
+  useEffect(() => {
+    window.localStorage.setItem('naturalminds-theme', theme);
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === 'light' ? 'dark' : 'light'));
+  };
 
   return (
-    <div className="app-shell">
-      <Navbar />
+    <div className="app-shell" data-theme={theme}>
+      <Navbar theme={theme} onToggleTheme={toggleTheme} />
       <main>
         <Hero register={register} />
         <Categories register={register} items={categories} />
