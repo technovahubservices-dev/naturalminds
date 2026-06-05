@@ -41,12 +41,12 @@ export const features = [
     description: 'Rigorous testing at every step of the supply chain for your safety.',
   },
   {
-    icon: 'clean_hands',
+    icon: 'clean hands',
     title: 'Hygienic',
     description: 'State-of-the-art facilities with zero-touch automated processing.',
   },
   {
-    icon: 'local_shipping',
+    icon: 'local shipping',
     title: 'Fast Delivery',
     description: 'Dedicated logistics fleet ensuring your morning starts fresh.',
   },
