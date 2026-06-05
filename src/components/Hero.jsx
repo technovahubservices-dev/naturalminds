@@ -1,4 +1,7 @@
 export default function Hero({ register }) {
+  const heroImage =
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuC1KWXhm7mTLLhrY2H1B-1U2QnFUKK6hbOpqBbomvdlOzBSHBCGnIu3TCi9hUfRa67U4g8Rsqasl4UDaGAEIg-8P-3SQbt07ry5hATl5Impvcuhfu9_jOdIVfVWPJV4HJPWOT4XInWzHuIDGcOuv2Xoqz3zg8Oy2CdysJbH2pzbLIyEWXqzl19AbOT_DE6LYSlAGMY0VQiI1acDgOf6MzTOPQynPjUjn3NZ9hQmkYxY4dbN_EGFIf06nEqOo_yzqUlkpzi06GBmom0";
+
   return (
     <section className="hero section" id="top">
       <div
@@ -6,7 +9,7 @@ export default function Hero({ register }) {
         ref={register}
         style={{
           backgroundImage:
-            "linear-gradient(90deg, rgba(248,247,243,0.98) 0%, rgba(248,247,243,0.72) 38%, rgba(248,247,243,0.08) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuA7QGqUvGlybod5Scw7QRxp1CrVF-r2Kqx7LpsreCQOo2Avn6lXTlJmlggnm_dx9mLaV4e9PJHJ72-ZG2sYlQ-ySTjo-8UEQIvuLqKCR1rV7I6Ci7yI0MiHDoHRtikYnd6B031YNy-WvMOTIL4XVZz7wM2YVOSF4xN18Lf7FaySM38-A2gqHkGqn9bNM3qxfrMzrgmqBdSTg3c7gm4zGs37aLSHO6uPoTrV4qCS9P1NcGxknBCXK7DceZLx5qe2zDy3jSTJbX8DOUY')",
+            `linear-gradient(90deg, rgba(248,247,243,0.98) 0%, rgba(248,247,243,0.74) 38%, rgba(248,247,243,0.14) 100%), url('${heroImage}')`,
         }}
       />
       <div className="container hero__content">
