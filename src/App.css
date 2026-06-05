@@ -159,6 +159,81 @@ img {
   padding-top: 1rem;
 }
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f6f8;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  padding: 40px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h2 {
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.card-content h3 {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.card-content ul {
+  padding-left: 20px;
+}
+
+.card-content li {
+  margin-bottom: 6px;
+  color: #555;
+}
+
 .hero__media {
   position: absolute;
   inset: 0;
@@ -387,6 +462,83 @@ img {
 
 .feature-card p {
   margin-top: 0.6rem;
+}
+
+.food-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.food-card {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.food-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(31, 35, 32, 0.12);
+}
+
+.food-card__image {
+  height: 220px;
+  object-fit: cover;
+}
+
+.food-card__body {
+  padding: 1.4rem;
+}
+
+.food-card__body h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.6rem;
+  color: var(--brand-strong);
+}
+
+.food-card__body p {
+  margin: 0;
+  color: var(--muted-ink);
+  line-height: 1.75;
+}
+
+.food-card__body h4 {
+  margin: 1rem 0 0.75rem;
+  color: var(--brand);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.food-card__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.food-card__list li {
+  position: relative;
+  padding-left: 1.4rem;
+  color: var(--muted-ink);
+  line-height: 1.55;
+}
+
+.food-card__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand);
 }
 
 .product-grid {
@@ -710,6 +862,7 @@ img {
 @media (max-width: 960px) {
   .category-grid,
   .feature-grid,
+  .food-cards,
   .product-grid,
   .testimonial-grid,
   .about-layout,

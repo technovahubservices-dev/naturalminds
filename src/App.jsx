@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Categories from './components/Categories';
 import Features from './components/Features';
 import Products from './components/Products';
+import FoodCards from './components/description';
 import Stats from './components/Stats';
 import About from './components/About';
 import Gallery from './components/Gallery';
@@ -24,6 +25,7 @@ function App() {
         <Categories register={register} items={categories} />
         <Features register={register} items={features} />
         <Products register={register} items={products} />
+        <FoodCards />
         <Stats register={register} />
         <About register={register} />
         <Gallery register={register} items={gallery} />
