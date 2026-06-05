@@ -30,16 +30,16 @@ export default function Contact({ register }) {
           <div className="form-row">
             <label>
               First Name
-              <input type="text" placeholder="John" />
+              <input type="text" placeholder="Enter your name" />
             </label>
             <label>
               Last Name
-              <input type="text" placeholder="Doe" />
+              <input type="text" placeholder="Enter your last name" />
             </label>
           </div>
           <label>
             Email Address
-            <input type="email" placeholder="john@example.com" />
+            <input type="email" placeholder="Enter your email address" />
           </label>
           <label>
             Message
