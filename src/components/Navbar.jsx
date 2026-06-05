@@ -12,20 +12,6 @@ export default function Navbar({ theme, onToggleTheme }) {
           Nature&apos;s Fresh
         </a>
         <button
-          className="theme-toggle"
-          type="button"
-          aria-pressed={theme === 'dark'}
-          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-          onClick={onToggleTheme}
-        >
-          <span className="theme-toggle__label">
-            {theme === 'light' ? 'Light' : 'Dark'}
-          </span>
-          <span className="theme-toggle__track" aria-hidden="true">
-            <span className="theme-toggle__thumb" />
-          </span>
-        </button>
-        <button
           className="nav-toggle"
           type="button"
           aria-label="Toggle navigation menu"
@@ -49,6 +35,23 @@ export default function Navbar({ theme, onToggleTheme }) {
           <a className="nav-links__cta" href="#contact" onClick={closeMenu}>
             Order Now
           </a>
+          <button
+            className="theme-toggle"
+            type="button"
+            aria-pressed={theme === 'dark'}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            onClick={onToggleTheme}
+          >
+            <span className="theme-toggle__icon" aria-hidden="true">
+              {theme === 'light' ? '☀' : '☾'}
+            </span>
+            <span className="theme-toggle__label">
+              {theme === 'light' ? 'Light' : 'Dark'}
+            </span>
+            <span className="theme-toggle__track" aria-hidden="true">
+              <span className="theme-toggle__thumb" />
+            </span>
+          </button>
         </div>
       </nav>
     </header>
