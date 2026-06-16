@@ -1,34 +1,16 @@
-import { useState } from 'react';
 
-const PRICES = {
-  milk: 65,
-  coconut: 80,
-  bread: 55,
-};
 
-const formatCurrency = (value) => `₹${value.toFixed(0)}`;
+
+
 
 export default function Hero({ register, onOfferClick }) {
   const heroImage =
     'https://lh3.googleusercontent.com/aida-public/AB6AXuC1KWXhm7mTLLhrY2H1B-1U2QnFUKK6hbOpqBbomvdlOzBSHBCGnIu3TCi9hUfRa67U4g8Rsqasl4UDaGAEIg-8P-3SQbt07ry5hATl5Impvcuhfu9_jOdIVfVWPJV4HJPWOT4XInWzHuIDGcOuv2Xoqz3zg8Oy2CdysJbH2pzbLIyEWXqzl19AbOT_DE6LYSlAGMY0VQiI1acDgOf6MzTOPQynPjUjn3NZ9hQmkYxY4dbN_EGFIf06nEqOo_yzqUlkpzi06GBmom0';
-  const [quantities, setQuantities] = useState({
-    milk: 1,
-    coconut: 1,
-    bread: 1,
-  });
+  
 
-  const total =
-    quantities.milk * PRICES.milk +
-    quantities.coconut * PRICES.coconut +
-    quantities.bread * PRICES.bread;
+ 
 
-  const updateQuantity = (key, value) => {
-    const nextValue = Math.max(0, Number(value) || 0);
-    setQuantities((current) => ({
-      ...current,
-      [key]: nextValue,
-    }));
-  };
+  
 
   return (
     <section className="hero section" id="top">
@@ -75,48 +57,9 @@ export default function Hero({ register, onOfferClick }) {
             </div>
           </div>
           <div className="hero-calculator reveal delay-2" ref={register}>
-            <div className="hero-calculator__header">
-              <div>
-                <p className="hero-calculator__label">Quick Calculator</p>
-                <strong>Estimate your fresh box</strong>
-              </div>
-              <span>{formatCurrency(total)}</span>
-            </div>
-            <div className="hero-calculator__grid">
-              <label>
-                Milk
-                <input
-                  type="number"
-                  min="0"
-                  step="1"
-                  value={quantities.milk}
-                  onChange={(event) => updateQuantity('milk', event.target.value)}
-                />
-              </label>
-              <label>
-                Coconut
-                <input
-                  type="number"
-                  min="0"
-                  step="1"
-                  value={quantities.coconut}
-                  onChange={(event) => updateQuantity('coconut', event.target.value)}
-                />
-              </label>
-              <label>
-                Bread
-                <input
-                  type="number"
-                  min="0"
-                  step="1"
-                  value={quantities.bread}
-                  onChange={(event) => updateQuantity('bread', event.target.value)}
-                />
-              </label>
-            </div>
-            <p className="hero-calculator__note">
-              Prices are estimated at {formatCurrency(PRICES.milk)} for milk, {formatCurrency(PRICES.coconut)} for coconut, and {formatCurrency(PRICES.bread)} for bread.
-            </p>
+        
+            
+           
           </div>
         </div>
       </div>
