@@ -1,7 +1,7 @@
-import "../styles/components/Contact.css";
+
 
 export default function Contact({ register }) {
-  const whatsappNumber = "919443311007";
+  const whatsappNumber = "+919443311007";
 
   const handleSubmit = (event) => {
     event.preventDefault();
