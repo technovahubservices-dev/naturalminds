@@ -78,11 +78,11 @@ export default function Navbar({
                 aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
                 onClick={onToggleTheme}
               >
-                <span className="theme-toggle__icon">
-                  {theme === "light" ? "Sun" : "Moon"}
-                </span>
-
                
+
+                <span className="theme-toggle__label">
+                  {theme === "light" ? "Light" : "Dark"}
+                </span>
 
                 <span className="theme-toggle__track">
                   <span className="theme-toggle__thumb" />
