@@ -21,6 +21,14 @@
   --container: 1180px;
 }
 
+
+.hero-slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.8s ease-in-out;
+}
+
 .app-shell[data-theme="dark"] {
   --bg: #17120e;
   --bg-2: #201913;
