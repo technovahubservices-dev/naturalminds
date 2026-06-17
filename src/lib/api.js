@@ -1,9 +1,5 @@
 export const API_BASE_URL =
-<<<<<<< Updated upstream
-  process.env.REACT_APP_API_BASE_URL?.trim() || "http://localhost:4000/api";
-=======
   process.env.REACT_APP_API_BASE_URL?.trim() || "https://mahimabackend.onrender.com/api";
->>>>>>> Stashed changes
 
 export function getAuthToken() {
   if (typeof window === "undefined") {
