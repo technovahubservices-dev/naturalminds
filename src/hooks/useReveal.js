@@ -2,14 +2,15 @@ import { useEffect, useRef } from 'react';
 
 export function useReveal() {
   const itemsRef = useRef([]);
+  const observerRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
+            observerRef.current?.unobserve(entry.target);
           }
         });
       },
@@ -17,15 +18,19 @@ export function useReveal() {
     );
 
     itemsRef.current.forEach((node) => {
-      if (node) observer.observe(node);
+      if (node) observerRef.current?.observe(node);
     });
 
-    return () => observer.disconnect();
+    return () => {
+      observerRef.current?.disconnect();
+      observerRef.current = null;
+    };
   }, []);
 
   const register = (node) => {
     if (node && !itemsRef.current.includes(node)) {
       itemsRef.current.push(node);
+      observerRef.current?.observe(node);
     }
   };
 

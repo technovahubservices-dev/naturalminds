@@ -14,7 +14,7 @@ export default function Testimonials({ register, items }) {
             ref={register}
           >
             <div className="stars" aria-label={`${item.rating} out of 5 stars`}>
-              {'★'.repeat(item.rating)}
+              {"★".repeat(item.rating)}
             </div>
             <p className="testimonial-card__quote">"{item.quote}"</p>
             <div className="testimonial-card__author">

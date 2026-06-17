@@ -5,20 +5,20 @@ export default function About({ register }) {
         <div className="about-layout__media reveal" ref={register}>
           <img
             src="/farm.svg"
-            alt="Our Farm"
+            alt="Mahima Bread storefront illustration"
           />
         </div>
         <div className="about-layout__copy reveal" ref={register}>
-          <p className="eyebrow">Our Heritage</p>
-          <h2>Nurturing life through pure organics</h2>
+          <p className="eyebrow">About Us</p>
+          <h2>Nurturing a premium bakery look and feel</h2>
           <p>
-            Founded on the principle of radical transparency, Nature&apos;s Fresh
-            brings you back to the roots of nutrition. We believe what you put
-            into your body should be as pure as the earth intended.
+            Mahima Bread brings the warm bakery reference style into a responsive
+            storefront system with creamy backgrounds, soft gold accents, and
+            polished spacing that scales to every screen size.
           </p>
           <ul className="checklist">
-            <li>Commitment to quality with every batch tested</li>
-            <li>Sustainable sourcing and regenerative farming</li>
+            <li>Elegant premium palette inspired by the reference theme</li>
+            <li>Responsive layout choices for desktop and mobile screens</li>
           </ul>
           <a className="button button--solid" href="#contact">
             Read Our Story

@@ -4,10 +4,10 @@ export default function Contact({ register }) {
       <div className="container contact-layout">
         <div className="reveal" ref={register}>
           <p className="eyebrow">Let&apos;s connect</p>
-          <h2>Have questions or want to visit the farm?</h2>
+          <h2>Have questions about the bakery storefront theme?</h2>
           <p>
-            Reach out anytime. We&apos;re happy to help with product questions,
-            wholesale inquiries, or farm visits.
+            Reach out anytime. We&apos;re happy to help with layout adjustments,
+            responsive refinements, or palette updates for your screens.
           </p>
 
           <div className="contact-list">
@@ -17,7 +17,7 @@ export default function Contact({ register }) {
             </div>
             <div>
               <span>Email</span>
-              <strong>hello@naturesfresh.com</strong>
+              <strong>hello@Mahima Bread.com</strong>
             </div>
             <div>
               <span>Address</span>
