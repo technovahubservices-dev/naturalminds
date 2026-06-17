@@ -82,9 +82,7 @@ export default function Navbar({
                   {theme === "light" ? "Sun" : "Moon"}
                 </span>
 
-                <span className="theme-toggle__label">
-                  {theme === "light" ? "Light" : "Dark"}
-                </span>
+               
 
                 <span className="theme-toggle__track">
                   <span className="theme-toggle__thumb" />
