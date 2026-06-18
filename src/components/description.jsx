@@ -1,3 +1,4 @@
+import "../styles/components/Description.css";
 import React from 'react';
 
 const data = [

@@ -1,3 +1,4 @@
+import "../styles/components/Products.css";
 import { useEffect, useState } from "react";
 import {
   apiRequest,
@@ -9,6 +10,12 @@ import {
 function ProductCard({ item, index, onAddToCart, onSelect, busyProductId, register }) {
   const productId = item._id || item.id || item.productId;
   const isBusy = busyProductId === productId;
+  const rawCategory = item.category || "Uncategorized";
+  const categoryWords = String(rawCategory).trim().split(/\s+/).filter(Boolean);
+  const cardCategory =
+    rawCategory && String(rawCategory).trim().length <= 24 && categoryWords.length <= 3
+      ? rawCategory
+      : "Product";
 
   return (
     <article
@@ -31,11 +38,12 @@ function ProductCard({ item, index, onAddToCart, onSelect, busyProductId, regist
 
       <div className="product-card__body">
         <div className="product-card__meta">
-          <span>{item.category || "Uncategorized"}</span>
-          {item.rating != null && <span>Rating {item.rating}</span>}
+          <span className="product-card__category">{cardCategory}</span>
+          {item.rating != null && (
+            <span className="product-card__rating">Rating {item.rating}</span>
+          )}
         </div>
-        <h3>{item.name || item.title}</h3>
-        <p>{item.description}</p>
+        <h3 className="product-card__title">{item.name || item.title}</h3>
         <div className="product-card__footer">
           <strong>Rs. {item.price ?? "N/A"}</strong>
           <button
@@ -55,11 +63,125 @@ function ProductCard({ item, index, onAddToCart, onSelect, busyProductId, regist
   );
 }
 
-export default function Products({ register, onCartChange, onNavigate }) {
+function getCompactCategory(category) {
+  const rawCategory = category || "Uncategorized";
+  const categoryWords = String(rawCategory).trim().split(/\s+/).filter(Boolean);
+
+  if (String(rawCategory).trim().length <= 24 && categoryWords.length <= 3) {
+    return rawCategory;
+  }
+
+  return "Product";
+}
+
+export function ProductDetailsPage({ item, onBack, onAddToCart, busyProductId, renderValue }) {
+  const productId = item._id || item.id || item.productId;
+  const details = Object.entries(item).filter(
+    ([key]) => !["image", "_id", "__v", "description", "category"].includes(key)
+  );
+  const quickFacts = [
+    { label: "Category", value: getCompactCategory(item.category) },
+    { label: "Rating", value: item.rating != null ? `${item.rating}/5` : "N/A" },
+    { label: "Price", value: `Rs. ${item.price ?? "N/A"}` },
+    { label: "Product ID", value: productId || "N/A" },
+  ];
+
+  return (
+    <section className="section container product-detail-page">
+      <div className="product-detail-page__topbar">
+        <button type="button" className="button button--ghost" onClick={onBack}>
+          Back to products
+        </button>
+        <span className="product-detail-page__eyebrow">Featured product</span>
+      </div>
+
+      <div className="product-detail-hero">
+        <div className="product-detail-hero__media">
+          <img
+            src={buildImageSrc(item.image)}
+            alt={item.name || item.title || "Product"}
+          />
+          <div className="product-detail-hero__floating">
+            <span>Starting at</span>
+            <strong>Rs. {item.price ?? "N/A"}</strong>
+            <p>{item.category || "Uncategorized"}</p>
+          </div>
+        </div>
+
+        <div className="product-detail-hero__content">
+          <p className="eyebrow">Product Details</p>
+          <h2>{item.name || item.title}</h2>
+          <p className="product-detail__description">
+            {item.description || "No description available for this product yet."}
+          </p>
+
+          <div className="product-detail__badges">
+            <span>{getCompactCategory(item.category)}</span>
+            <span>{item.rating != null ? `${item.rating} star rating` : "No rating yet"}</span>
+            <span>Freshly curated</span>
+          </div>
+
+          <div className="product-detail__actions">
+            <button
+              type="button"
+              className="button button--solid"
+              onClick={() => onAddToCart(item)}
+              disabled={busyProductId === productId}
+            >
+              {busyProductId === productId ? "Adding..." : "Add to Cart"}
+            </button>
+            <button type="button" className="button button--ghost" onClick={onBack}>
+              Back to listing
+            </button>
+          </div>
+
+          <div className="product-detail__facts">
+            {quickFacts.map((fact) => (
+              <article className="product-detail__fact" key={fact.label}>
+                <span>{fact.label}</span>
+                <strong>{fact.value}</strong>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="product-detail-grid">
+        <article className="product-detail-panel">
+          <p className="eyebrow">Why it stands out</p>
+          <h3>Designed for confident browsing</h3>
+          <p>
+            This full-page layout keeps the product front and center with a richer image
+            treatment, clearer price callout, and stronger data hierarchy than a popup.
+          </p>
+          <ul className="product-detail-points">
+            <li>Image, title, and description stay easy to scan.</li>
+            <li>Pricing and category stay visible while you decide.</li>
+            <li>One tap adds the item to cart without leaving the page.</li>
+          </ul>
+        </article>
+
+        <article className="product-detail-panel">
+          <p className="eyebrow">All fields</p>
+          <h3>Product data</h3>
+          <dl className="product-detail__details">
+            {details.map(([key, value]) => (
+              <div key={key}>
+                <dt>{key}</dt>
+                <dd>{renderValue(value)}</dd>
+              </div>
+            ))}
+          </dl>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+export default function Products({ register, onCartChange, onNavigate, onSelectProduct }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [selectedItem, setSelectedItem] = useState(null);
   const [message, setMessage] = useState("");
   const [busyProductId, setBusyProductId] = useState("");
 
@@ -89,28 +211,6 @@ export default function Products({ register, onCartChange, onNavigate }) {
     loadProducts();
   }, []);
 
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        setSelectedItem(null);
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = selectedItem ? "hidden" : "";
-
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [selectedItem]);
-
   const addToCart = async (item) => {
     const productId = item._id || item.id || item.productId;
     setBusyProductId(productId);
@@ -130,22 +230,6 @@ export default function Products({ register, onCartChange, onNavigate }) {
     } finally {
       setBusyProductId("");
     }
-  };
-
-  const renderValue = (value) => {
-    if (value == null || value === "") {
-      return "N/A";
-    }
-
-    if (Array.isArray(value)) {
-      return value.join(", ");
-    }
-
-    if (typeof value === "object") {
-      return JSON.stringify(value);
-    }
-
-    return String(value);
   };
 
   return (
@@ -189,73 +273,13 @@ export default function Products({ register, onCartChange, onNavigate }) {
               item={item}
               index={index}
               onAddToCart={addToCart}
-              onSelect={setSelectedItem}
+              onSelect={onSelectProduct}
               busyProductId={busyProductId}
               register={register}
             />
           ))
         )}
       </div>
-
-      {selectedItem && (
-        <div
-          className="product-modal"
-          role="presentation"
-          onClick={() => setSelectedItem(null)}
-        >
-          <div
-            className="product-modal__panel"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="product-modal-title"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="product-modal__close"
-              aria-label="Close product details"
-              onClick={() => setSelectedItem(null)}
-            >
-              x
-            </button>
-
-            <div className="product-modal__media">
-              <img
-                src={buildImageSrc(selectedItem.image)}
-                alt={selectedItem.name || selectedItem.title || "Product"}
-              />
-            </div>
-
-            <div className="product-modal__content">
-              <p className="eyebrow">Product Details</p>
-              <h3 id="product-modal-title">{selectedItem.name || selectedItem.title}</h3>
-              <p className="product-modal__description">{selectedItem.description}</p>
-
-              <dl className="product-modal__details">
-                {Object.entries(selectedItem)
-                  .filter(([key]) => key !== "image" && key !== "_id" && key !== "__v")
-                  .map(([key, value]) => (
-                    <div key={key}>
-                      <dt>{key}</dt>
-                      <dd>{renderValue(value)}</dd>
-                    </div>
-                  ))}
-              </dl>
-
-              <div className="product-modal__actions">
-                <button
-                  type="button"
-                  className="button button--solid"
-                  onClick={() => addToCart(selectedItem)}
-                  disabled={busyProductId === (selectedItem._id || selectedItem.id || selectedItem.productId)}
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

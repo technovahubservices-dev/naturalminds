@@ -1,3 +1,4 @@
+import "../styles/components/CartPage.css";
 import { buildImageSrc } from "../lib/api";
 
 export default function CartPage({

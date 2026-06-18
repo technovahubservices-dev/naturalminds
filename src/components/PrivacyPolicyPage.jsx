@@ -1,3 +1,5 @@
+import "../styles/components/PrivacyPolicyPage.css";
+
 export default function PrivacyPolicyPage({ onNavigate }) {
   return (
     <section className="section container">

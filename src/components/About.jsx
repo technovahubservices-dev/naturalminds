@@ -1,3 +1,5 @@
+import "../styles/components/About.css";
+
 export default function About({ register }) {
   return (
     <section className="section container" id="about">

@@ -1,3 +1,5 @@
+import "../styles/components/AboutPage.css";
+
 export default function AboutPage({ onNavigate }) {
   return (
     <section className="section container">

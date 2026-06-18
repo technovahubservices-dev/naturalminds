@@ -1,3 +1,4 @@
+import "../styles/components/CheckoutPage.css";
 import { useState } from "react";
 
 const initialForm = {

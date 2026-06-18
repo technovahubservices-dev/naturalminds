@@ -1,3 +1,4 @@
+import "../styles/components/OrderHistoryPage.css";
 import { buildImageSrc } from "../lib/api";
 
 export default function OrderHistoryPage({ orderHistory = [], onNavigate }) {

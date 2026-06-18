@@ -1,3 +1,4 @@
+import "../styles/components/Navbar.css";
 import { useState } from "react";
 
 export default function Navbar({
@@ -78,7 +79,7 @@ export default function Navbar({
                 aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
                 onClick={onToggleTheme}
               >
-               
+              
 
                 <span className="theme-toggle__label">
                   {theme === "light" ? "Light" : "Dark"}
@@ -123,6 +124,7 @@ export default function Navbar({
           </div>
         </div>
       </nav>
+      {isOpen && <button className="nav-backdrop" type="button" aria-label="Close menu" onClick={closeMenu} />}
     </header>
   );
 }

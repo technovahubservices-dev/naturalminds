@@ -1,3 +1,5 @@
+import "../styles/components/SuccessPage.css";
+
 export default function SuccessPage({ order, onNavigate }) {
   const placedOrder = order?.order || {};
   const summaryItems = Array.isArray(placedOrder.items) ? placedOrder.items : [];

@@ -1,3 +1,5 @@
+import "../styles/components/PrivacyPolicy.css";
+
 export default function PrivacyPolicy({ register }) {
   return (
     <section className="section section--muted legal-section" id="privacy-policy">

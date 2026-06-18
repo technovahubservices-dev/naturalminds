@@ -1,3 +1,5 @@
+import "../styles/components/Stats.css";
+
 export default function Stats({ register }) {
   const stats = [
     ['10k+', 'Happy Customers'],

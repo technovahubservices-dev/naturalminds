@@ -1,3 +1,5 @@
+import "../styles/components/TermsConditions.css";
+
 export default function TermsConditions({ register }) {
   return (
     <section className="section legal-section" id="terms-conditions">

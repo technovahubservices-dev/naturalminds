@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import "./styles/App.css";
 import { categories, features, gallery, testimonials } from "./data/siteContent";
 import { useReveal } from "./hooks/useReveal";
 import Navbar from "./components/Navbar";
@@ -20,8 +20,8 @@ import CartPage from "./components/CartPage";
 import CheckoutPage from "./components/CheckoutPage";
 import OrderHistoryPage from "./components/OrderHistoryPage";
 import SuccessPage from "./components/SuccessPage";
+import { ProductDetailsPage } from "./components/Products";
 import { apiRequest, buildProductPayload, formatCartSummary } from "./lib/api";
-import { ProductDetailsPage } from "./components/ProductDetailsPage";
 
 const HOME_PAGE = "home";
 const ABOUT_PAGE = "about";

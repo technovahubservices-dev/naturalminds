@@ -1,3 +1,5 @@
+import "../styles/components/Gallery.css";
+
 export default function Gallery({ register, items }) {
   return (
     <section className="section section--muted">

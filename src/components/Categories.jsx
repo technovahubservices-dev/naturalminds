@@ -1,3 +1,5 @@
+import "../styles/components/Categories.css";
+
 export default function Categories({ register, items }) {
   return (
     <section className="section container" id="categories">

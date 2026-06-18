@@ -1,3 +1,5 @@
+import "../styles/components/Features.css";
+
 export default function Features({ register, items }) {
   return (
     <section className="section section--muted">

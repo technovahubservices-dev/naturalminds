@@ -1,3 +1,5 @@
+import "../styles/components/Testimonials.css";
+
 export default function Testimonials({ register, items }) {
   return (
     <section className="section container">

@@ -1,3 +1,5 @@
+import "../styles/components/TermsConditionsPage.css";
+
 export default function TermsConditionsPage({ onNavigate }) {
   return (
     <section className="section container">

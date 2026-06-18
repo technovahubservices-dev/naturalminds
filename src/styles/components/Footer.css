@@ -1,0 +1,129 @@
+
+.site-footer {
+  border-top: 1px solid rgba(34, 25, 19, 0.08);
+  background: rgba(255, 250, 243, 0.8);
+}
+
+.app-shell[data-theme="dark"] .site-footer {
+  background: rgba(18, 14, 11, 0.9);
+  border-top-color: rgba(255, 233, 202, 0.08);
+}
+
+.footer-inner {
+  padding: 3rem 0 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 0.8fr));
+  gap: 1.5rem;
+}
+
+.footer-brand {
+  max-width: 360px;
+}
+
+.site-footer h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.8rem;
+  font-family: "Playfair Display", serif;
+}
+
+.site-footer p {
+  color: var(--muted-ink);
+}
+
+.footer-links-group {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.footer-links-group h4 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.app-shell[data-theme="dark"] .footer-links-group h4 {
+  color: var(--ink);
+}
+
+.footer-links {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.footer-links a,
+.footer-links button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--muted-ink);
+  font-weight: 700;
+  text-align: left;
+}
+
+.footer-links a:hover,
+.footer-links button:hover {
+  color: var(--brand-strong);
+}
+
+.app-shell[data-theme="dark"] .footer-links a,
+.app-shell[data-theme="dark"] .footer-links button,
+.app-shell[data-theme="dark"] .footer-copy,
+.app-shell[data-theme="dark"] .social-links a {
+  color: var(--muted-ink);
+}
+
+.social-links {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 42px;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(214, 162, 79, 0.09);
+  border: 1px solid rgba(214, 162, 79, 0.12);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.social-links a:hover {
+  background: rgba(214, 162, 79, 0.15);
+}
+
+.social-links__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.social-links__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.footer-copy {
+  padding: 1rem;
+  text-align: center;
+  color: var(--muted-ink);
+  border-top: 1px solid rgba(34, 25, 19, 0.08);
+}
+
+@media (max-width: 1080px) {
+  .footer-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
