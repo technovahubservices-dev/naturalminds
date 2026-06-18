@@ -20,13 +20,15 @@ import CartPage from "./components/CartPage";
 import CheckoutPage from "./components/CheckoutPage";
 import OrderHistoryPage from "./components/OrderHistoryPage";
 import SuccessPage from "./components/SuccessPage";
-import { apiRequest, formatCartSummary } from "./lib/api";
+import { apiRequest, buildProductPayload, formatCartSummary } from "./lib/api";
+import { ProductDetailsPage } from "./components/ProductDetailsPage";
 
 const HOME_PAGE = "home";
 const ABOUT_PAGE = "about";
 const PRIVACY_POLICY_PAGE = "privacy-policy";
 const TERMS_CONDITIONS_PAGE = "terms-conditions";
 const PRODUCTS_PAGE = "products";
+const PRODUCT_DETAIL_PAGE = "product-detail";
 const CART_PAGE = "cart";
 const CHECKOUT_PAGE = "checkout";
 const ORDER_HISTORY_PAGE = "orders";
@@ -46,6 +48,9 @@ function App() {
   const [cartLoading, setCartLoading] = useState(false);
   const [cartError, setCartError] = useState("");
   const [successOrder, setSuccessOrder] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [productDetailSourcePage, setProductDetailSourcePage] = useState(PRODUCTS_PAGE);
+  const [detailAddBusy, setDetailAddBusy] = useState(false);
   const [orderHistory, setOrderHistory] = useState(() => {
     if (typeof window === "undefined") {
       return [];
@@ -96,6 +101,12 @@ function App() {
   }, [page]);
 
   const navigate = (nextPage) => {
+    if (nextPage === PRODUCT_DETAIL_PAGE) {
+      setPage(nextPage);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     if (nextPage === "contact") {
       setPage(HOME_PAGE);
 
@@ -113,6 +124,51 @@ function App() {
 
   const toggleTheme = () => {
     setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
+  };
+
+  const openProductDetail = (product) => {
+    setSelectedProduct(product);
+    setProductDetailSourcePage(page);
+    setPage(PRODUCT_DETAIL_PAGE);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const closeProductDetail = () => {
+    setPage(productDetailSourcePage || PRODUCTS_PAGE);
+    setSelectedProduct(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const renderDetailValue = (value) => {
+    if (value == null || value === "") {
+      return "N/A";
+    }
+
+    if (Array.isArray(value)) {
+      return value.join(", ");
+    }
+
+    if (typeof value === "object") {
+      return JSON.stringify(value);
+    }
+
+    return String(value);
+  };
+
+  const addProductToCart = async (item) => {
+    setDetailAddBusy(true);
+
+    try {
+      await apiRequest("/cart", {
+        method: "POST",
+        body: buildProductPayload(item, 1),
+      });
+
+      const cartData = await apiRequest("/cart");
+      setCart(formatCartSummary(cartData?.cart));
+    } finally {
+      setDetailAddBusy(false);
+    }
   };
 
   const refreshCart = async () => {
@@ -209,6 +265,7 @@ function App() {
               register={register}
               onCartChange={setCart}
               onNavigate={navigate}
+              onSelectProduct={openProductDetail}
             />
             <FoodCards />
             <Stats register={register} />
@@ -229,6 +286,17 @@ function App() {
             register={register}
             onCartChange={setCart}
             onNavigate={navigate}
+            onSelectProduct={openProductDetail}
+          />
+        )}
+
+        {page === PRODUCT_DETAIL_PAGE && selectedProduct && (
+          <ProductDetailsPage
+            item={selectedProduct}
+            onBack={closeProductDetail}
+            onAddToCart={addProductToCart}
+            busyProductId={detailAddBusy ? (selectedProduct._id || selectedProduct.id || selectedProduct.productId) : ""}
+            renderValue={renderDetailValue}
           />
         )}
 
