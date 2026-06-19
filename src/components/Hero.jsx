@@ -9,7 +9,7 @@ export default function Hero({ register, onOfferClick, onExploreClick }) {
       <div className="container hero__content">
         <div className="hero__copy reveal" ref={register}>
           <p className="eyebrow">Summer Bakery Sale</p>
-          <h1  a>Handmade bakery shop</h1>
+          <h1>Handmade bakery shop</h1>
           <p className="lead">
             Warm croissants, fresh loaves, and sweet pastries styled with a
             premium creamy palette for a polished storefront on every screen.
