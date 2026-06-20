@@ -49,9 +49,9 @@ export default function Contact({ register }) {
             </div>
             <div>
               <span className="contact-label-highlight">Address</span>
-              <strong>9A , Bashyam Street Manjakuppam Village</strong>
-                 <strong>Cuddalore Tamilnadu</strong>
-                 <strong>607001</strong>
+              <strong>9A,BASHIYAM STREET,MANJAKUPPAM VILLAGE,</strong>
+                 <strong>Cuddalore, Tamil Nadu, 607001</strong>
+                 
             </div>
           </div>
         </div>
