@@ -5,7 +5,8 @@ import {
   Calendar,
   Droplets,
   Candy,
-  Sandwich,
+  
+  Sparkles,
 } from "lucide-react";
 
 const ingredients = [
@@ -13,31 +14,26 @@ const ingredients = [
     icon: <Calendar size={28} />,
     title: "Dates",
     desc: "Natural energy & sweetness",
-    className: "orbit-1",
   },
   {
     icon: <Droplets size={28} />,
     title: "Coconut Milk",
     desc: "Creamy dairy-free richness",
-    className: "orbit-2",
+  },
+  {
+    icon: <Sparkles size={28} />,
+    title: "Honey",
+    desc: "Golden antioxidant sweetness",
   },
   {
     icon: <Candy size={28} />,
-    title: "Honey",
-    desc: "Golden antioxidant sweetness",
-    className: "orbit-3",
+    title: "Butter",
+    desc: "Smooth texture & flavor",
   },
   {
     icon: <Wheat size={28} />,
     title: "Wheat",
     desc: "Fiber-rich nutritional base",
-    className: "orbit-4",
-  },
-  {
-    icon: <Sandwich size={28} />,
-    title: "Butter",
-    desc: "Smooth texture & flavor",
-    className: "orbit-5",
   },
 ];
 
@@ -50,8 +46,8 @@ export default function Ingredients() {
         <h2>Where Nutrition Meets Indulgence</h2>
 
         <p>
-          Tuni Breads combines traditional nourishment with modern healthy
-          eating — five purposeful ingredients, one remarkable loaf.
+          Five carefully selected ingredients combine to create a wholesome,
+          nourishing loaf that tastes as indulgent as it feels healthy.
         </p>
       </div>
 
@@ -59,34 +55,18 @@ export default function Ingredients() {
         <div className="ingredient-center">
           <div className="center-glow"></div>
 
-          {/* Rotating Orbit */}
-          <div className="orbit-container">
-            {ingredients.map((item, index) => (
-              <div
-                key={index}
-                className={`orbit-card ${item.className}`}
-              >
-                <div className="orbit-card-inner">
-                  <div className="orbit-icon">
-                    {item.icon}
-                  </div>
+         
 
-                  <h4>{item.title}</h4>
-
-                  <p>{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Center Circle */}
-          <div className="center-circle">
-            <Sandwich size={50} />
-
-            <h3>Tuni Breads</h3>
-
-            <p>The Heart Of Every Slice</p>
-          </div>
+          {ingredients.map((item, index) => (
+            <div
+              className={`orbit-card orbit-${index + 1}`}
+              key={index}
+            >
+              <div className="orbit-icon">{item.icon}</div>
+              <h4>{item.title}</h4>
+              <p>{item.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

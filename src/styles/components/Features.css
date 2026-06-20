@@ -14,39 +14,6 @@
   margin: auto;
 }
 
-.orbit-container {
-  position: absolute;
-  inset: 0;
-  animation: rotateOrbit 35s linear infinite;
-}
-
-.orbit-card-inner {
-  animation: counterRotate 35s linear infinite;
-}
-
-@keyframes rotateOrbit {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes counterRotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-}
-
-.ingredient-center:hover .orbit-container,
-.ingredient-center:hover .orbit-card-inner {
-  animation-play-state: paused;
-}
-
 .ingredients-header span {
   display: inline-block;
   padding: 10px 22px;
@@ -187,29 +154,29 @@
 }
 
 .orbit-1 {
-  top: -20px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .orbit-2 {
   top: 150px;
-  right: -60px;
+  right: 0;
 }
 
 .orbit-3 {
-  bottom: 40px;
-  right: 50px;
+  bottom: 60px;
+  right: 80px;
 }
 
 .orbit-4 {
-  bottom: 40px;
-  left: 50px;
+  bottom: 60px;
+  left: 80px;
 }
 
 .orbit-5 {
   top: 150px;
-  left: -60px;
+  left: 0;
 }
 
 @keyframes float {
