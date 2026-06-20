@@ -22,6 +22,7 @@ import OrderHistoryPage from "./components/OrderHistoryPage";
 import SuccessPage from "./components/SuccessPage";
 import { ProductDetailsPage } from "./components/Products";
 import { apiRequest, buildProductPayload, formatCartSummary } from "./lib/api";
+import BenefitsSection from "./components/flow";
 
 const HOME_PAGE = "home";
 const ABOUT_PAGE = "about";
@@ -270,6 +271,7 @@ function App() {
             <FoodCards />
             <Stats register={register} />
             <Gallery register={register} items={gallery} />
+            <BenefitsSection register={register} items={''}/>
             <Testimonials register={register} items={testimonials} />
             <Contact register={register} />
           </>

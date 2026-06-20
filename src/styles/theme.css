@@ -97,7 +97,14 @@ button {
 }
 
 .app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   overflow-x: clip;
+}
+
+main {
+  flex-grow: 1;
 }
 
 .container {

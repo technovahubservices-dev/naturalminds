@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.benefits {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 8%;
+  background: linear-gradient(
+    135deg,
+    #eef8f3 0%,
+    #f8f6ef 50%,
+    #edf5ff 100%
+  );
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+.tag {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  color: #b8860b;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #182033;
+  margin-bottom: 60px;
+  line-height: 1.1;
+}
+
+.title span {
+  background: linear-gradient(
+    90deg,
+    #d9a441,
+    #f4c46c
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  padding: 40px;
+  border-radius: 28px;
+
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.5);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.05),
+    inset 0 1px 1px rgba(255,255,255,0.5);
+
+  transition: all 0.5s ease;
+
+  opacity: 0;
+  transform: translateY(50px);
+
+  animation: reveal 0.8s forwards;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 25px 50px rgba(0,0,0,0.12);
+}
+
+.icon-box {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b
+  );
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 24px;
+
+  transition: all 0.4s ease;
+}
+
+.card:hover .icon-box {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+.card h3 {
+  font-size: 1.7rem;
+  color: #1e293b;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.card p {
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.shine {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100px;
+  height: 100%;
+  background: rgba(255,255,255,0.4);
+  transform: skewX(-25deg);
+}
+
+.card:hover .shine {
+  animation: shine 1.3s;
+}
+
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+.bg1 {
+  width: 400px;
+  height: 400px;
+  background: #f5c36a;
+  top: -100px;
+  left: -100px;
+  opacity: 0.25;
+}
+
+.bg2 {
+  width: 450px;
+  height: 450px;
+  background: #8ad6ff;
+  bottom: -150px;
+  right: -150px;
+  opacity: 0.2;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shine {
+  100% {
+    left: 180%;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .card {
+    padding: 30px;
+  }
+}
+
+.app-shell[data-theme="dark"] .benefits {
+  background: linear-gradient(135deg, #12100d 0%, #1f1812 50%, #151b22 100%);
+}
+
+.app-shell[data-theme="dark"] .tag,
+.app-shell[data-theme="dark"] .card {
+  background: rgba(37, 29, 23, 0.78);
+  border-color: rgba(255, 233, 202, 0.12);
+}
+
+.app-shell[data-theme="dark"] .title,
+.app-shell[data-theme="dark"] .card h3 {
+  color: #f8f2ea;
+}
+
+.app-shell[data-theme="dark"] .card p {
+  color: #e7d3bf;
+}

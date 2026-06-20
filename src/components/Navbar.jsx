@@ -1,5 +1,14 @@
+
 import "../styles/components/Navbar.css";
 import { useState } from "react";
+import {
+  ShoppingCart,
+  Sun,
+  Moon,
+  Menu,
+  X,
+} from "lucide-react";
+import logo from "../asset/logo.png";
 
 export default function Navbar({
   theme,
@@ -9,122 +18,133 @@ export default function Navbar({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const closeMenu = () => setIsOpen(false);
-
   const handleNavigate = (page) => {
     onNavigate(page);
-    closeMenu();
+    setIsOpen(false);
   };
 
   return (
     <header className="site-header">
-      <div className="announcement-bar">
-        <div className="container announcement-bar__inner">
-          <span>Free shipping on orders over Rs. 999</span>
-          <div className="announcement-bar__links">
-            <button type="button" onClick={() => handleNavigate("orders")}>
-              My Orders
-            </button>
-            <button type="button" onClick={() => handleNavigate("orders")}>
-              Track Order
-            </button>
-            <button type="button" onClick={() => handleNavigate("contact")}>
-              Contact Us
-            </button>
-          </div>
-        </div>
-      </div>
 
+      {/* Announcement Bar */}
+      
+
+      {/* Navbar */}
       <nav className="site-nav">
-        <div className="site-nav__top">
+
+        {/* Logo */}
+        <button
+          className="brand-button"
+          onClick={() => handleNavigate("home")}
+          aria-label="Mahima Bread home"
+        >
+          <img
+            className="brand-logo"
+            src={logo}
+            alt=""
+          />
+          <span className="brand-text">Mahima Bread</span>
+        </button>
+
+        {/* Desktop Menu */}
+        <div className="nav-links">
+          <button onClick={() => handleNavigate("home")}>Home</button>
+          <button onClick={() => handleNavigate("about")}>About Us</button>
+          <button onClick={() => handleNavigate("products")}>Products</button>
+          <button onClick={() => handleNavigate("orders")}>Order History</button>
+          <button onClick={() => handleNavigate("contact")}>Contact</button>
+        </div>
+
+        {/* Actions */}
+        <div className="nav-actions">
+
           <button
-            className="brand brand-button"
+            className="theme-toggle"
             type="button"
-            onClick={() => handleNavigate("home")}
+            aria-pressed={theme === "dark"}
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            onClick={onToggleTheme}
           >
-            Mahima Bread
+            {theme === "light" ? (
+              <Moon size={18} />
+            ) : (
+              <Sun size={18} />
+            )}
+            <span className="theme-toggle__label">
+              {theme === "light" ? "Dark" : "Light"}
+            </span>
+            <span className="theme-toggle__track" aria-hidden="true">
+              <span className="theme-toggle__thumb" />
+            </span>
           </button>
 
-          <div className={`nav-links ${isOpen ? "nav-links--open" : ""}`}>
-            <button type="button" onClick={() => handleNavigate("home")}>
-              Home
-            </button>
-            <button type="button" onClick={() => handleNavigate("about")}>
-              About Us
-            </button>
-            <button type="button" onClick={() => handleNavigate("products")}>
-              Products
-            </button>
-            <button type="button" onClick={() => handleNavigate("orders")}>
-              Order History
-            </button>
-            <button type="button" onClick={() => handleNavigate("contact")}>
-              Contact
-            </button>
-            <button
-              type="button"
-              className="nav-links__cta"
-              onClick={() => handleNavigate("products")}
-            >
-              Shop Now
-            </button>
-          </div>
+          {/* Cart */}
+          <button
+            className="nav-cart"
+            onClick={() => handleNavigate("cart")}
+          >
+            <ShoppingCart size={22} />
 
-          <div className="nav-side">
-            <div className="nav-actions">
-              <button
-                className="theme-toggle"
-                type="button"
-                aria-pressed={theme === "dark"}
-                aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-                onClick={onToggleTheme}
-              >
-              
+            {cartCount > 0 && (
+              <span className="nav-cart__badge">
+                {cartCount}
+              </span>
+            )}
+          </button>
 
-                <span className="theme-toggle__label">
-                  {theme === "light" ? "Light" : "Dark"}
-                </span>
+          {/* Mobile menu button */}
+          <button
+            className="nav-toggle"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? (
+              <X size={24} />
+            ) : (
+              <Menu size={24} />
+            )}
+          </button>
 
-                <span className="theme-toggle__track">
-                  <span className="theme-toggle__thumb" />
-                </span>
-              </button>
-
-              <button
-                type="button"
-                className="nav-cart"
-                onClick={() => handleNavigate("cart")}
-                aria-label={`Cart${cartCount > 0 ? `, ${cartCount} items` : ""}`}
-              >
-                <span className="nav-cart__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="42" height="42">
-                    <circle cx="9" cy="20" r="1.5" />
-                    <circle cx="18" cy="20" r="1.5" />
-                    <path d="M1 1h4l2.68 13.39a1 1 0 0 0 .99.81h9.72a1 1 0 0 0 .99-.81L23 6H6" />
-                  </svg>
-                </span>
-
-                {cartCount > 0 && (
-                  <span className="nav-cart__badge">{cartCount}</span>
-                )}
-              </button>
-
-              <button
-                className="nav-toggle"
-                type="button"
-                aria-label="Toggle navigation menu"
-                aria-expanded={isOpen}
-                onClick={() => setIsOpen((value) => !value)}
-              >
-                <span />
-                <span />
-                <span />
-              </button>
-            </div>
-          </div>
         </div>
       </nav>
-      {isOpen && <button className="nav-backdrop" type="button" aria-label="Close menu" onClick={closeMenu} />}
+
+      {/* Mobile Sidebar */}
+      <div className={`mobile-menu ${isOpen ? "mobile-menu--open" : ""}`}>
+
+        <button onClick={() => handleNavigate("home")}>
+          Home
+        </button>
+
+        <button onClick={() => handleNavigate("about")}>
+          About Us
+        </button>
+
+        <button onClick={() => handleNavigate("products")}>
+          Products
+        </button>
+
+        <button onClick={() => handleNavigate("orders")}>
+          Order History
+        </button>
+
+        <button onClick={() => handleNavigate("contact")}>
+          Contact
+        </button>
+
+        <button
+          className="shop-btn"
+          onClick={() => handleNavigate("products")}
+        >
+          Shop Now
+        </button>
+
+      </div>
+
+      {isOpen && (
+        <div
+          className="nav-backdrop"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
     </header>
   );
 }

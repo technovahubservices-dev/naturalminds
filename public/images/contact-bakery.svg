@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 620" role="img" aria-labelledby="title desc">
+  <title id="title">Bakery contact counter</title>
+  <desc id="desc">A friendly bakery counter with bread, phone, and message icons.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff7ed"/>
+      <stop offset="0.55" stop-color="#fde9d0"/>
+      <stop offset="1" stop-color="#ffd28a"/>
+    </linearGradient>
+    <linearGradient id="phone" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#172033"/>
+      <stop offset="1" stop-color="#2f3d58"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="20" flood-color="#70451e" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="820" height="620" rx="34" fill="url(#bg)"/>
+  <circle cx="700" cy="120" r="120" fill="#fff" opacity="0.34"/>
+  <circle cx="120" cy="528" r="180" fill="#c8963a" opacity="0.15"/>
+  <g filter="url(#shadow)">
+    <rect x="460" y="118" width="190" height="342" rx="34" fill="url(#phone)"/>
+    <rect x="485" y="164" width="140" height="232" rx="18" fill="#fffaf0"/>
+    <circle cx="555" cy="424" r="14" fill="#fffaf0"/>
+    <path d="M523 244h66M523 284h88M523 324h56" stroke="#d99b38" stroke-width="14" stroke-linecap="round"/>
+  </g>
+  <g filter="url(#shadow)">
+    <ellipse cx="310" cy="448" rx="205" ry="44" fill="#7c451f" opacity="0.15"/>
+    <path d="M148 359c21-92 88-148 181-148 94 0 158 55 180 148 9 41-14 70-55 70H203c-41 0-64-29-55-70Z" fill="#c77a2d"/>
+    <path d="M190 363c18-58 68-93 139-93 72 0 119 34 138 93 5 18-6 31-25 31H214c-19 0-30-13-24-31Z" fill="#ffdfa0"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="153" y="115" width="235" height="92" rx="28" fill="#ffffff" opacity="0.95"/>
+    <path d="M210 158h120" stroke="#1f8f3a" stroke-width="14" stroke-linecap="round"/>
+    <path d="M210 183h78" stroke="#d99b38" stroke-width="12" stroke-linecap="round"/>
+    <path d="M171 206l28-26h30" fill="#ffffff"/>
+  </g>
+</svg>

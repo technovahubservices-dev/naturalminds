@@ -34,7 +34,7 @@ export default function Contact({ register }) {
 
           <div className="contact-list">
             <div>
-              <span>Phone</span>
+              <span className="contact-label-highlight">Phone</span>
               <strong>
                 <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer noopener">
                   +91 94433 11007
@@ -42,12 +42,16 @@ export default function Contact({ register }) {
               </strong>
             </div>
             <div>
-              <span>Email</span>
-              <strong>hello@Mahima Bread.com</strong>
+              <span className="contact-label-highlight">Email</span>
+              <strong>
+                <a href="mailto:mahimyfoodsin@gmail.com">mahimyfoodsin@gmail.com</a>
+              </strong>
             </div>
             <div>
-              <span>Address</span>
-              <strong>Pondicherry, India</strong>
+              <span className="contact-label-highlight">Address</span>
+              <strong>9A , Bashyam Street Manajakuppam Village</strong>
+                 <strong>Cuddalore Tamilnadu</strong>
+                 <strong>607001</strong>
             </div>
           </div>
         </div>
@@ -79,6 +83,8 @@ export default function Contact({ register }) {
             Send on WhatsApp
           </button>
         </form>
+
+       
       </div>
     </section>
   );

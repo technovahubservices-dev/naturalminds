@@ -1,25 +1,101 @@
+import { useState } from "react";
 import "../styles/components/Stats.css";
 
-export default function Stats({ register }) {
-  const stats = [
-    ['10k+', 'Happy Customers'],
-    ['500+', 'Retail Partners'],
-    ['50+', 'Daily Deliveries'],
-    ['100%', 'Natural'],
-  ];
+import {
+  ShieldCheck,
+  Leaf,
+  BadgeCheck,
+  Wheat,
+  HeartHandshake,
+  Ban,
+} from "lucide-react";
+
+const promises = [
+  {
+    icon: <Ban />,
+    title: "No Vanaspati",
+    desc: "Only wholesome ingredients chosen for better nutrition.",
+  },
+  {
+    icon: <ShieldCheck />,
+    title: "No Artificial Compromise",
+    desc: "Free from unnecessary artificial ingredients.",
+  },
+  {
+    icon: <BadgeCheck />,
+    title: "No Class 2 & 3 Preservatives",
+    desc: "Clean label approach for everyday wellness.",
+  },
+  {
+    icon: <Leaf />,
+    title: "Carefully Selected Ingredients",
+    desc: "Each ingredient serves a meaningful purpose.",
+  },
+  {
+    icon: <Wheat />,
+    title: "Premium Quality Standards",
+    desc: "Crafted with consistency and care.",
+  },
+  {
+    icon: <HeartHandshake />,
+    title: "Balanced Taste + Nutrition",
+    desc: "Good for your body and satisfying to enjoy.",
+  },
+];
+
+export default function QualityPromise() {
+  const [activeCard, setActiveCard] = useState(0);
 
   return (
-    <section className="stats">
-      <div className="container">
-        <div className="stats-grid">
-          {stats.map(([value, label], index) => (
+    <section className="quality">
+      <div className="quality-header">
+        <span>QUALITY PROMISE</span>
+
+        <h2>Clean Ingredients. Honest Baking.</h2>
+
+        <p>
+          Transparency and quality are baked into every loaf, delivering
+          nourishment you can trust.
+        </p>
+      </div>
+
+      <div className="quality-grid">
+        <div className="quality-image">
+          <img
+            src="/images/tuni-quality.svg"
+            alt="Tuni Bread"
+          />
+
+          <div className="floating-card wheat">
+            🌾 Whole Grain
+          </div>
+
+          <div className="floating-card dates">
+            🌴 Rich In Iron & Fibre
+          </div>
+
+          <div className="floating-card coconut">
+            🥥 Plant-Based Goodness
+          </div>
+        </div>
+
+        <div className="quality-list">
+          {promises.map((item, index) => (
             <div
-              className={`stat reveal delay-${index}`}
-              key={label}
-              ref={register}
+              key={index}
+              className={`promise-card ${
+                activeCard === index ? "active" : ""
+              }`}
+              onClick={() => setActiveCard(index)}
             >
-              <strong>{value}</strong>
-              <span>{label}</span>
+              <div className="promise-icon">
+                {item.icon}
+              </div>
+
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
             </div>
           ))}
         </div>

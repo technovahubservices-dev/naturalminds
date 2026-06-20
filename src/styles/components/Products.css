@@ -1,1 +1,93 @@
 @import "../theme.css";
+
+#products .section-heading {
+  text-align: center;
+}
+
+#products .page-banner {
+  align-items: center;
+}
+
+#products .product-grid {
+  align-items: stretch;
+}
+
+#products .product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#products .product-card__imageWrap {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(255, 248, 237, 0.9), rgba(245, 236, 222, 0.9));
+}
+
+#products .product-card__imageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 14px;
+}
+
+#products .product-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+#products .product-card__meta {
+  align-items: flex-start;
+}
+
+#products .product-card__title {
+  min-height: 2.9rem;
+}
+
+#products .product-card__footer {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: minmax(64px, auto) minmax(180px, 1fr);
+  align-items: center;
+  gap: 18px;
+}
+
+#products .product-card__footer strong {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  white-space: nowrap;
+  min-width: 64px;
+}
+
+#products .product-card__footer .button {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 16px;
+}
+
+.app-shell[data-theme="dark"] #products .product-card__imageWrap {
+  background: linear-gradient(135deg, rgba(37, 29, 23, 0.92), rgba(23, 18, 14, 0.92));
+}
+
+@media (max-width: 620px) {
+  #products .page-banner {
+    align-items: stretch;
+  }
+
+  #products .product-card__footer {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  #products .product-card__footer strong {
+    min-width: 0;
+  }
+
+  #products .product-card__footer .button {
+    width: 100%;
+  }
+}

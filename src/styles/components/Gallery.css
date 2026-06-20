@@ -1,1 +1,218 @@
-@import "../theme.css";
+.nutrition {
+  padding: 120px 8%;
+  background: #f8f3e8;
+}
+
+.nutrition-header {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.nutrition-header span {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1px solid #c8963a;
+  border-radius: 30px;
+  color: #c8963a;
+  font-weight: 700;
+}
+
+.nutrition-header h2 {
+  margin-top: 20px;
+  font-size: 4rem;
+  color: #2f1f12;
+}
+
+.nutrition-header p {
+  margin-top: 15px;
+  color: #6a6056;
+  line-height: 1.8;
+}
+
+.nutrition-grid {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* PRODUCT */
+
+.nutrition-product {
+  position: relative;
+}
+
+.product-glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(
+    rgba(200,150,58,.25),
+    transparent
+  );
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nutrition-product img {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  transition: .5s;
+}
+
+.nutrition-product:hover img {
+  transform: translateY(-10px);
+}
+
+.floating-badge {
+  position: absolute;
+  background: white;
+  padding: 12px 18px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,.08);
+  font-weight: 600;
+  z-index: 3;
+  animation: float 4s infinite ease-in-out;
+}
+
+.badge-1 {
+  top: 50px;
+  right: -20px;
+}
+
+.badge-2 {
+  bottom: 120px;
+  right: -30px;
+}
+
+.badge-3 {
+  bottom: 50px;
+  left: -20px;
+}
+
+/* BENTO GRID */
+
+.nutrition-cards {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+}
+
+.nutrition-card {
+  background: white;
+  border-radius: 28px;
+  padding: 30px;
+  transition: .4s;
+  border: 1px solid rgba(200,150,58,.15);
+}
+
+.nutrition-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(200,150,58,.18);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: #fff4df;
+  color: #c8963a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-number {
+  margin-top: 20px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #2f1f12;
+}
+
+.card-number span {
+  font-size: 1rem;
+  color: #777;
+  margin-left: 6px;
+}
+
+.nutrition-card h3 {
+  margin-top: 10px;
+  color: #555;
+}
+
+/* BOTTOM TAGS */
+
+.nutrition-bottom {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 15px;
+}
+
+.nutrition-bottom div {
+  background: white;
+  text-align: center;
+  padding: 18px;
+  border-radius: 18px;
+  font-weight: 600;
+}
+
+@keyframes float {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media(max-width:992px){
+  .nutrition-grid{
+    grid-template-columns:1fr;
+  }
+
+  .nutrition-cards{
+    grid-template-columns:1fr;
+  }
+
+  .nutrition-bottom{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .nutrition-header h2{
+    font-size:2.8rem;
+  }
+}
+
+.app-shell[data-theme="dark"] .nutrition {
+  background: #17120e;
+}
+
+.app-shell[data-theme="dark"] .nutrition-header h2,
+.app-shell[data-theme="dark"] .card-number {
+  color: #f8f2ea;
+}
+
+.app-shell[data-theme="dark"] .nutrition-header p,
+.app-shell[data-theme="dark"] .nutrition-card h3,
+.app-shell[data-theme="dark"] .card-number span {
+  color: #e7d3bf;
+}
+
+.app-shell[data-theme="dark"] .nutrition-card,
+.app-shell[data-theme="dark"] .nutrition-bottom div,
+.app-shell[data-theme="dark"] .floating-badge {
+  background: #251d17;
+  border-color: rgba(255, 233, 202, 0.12);
+  color: #f8f2ea;
+}
+
+.app-shell[data-theme="dark"] .card-icon {
+  background: rgba(240, 191, 110, 0.16);
+  color: #f0bf6e;
+}

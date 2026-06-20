@@ -1,1 +1,150 @@
-@import "../theme.css";
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    #fff8f0,
+    #fff1e6
+  );
+  color: #2f1f12;
+}
+
+.hero__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #ff7a00;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hero__mediaCard {
+  position: relative;
+  animation: float 5s ease-in-out infinite;
+}
+
+.hero__mediaCard img {
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.15);
+}
+
+.hero__floating {
+  position: absolute;
+  background: white;
+  padding: 14px 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+  font-weight: 600;
+  color: #2f1f12;
+}
+
+.hero__floating--top {
+  top: 20px;
+  right: -20px;
+}
+
+.hero__floating--bottom {
+  bottom: 20px;
+  left: -20px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.hero-stats h3 {
+  font-size: 2rem;
+  color: #ff7a00;
+}
+
+.hero-stats span {
+  color: #666;
+}
+
+.hero__chip {
+  background: white;
+  padding: 10px 18px;
+  border-radius: 999px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+  color: #3c2a1f;
+}
+
+@keyframes float {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+  }
+}
+
+.app-shell[data-theme="dark"] .hero {
+  background: linear-gradient(
+    135deg,
+    #15100c,
+    #211914
+  );
+  color: #f8f2ea;
+}
+
+.app-shell[data-theme="dark"] .hero h1,
+.app-shell[data-theme="dark"] .hero h1 span {
+  color: #f8f2ea;
+}
+
+.app-shell[data-theme="dark"] .hero h1 span,
+.app-shell[data-theme="dark"] .hero-stats h3 {
+  color: #f0bf6e;
+}
+
+.app-shell[data-theme="dark"] .lead,
+.app-shell[data-theme="dark"] .hero-stats span {
+  color: #e7d3bf;
+}
+
+.app-shell[data-theme="dark"] .hero__chip,
+.app-shell[data-theme="dark"] .hero__floating {
+  background: rgba(37, 29, 23, 0.88);
+  color: #f8f2ea;
+  border: 1px solid rgba(255, 233, 202, 0.12);
+  box-shadow: 0 10px 25px rgba(0,0,0,.24);
+}
+
+.app-shell[data-theme="dark"] .hero__mediaCard img {
+  box-shadow: 0 20px 50px rgba(0,0,0,.34);
+}

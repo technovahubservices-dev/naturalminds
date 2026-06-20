@@ -1,28 +1,66 @@
 import "../styles/components/Categories.css";
 
-export default function Categories({ register, items }) {
-  return (
-    <section className="section container" id="categories">
-      <div className="section-heading reveal" ref={register}>
-        <p className="eyebrow">Nature&apos;s Best Selections</p>
-        <h2>Curated essentials from the farm</h2>
-      </div>
 
-      <div className="category-grid">
-        {items.map((item, index) => (
-          <article
-            className={`card card--category reveal delay-${Math.min(index, 3)}`}
-            key={item.title}
-            ref={register}
-          >
-            <img src={item.image} alt={item.title} />
-            <div className="card__overlay">
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              <a href="#contact">Learn More</a>
-            </div>
-          </article>
-        ))}
+
+const features = [
+  {
+    title: "Coconut",
+    desc: "Natural Energy",
+    icon: "🥥",
+  },
+  {
+    title: "Dates",
+    desc: "Iron & Fiber Rich",
+    icon: "🌴",
+  },
+  {
+    title: "Functional Blend",
+    desc: "Everyday Vitality",
+    icon: "🌾",
+  },
+];
+
+export default function BrandOrigin() {
+  return (
+    <section className="brand-origin">
+      <div className="brand-container">
+        <div className="brand-content">
+          <span className="brand-tag">BRAND ORIGIN</span>
+
+          <h2>
+            Inspired by Ancient
+            <br />
+            Morning Nutrition
+          </h2>
+
+          <div className="origin-list">
+            {features.map((item, index) => (
+              <div className="origin-item" key={index}>
+                <div className="origin-icon">
+                  <span>{item.icon}</span>
+                </div>
+
+                <div className="origin-text">
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="brand-description">
+            This ancient nutritional inspiration became the foundation of our
+            premium bread recipes, combining wholesome ingredients with modern
+            baking craftsmanship.
+          </p>
+        </div>
+
+        <div className="brand-image">
+          <img
+            src="/images/coconut-dates.svg"
+            alt="Coconut and Dates"
+          />
+        </div>
       </div>
     </section>
   );

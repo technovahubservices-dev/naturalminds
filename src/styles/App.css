@@ -1,1 +1,57 @@
 @import "./theme.css";
+
+.app-shell[data-theme="dark"] .hero,
+.app-shell[data-theme="dark"] .brand-origin,
+.app-shell[data-theme="dark"] .ingredients,
+.app-shell[data-theme="dark"] .nutrition,
+.app-shell[data-theme="dark"] .quality,
+.app-shell[data-theme="dark"] .benefits,
+.app-shell[data-theme="dark"] .testimonials-section,
+.app-shell[data-theme="dark"] .section--contact {
+  color: #f8f2ea;
+}
+
+.app-shell[data-theme="dark"] .hero h1,
+.app-shell[data-theme="dark"] .hero h2,
+.app-shell[data-theme="dark"] .hero h3,
+.app-shell[data-theme="dark"] .brand-origin h2,
+.app-shell[data-theme="dark"] .brand-origin h3,
+.app-shell[data-theme="dark"] .ingredients h2,
+.app-shell[data-theme="dark"] .ingredients h3,
+.app-shell[data-theme="dark"] .ingredients h4,
+.app-shell[data-theme="dark"] .nutrition h2,
+.app-shell[data-theme="dark"] .nutrition h3,
+.app-shell[data-theme="dark"] .quality h2,
+.app-shell[data-theme="dark"] .quality h3,
+.app-shell[data-theme="dark"] .benefits h2,
+.app-shell[data-theme="dark"] .benefits h3,
+.app-shell[data-theme="dark"] .testimonials-section h2,
+.app-shell[data-theme="dark"] .testimonials-section h3,
+.app-shell[data-theme="dark"] .section--contact h2,
+.app-shell[data-theme="dark"] .section--contact h3,
+.app-shell[data-theme="dark"] .section--contact strong,
+.app-shell[data-theme="dark"] .section--contact label,
+.app-shell[data-theme="dark"] .section--contact a {
+  color: #f8f2ea !important;
+}
+
+.app-shell[data-theme="dark"] .hero p,
+.app-shell[data-theme="dark"] .hero-stats span,
+.app-shell[data-theme="dark"] .brand-origin p,
+.app-shell[data-theme="dark"] .ingredients p,
+.app-shell[data-theme="dark"] .nutrition p,
+.app-shell[data-theme="dark"] .nutrition span,
+.app-shell[data-theme="dark"] .quality p,
+.app-shell[data-theme="dark"] .benefits p,
+.app-shell[data-theme="dark"] .section--contact p,
+.app-shell[data-theme="dark"] .section--contact span {
+  color: #e7d3bf !important;
+}
+
+.app-shell[data-theme="dark"] .mobile-menu {
+  background: #18120e !important;
+}
+
+.app-shell[data-theme="dark"] .mobile-menu button {
+  color: #f8f2ea !important;
+}
