@@ -49,7 +49,7 @@ export default function Contact({ register }) {
             </div>
             <div>
               <span className="contact-label-highlight">Address</span>
-              <strong>9A , Bashyam Street Manajakuppam Village</strong>
+              <strong>9A , Bashyam Street Manjakuppam Village</strong>
                  <strong>Cuddalore Tamilnadu</strong>
                  <strong>607001</strong>
             </div>
