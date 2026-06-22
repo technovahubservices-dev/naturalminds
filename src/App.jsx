@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import "./styles/App.css";
 import { categories, features, gallery, testimonials } from "./data/siteContent";
 import { useReveal } from "./hooks/useReveal";
@@ -63,6 +64,7 @@ function App() {
       return [];
     }
   });
+  const whatsappNumber = "919443311007";
 
   useEffect(() => {
     window.localStorage.setItem("naturalminds-theme", theme);
@@ -330,6 +332,15 @@ function App() {
 
         {page === SUCCESS_PAGE && <SuccessPage order={successOrder} onNavigate={navigate} />}
       </main>
+      <a
+        className="whatsapp-float"
+        href={`https://wa.me/${whatsappNumber}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+      >
+        <FaWhatsapp />
+      </a>
       <Footer onNavigate={navigate} />
     </div>
   );

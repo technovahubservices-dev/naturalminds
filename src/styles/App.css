@@ -55,3 +55,41 @@
 .app-shell[data-theme="dark"] .mobile-menu button {
   color: #f8f2ea !important;
 }
+
+.whatsapp-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 58px;
+  height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  font-size: 2rem;
+  box-shadow: 0 16px 35px rgba(37, 211, 102, 0.35);
+  z-index: 1100;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 20px 40px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-float:focus-visible {
+  outline: 3px solid rgba(37, 211, 102, 0.35);
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 54px;
+    height: 54px;
+    font-size: 1.8rem;
+  }
+}
