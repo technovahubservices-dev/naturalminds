@@ -14,7 +14,7 @@ export default function Contact({ register }) {
 
     const fullName = [firstName, lastName].filter(Boolean).join(" ") || "Customer";
     const whatsappMessage = encodeURIComponent(
-      `Hello Mahima Bread,\n\nName: ${fullName}\nEmail: ${email || "Not provided"}\nMessage: ${message || "No message entered"}`
+      `Hello mahimy foods,\n\nName: ${fullName}\nEmail: ${email || "Not provided"}\nMessage: ${message || "No message entered"}`
     );
 
     window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank", "noopener,noreferrer");

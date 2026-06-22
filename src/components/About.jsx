@@ -7,14 +7,14 @@ export default function About({ register }) {
         <div className="about-layout__media reveal" ref={register}>
           <img
             src="/farm.svg"
-            alt="Mahima Bread storefront illustration"
+            alt="mahimy foods storefront illustration"
           />
         </div>
         <div className="about-layout__copy reveal" ref={register}>
           <p className="eyebrow">About Us</p>
           <h2>Nurturing a premium bakery look and feel</h2>
           <p>
-            Mahima Bread brings the warm bakery reference style into a responsive
+            mahimy foods brings the warm bakery reference style into a responsive
             storefront system with creamy backgrounds, soft gold accents, and
             polished spacing that scales to every screen size.
           </p>

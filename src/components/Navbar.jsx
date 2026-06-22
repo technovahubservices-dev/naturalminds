@@ -36,14 +36,14 @@ export default function Navbar({
         <button
           className="brand-button"
           onClick={() => handleNavigate("home")}
-          aria-label="Mahima Bread home"
+          aria-label="mahimy foods home"
         >
           <img
             className="brand-logo"
             src={logo}
             alt=""
           />
-          <span className="brand-text">Mahima Bread</span>
+          <span className="brand-text">mahimy foods</span>
         </button>
 
         {/* Desktop Menu */}

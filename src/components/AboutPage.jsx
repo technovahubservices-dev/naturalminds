@@ -12,7 +12,7 @@ export default function AboutPage({ onNavigate }) {
         <div>
           <strong>Our story</strong>
           <p>
-            Mahima Bread is designed to echo the elegant bakery storefront style:
+            mahimy foods is designed to echo the elegant bakery storefront style:
             soft cream surfaces, golden highlights, rounded cards, and a layout
             that stays beautiful from large desktop screens to compact phones.
           </p>
