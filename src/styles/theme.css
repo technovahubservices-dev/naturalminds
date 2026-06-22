@@ -498,7 +498,7 @@ main > section:not(.site-header)::before {
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--brand-strong);
+  color: #b45309;
   font-size: 0.78rem;
   font-weight: 800;
 }
@@ -720,6 +720,23 @@ main > section:not(.site-header)::before {
   margin-top: 0.35rem;
   color: var(--muted-ink);
   line-height: 1.6;
+}
+
+.app-shell[data-theme="dark"] .hero-offer {
+  background: linear-gradient(135deg, rgba(255, 249, 241, 0.96), rgba(241, 227, 203, 0.9));
+  border-color: rgba(214, 162, 79, 0.2);
+}
+
+.app-shell[data-theme="dark"] .hero-offer__label {
+  color: #b67c1f;
+}
+
+.app-shell[data-theme="dark"] .hero-offer__content strong {
+  color: #2f1f12;
+}
+
+.app-shell[data-theme="dark"] .hero-offer__content span {
+  color: #6d6358;
 }
 
 .hero-offer__button {

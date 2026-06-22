@@ -235,3 +235,10 @@
   background: rgba(240, 191, 110, 0.16);
   color: #f0bf6e;
 }
+
+.app-shell[data-theme="dark"] .floating-card {
+  background: rgba(37, 29, 23, 0.92);
+  color: #f8f2ea;
+  border: 1px solid rgba(255, 233, 202, 0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+}
