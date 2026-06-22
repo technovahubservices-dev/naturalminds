@@ -80,7 +80,7 @@ export default function Testimonials({ register }) {
   const testimonial = testimonials[currentIndex];
 
   return (
-    <section className="testimonials-section">
+    <section className="testimonials-section" id="testimonials">
       <div className="section-heading reveal" ref={register}>
         <span className="eyebrow">CUSTOMER LOVE</span>
         <h2>What Customers Are Saying</h2>

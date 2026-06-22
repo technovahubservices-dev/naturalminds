@@ -30,6 +30,7 @@ const ABOUT_PAGE = "about";
 const PRIVACY_POLICY_PAGE = "privacy-policy";
 const TERMS_CONDITIONS_PAGE = "terms-conditions";
 const PRODUCTS_PAGE = "products";
+const TESTIMONIALS_PAGE = "testimonials";
 const PRODUCT_DETAIL_PAGE = "product-detail";
 const CART_PAGE = "cart";
 const CHECKOUT_PAGE = "checkout";
@@ -118,6 +119,18 @@ function App() {
 
       window.requestAnimationFrame(() => {
         const section = document.getElementById("contact");
+        section?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+
+      return;
+    }
+
+    if (nextPage === TESTIMONIALS_PAGE) {
+      setActiveNav(TESTIMONIALS_PAGE);
+      setPage(HOME_PAGE);
+
+      window.requestAnimationFrame(() => {
+        const section = document.getElementById(TESTIMONIALS_PAGE);
         section?.scrollIntoView({ behavior: "smooth", block: "start" });
       });
 

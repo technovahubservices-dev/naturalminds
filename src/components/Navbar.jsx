@@ -37,7 +37,7 @@ export default function Navbar({
         <button
           className={activePage === "home" ? "brand-button is-active" : "brand-button"}
           onClick={() => handleNavigate("home")}
-          aria-label="mahimy foods home"
+          aria-label="Mahima bread home"
           aria-current={activePage === "home" ? "page" : undefined}
         >
           <span className="brand-logo-shell" aria-hidden="true">
@@ -47,7 +47,7 @@ export default function Navbar({
               alt=""
             />
           </span>
-          <span className="brand-text">mahimy foods</span>
+          <span className="brand-text">Mahimy foods</span>
         </button>
 
         {/* Desktop Menu */}
@@ -73,13 +73,15 @@ export default function Navbar({
           >
             Products
           </button>
+
           <button
-            className={activePage === "orders" ? "is-active" : ""}
-            onClick={() => handleNavigate("orders")}
-            aria-current={activePage === "orders" ? "page" : undefined}
+            className={activePage === "testimonials" ? "is-active" : ""}
+            onClick={() => handleNavigate("testimonials")}
+            aria-current={activePage === "testimonials" ? "page" : undefined}
           >
-            Order History
+            Testimonials
           </button>
+          
           <button
             className={activePage === "contact" ? "is-active" : ""}
             onClick={() => handleNavigate("contact")}
@@ -154,6 +156,10 @@ export default function Navbar({
 
         <button className={activePage === "products" ? "is-active" : ""} onClick={() => handleNavigate("products")} aria-current={activePage === "products" ? "page" : undefined}>
           Products
+        </button>
+
+        <button className={activePage === "testimonials" ? "is-active" : ""} onClick={() => handleNavigate("testimonials")} aria-current={activePage === "testimonials" ? "page" : undefined}>
+          Testimonials
         </button>
 
         <button className={activePage === "orders" ? "is-active" : ""} onClick={() => handleNavigate("orders")} aria-current={activePage === "orders" ? "page" : undefined}>
