@@ -386,6 +386,10 @@
     color:#f8f2ea;
 }
 
+.app-shell[data-theme="dark"] .nav-toggle span {
+    background:#f8f2ea;
+}
+
 /* =========================
    NAV LINKS
 ========================= */

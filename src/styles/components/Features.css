@@ -224,3 +224,49 @@
     margin-bottom: 20px;
   }
 }
+
+.app-shell[data-theme="dark"] .ingredients {
+  background: linear-gradient(135deg, #15100c, #201813);
+}
+
+.app-shell[data-theme="dark"] .ingredients-header span {
+  background: rgba(240, 191, 110, 0.14);
+  color: #f0bf6e;
+}
+
+.app-shell[data-theme="dark"] .ingredients-header h2 {
+  color: #f8f2ea;
+}
+
+.app-shell[data-theme="dark"] .ingredients-header p {
+  color: #e7d3bf;
+}
+
+.app-shell[data-theme="dark"] .center-glow {
+  background: radial-gradient(rgba(240, 191, 110, 0.22), transparent);
+}
+
+.app-shell[data-theme="dark"] .center-circle {
+  background: linear-gradient(135deg, #c89235, #8f6420);
+  color: #fff8ef;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.32);
+}
+
+.app-shell[data-theme="dark"] .orbit-card {
+  background: rgba(37, 29, 23, 0.84);
+  border: 1px solid rgba(255, 233, 202, 0.12);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.22);
+}
+
+.app-shell[data-theme="dark"] .orbit-icon {
+  background: rgba(240, 191, 110, 0.14);
+  color: #f0bf6e;
+}
+
+.app-shell[data-theme="dark"] .orbit-card h4 {
+  color: #f8f2ea;
+}
+
+.app-shell[data-theme="dark"] .orbit-card p {
+  color: #e7d3bf;
+}
