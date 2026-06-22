@@ -1,14 +1,14 @@
 import "../styles/components/TermsConditionsPage.css";
 
-export default function TermsConditionsPage({ onNavigate }) {
+export default function TermsConditionsPage({ onNavigate, register }) {
   return (
     <section className="section container">
-      <div className="section-heading">
+      <div className="section-heading reveal" ref={register}>
         <p className="eyebrow">Terms &amp; Conditions</p>
         <h2>Simple rules for a smooth experience</h2>
       </div>
 
-      <div className="page-banner">
+      <div className="page-banner reveal delay-1" ref={register}>
         <div>
           <strong>Before you place an order</strong>
           <p>By using the website or placing an order, you agree to the terms below.</p>
@@ -24,7 +24,7 @@ export default function TermsConditionsPage({ onNavigate }) {
       </div>
 
       <div className="legal-grid">
-        <article className="legal-card">
+        <article className="legal-card reveal delay-1" ref={register}>
           <h3>Orders and payments</h3>
           <p>
             All orders are subject to availability and confirmation. Prices,
@@ -34,7 +34,7 @@ export default function TermsConditionsPage({ onNavigate }) {
           </p>
         </article>
 
-        <article className="legal-card">
+        <article className="legal-card reveal delay-2" ref={register}>
           <h3>Delivery and freshness</h3>
           <p>
             We aim to deliver within the time windows shown at checkout, but
@@ -44,7 +44,7 @@ export default function TermsConditionsPage({ onNavigate }) {
           </p>
         </article>
 
-        <article className="legal-card">
+        <article className="legal-card reveal delay-3" ref={register}>
           <h3>Returns and refunds</h3>
           <p>
             Because we sell perishable goods, return eligibility may be
@@ -54,7 +54,7 @@ export default function TermsConditionsPage({ onNavigate }) {
           </p>
         </article>
 
-        <article className="legal-card">
+        <article className="legal-card reveal delay-4" ref={register}>
           <h3>Content and use</h3>
           <p>
             The website content, product descriptions, images, and branding

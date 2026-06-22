@@ -42,16 +42,16 @@ const features = [
   },
 ];
 
-export default function BenefitsSection() {
+export default function BenefitsSection({ register }) {
   return (
     <section className="benefits">
       <div className="bg-circle bg1"></div>
       <div className="bg-circle bg2"></div>
 
       <div className="container">
-        <span className="tag">WHY CHOOSE US</span>
+        <span className="tag reveal" ref={register}>WHY CHOOSE US</span>
 
-        <h2 className="title">
+        <h2 className="title reveal delay-1" ref={register}>
           Not Just Bread.
           <br />
           <span>A Lifestyle Choice</span>
@@ -64,7 +64,8 @@ export default function BenefitsSection() {
             return (
               <div
                 key={index}
-                className="card"
+                className="card reveal"
+                ref={register}
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 <div className="icon-box">

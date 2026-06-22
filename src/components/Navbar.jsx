@@ -15,6 +15,7 @@ export default function Navbar({
   onToggleTheme,
   onNavigate,
   cartCount = 0,
+  activePage = "home",
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -34,9 +35,10 @@ export default function Navbar({
 
         {/* Logo */}
         <button
-          className="brand-button"
+          className={activePage === "home" ? "brand-button is-active" : "brand-button"}
           onClick={() => handleNavigate("home")}
           aria-label="mahimy foods home"
+          aria-current={activePage === "home" ? "page" : undefined}
         >
           <img
             className="brand-logo"
@@ -48,11 +50,41 @@ export default function Navbar({
 
         {/* Desktop Menu */}
         <div className="nav-links">
-          <button onClick={() => handleNavigate("home")}>Home</button>
-          <button onClick={() => handleNavigate("about")}>About Us</button>
-          <button onClick={() => handleNavigate("products")}>Products</button>
-          <button onClick={() => handleNavigate("orders")}>Order History</button>
-          <button onClick={() => handleNavigate("contact")}>Contact</button>
+          <button
+            className={activePage === "home" ? "is-active" : ""}
+            onClick={() => handleNavigate("home")}
+            aria-current={activePage === "home" ? "page" : undefined}
+          >
+            Home
+          </button>
+          <button
+            className={activePage === "about" ? "is-active" : ""}
+            onClick={() => handleNavigate("about")}
+            aria-current={activePage === "about" ? "page" : undefined}
+          >
+            About Us
+          </button>
+          <button
+            className={activePage === "products" ? "is-active" : ""}
+            onClick={() => handleNavigate("products")}
+            aria-current={activePage === "products" ? "page" : undefined}
+          >
+            Products
+          </button>
+          <button
+            className={activePage === "orders" ? "is-active" : ""}
+            onClick={() => handleNavigate("orders")}
+            aria-current={activePage === "orders" ? "page" : undefined}
+          >
+            Order History
+          </button>
+          <button
+            className={activePage === "contact" ? "is-active" : ""}
+            onClick={() => handleNavigate("contact")}
+            aria-current={activePage === "contact" ? "page" : undefined}
+          >
+            Contact
+          </button>
         </div>
 
         {/* Actions */}
@@ -80,7 +112,7 @@ export default function Navbar({
 
           {/* Cart */}
           <button
-            className="nav-cart"
+            className={activePage === "cart" ? "nav-cart is-active" : "nav-cart"}
             onClick={() => handleNavigate("cart")}
           >
             <ShoppingCart size={22} />
@@ -110,23 +142,23 @@ export default function Navbar({
       {/* Mobile Sidebar */}
       <div className={`mobile-menu ${isOpen ? "mobile-menu--open" : ""}`}>
 
-        <button onClick={() => handleNavigate("home")}>
+        <button className={activePage === "home" ? "is-active" : ""} onClick={() => handleNavigate("home")} aria-current={activePage === "home" ? "page" : undefined}>
           Home
         </button>
 
-        <button onClick={() => handleNavigate("about")}>
+        <button className={activePage === "about" ? "is-active" : ""} onClick={() => handleNavigate("about")} aria-current={activePage === "about" ? "page" : undefined}>
           About Us
         </button>
 
-        <button onClick={() => handleNavigate("products")}>
+        <button className={activePage === "products" ? "is-active" : ""} onClick={() => handleNavigate("products")} aria-current={activePage === "products" ? "page" : undefined}>
           Products
         </button>
 
-        <button onClick={() => handleNavigate("orders")}>
+        <button className={activePage === "orders" ? "is-active" : ""} onClick={() => handleNavigate("orders")} aria-current={activePage === "orders" ? "page" : undefined}>
           Order History
         </button>
 
-        <button onClick={() => handleNavigate("contact")}>
+        <button className={activePage === "contact" ? "is-active" : ""} onClick={() => handleNavigate("contact")} aria-current={activePage === "contact" ? "page" : undefined}>
           Contact
         </button>
 

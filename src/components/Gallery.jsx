@@ -41,10 +41,10 @@ const stats = [
   },
 ];
 
-export default function Nutrition() {
+export default function Nutrition({ register }) {
   return (
     <section className="nutrition">
-      <div className="nutrition-header">
+      <div className="nutrition-header reveal" ref={register}>
         <span>NUTRITION FACTS</span>
 
         <h2>Balanced Nutrition Profile</h2>
@@ -57,7 +57,7 @@ export default function Nutrition() {
 
       <div className="nutrition-grid">
         {/* LEFT */}
-        <div className="nutrition-product">
+        <div className="nutrition-product reveal delay-1" ref={register}>
           <div className="product-glow"></div>
 
           <img
@@ -81,7 +81,11 @@ export default function Nutrition() {
         {/* RIGHT */}
         <div className="nutrition-cards">
           {stats.map((item, index) => (
-            <div className="nutrition-card" key={index}>
+            <div
+              className={`nutrition-card reveal delay-${(index % 4) + 1}`}
+              key={index}
+              ref={register}
+            >
               <div className="card-icon">
                 {item.icon}
               </div>
@@ -97,7 +101,7 @@ export default function Nutrition() {
         </div>
       </div>
 
-      <div className="nutrition-bottom">
+      <div className="nutrition-bottom reveal delay-2" ref={register}>
         <div>✓ Fiber Rich</div>
         <div>✓ Balanced Energy</div>
         <div>✓ Functional Ingredients</div>

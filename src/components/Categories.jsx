@@ -1,7 +1,5 @@
 import "../styles/components/Categories.css";
 
-
-
 const features = [
   {
     title: "Coconut",
@@ -20,11 +18,11 @@ const features = [
   },
 ];
 
-export default function BrandOrigin() {
+export default function BrandOrigin({ register }) {
   return (
     <section className="brand-origin">
       <div className="brand-container">
-        <div className="brand-content">
+        <div className="brand-content reveal" ref={register}>
           <span className="brand-tag">BRAND ORIGIN</span>
 
           <h2>
@@ -35,7 +33,7 @@ export default function BrandOrigin() {
 
           <div className="origin-list">
             {features.map((item, index) => (
-              <div className="origin-item" key={index}>
+              <div className="origin-item reveal" key={index} ref={register}>
                 <div className="origin-icon">
                   <span>{item.icon}</span>
                 </div>
@@ -55,7 +53,7 @@ export default function BrandOrigin() {
           </p>
         </div>
 
-        <div className="brand-image">
+        <div className="brand-image reveal delay-1" ref={register}>
           <img
             src="/images/coconut-dates.svg"
             alt="Coconut and Dates"

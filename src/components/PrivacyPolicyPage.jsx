@@ -1,14 +1,14 @@
 import "../styles/components/PrivacyPolicyPage.css";
 
-export default function PrivacyPolicyPage({ onNavigate }) {
+export default function PrivacyPolicyPage({ onNavigate, register }) {
   return (
     <section className="section container">
-      <div className="section-heading">
+      <div className="section-heading reveal" ref={register}>
         <p className="eyebrow">Privacy Policy</p>
         <h2>How we handle your information</h2>
       </div>
 
-      <div className="page-banner">
+      <div className="page-banner reveal delay-1" ref={register}>
         <div>
           <strong>Privacy at a glance</strong>
           <p>
@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
       </div>
 
       <div className="legal-grid">
-        <article className="legal-card">
+        <article className="legal-card reveal delay-1" ref={register}>
           <h3>Information we collect</h3>
           <p>
             When you place an order or contact us, we may collect your name,
@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
           </p>
         </article>
 
-        <article className="legal-card">
+        <article className="legal-card reveal delay-2" ref={register}>
           <h3>How we use it</h3>
           <p>
             We use your information to process purchases, respond to support
@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
           </p>
         </article>
 
-        <article className="legal-card">
+        <article className="legal-card reveal delay-3" ref={register}>
           <h3>Sharing and security</h3>
           <p>
             We only share information with trusted service providers that help
@@ -58,7 +58,7 @@ export default function PrivacyPolicyPage({ onNavigate }) {
           </p>
         </article>
 
-        <article className="legal-card">
+        <article className="legal-card reveal delay-4" ref={register}>
           <h3>Your choices</h3>
           <p>
             You can request access, correction, or deletion of your information

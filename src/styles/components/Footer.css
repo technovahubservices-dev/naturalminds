@@ -9,6 +9,7 @@
   );
   color: white;
   padding-top: 80px;
+  animation: footerRise 820ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 
@@ -115,6 +116,7 @@
   border-radius: 50%;
   filter: blur(120px);
   z-index: 0;
+  animation: glowDrift 12s ease-in-out infinite;
 }
 
 .footer-glow-1 {
@@ -131,6 +133,7 @@
   background: rgba(16, 185, 129, 0.2);
   bottom: -100px;
   right: -100px;
+  animation-delay: 2.2s;
 }
 
 /* Layout */
@@ -150,6 +153,15 @@
   padding-bottom: 60px;
 }
 
+.footer-content > * {
+  animation: cardLift 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.footer-content > *:nth-child(1) { animation-delay: 60ms; }
+.footer-content > *:nth-child(2) { animation-delay: 120ms; }
+.footer-content > *:nth-child(3) { animation-delay: 180ms; }
+.footer-content > *:nth-child(4) { animation-delay: 240ms; }
+
 /* Brand */
 
 .footer-brand-heading {
@@ -167,6 +179,7 @@
   border-radius: 12px;
   background: white;
   padding: 6px;
+  animation: logoFloat 6s ease-in-out infinite;
 }
 
 .brand-title {
@@ -216,11 +229,12 @@
   backdrop-filter: blur(10px);
 
   transition: all 0.3s ease;
+  animation: popIn 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .social-icons a:hover {
   background: #f59e0b;
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.06) rotate(-2deg);
 }
 
 .social-icons a svg {
@@ -250,11 +264,29 @@
   padding: 0;
 
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .footer-column button:hover {
   color: white;
   transform: translateX(8px);
+}
+
+.footer-column button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.15rem;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #f59e0b, transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.footer-column button:hover::after {
+  transform: scaleX(1);
 }
 
 /* Contact */
@@ -335,11 +367,52 @@
   border-top: 1px solid rgba(255,255,255,0.08);
   text-align: center;
   padding: 25px;
+  animation: footerRise 900ms ease both;
 }
 
 .footer-bottom p {
   color: #94a3b8;
   margin: 0;
+}
+
+@keyframes footerRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(14px, 10px, 0) scale(1.05);
+  }
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Responsive */

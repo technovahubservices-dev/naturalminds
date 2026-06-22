@@ -46,18 +46,18 @@ const data = [
   },
 ];
 
-export default function FoodCards() {
+export default function FoodCards({ register }) {
   return (
     <section className="section food-guide">
       <div className="container food-guide__inner">
-        <div className="section-heading center">
+        <div className="section-heading center reveal" ref={register}>
           <p className="eyebrow">Fresh Food Guide</p>
           <h2>Everyday staples from our farm</h2>
         </div>
 
         <div className="food-cards">
           {data.map((item) => (
-            <article className="food-card" key={item.id}>
+            <article className="food-card reveal" key={item.id} ref={register}>
               <img className="food-card__image" src={item.image} alt={item.title} />
               <div className="food-card__body">
                 <h3>{item.title}</h3>

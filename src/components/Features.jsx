@@ -36,10 +36,10 @@ const ingredients = [
   },
 ];
 
-export default function Ingredients() {
+export default function Ingredients({ register }) {
   return (
     <section className="ingredients">
-      <div className="ingredients-header">
+      <div className="ingredients-header reveal" ref={register}>
         <span>OUR INGREDIENTS</span>
 
         <h2>Where Nutrition Meets Indulgence</h2>
@@ -51,7 +51,7 @@ export default function Ingredients() {
       </div>
 
       <div className="ingredient-layout">
-        <div className="ingredient-center">
+        <div className="ingredient-center reveal delay-1" ref={register}>
           <div className="center-glow"></div>
 
           <div className="orbit-track" aria-hidden="true">

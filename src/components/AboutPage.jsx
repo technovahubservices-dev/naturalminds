@@ -1,14 +1,14 @@
 import "../styles/components/AboutPage.css";
 
-export default function AboutPage({ onNavigate }) {
+export default function AboutPage({ onNavigate, register }) {
   return (
     <section className="section container">
-      <div className="section-heading">
+      <div className="section-heading reveal" ref={register}>
         <p className="eyebrow">About Us</p>
         <h2>Nurturing a warm premium bakery experience</h2>
       </div>
 
-      <div className="page-banner">
+      <div className="page-banner reveal delay-1" ref={register}>
         <div>
           <strong>Our story</strong>
           <p>
@@ -28,10 +28,10 @@ export default function AboutPage({ onNavigate }) {
       </div>
 
       <div className="about-layout about-layout--page">
-        <div className="about-layout__media">
+        <div className="about-layout__media reveal delay-1" ref={register}>
           <img src="/farm.svg" alt="Nature's Fresh farm" />
         </div>
-        <div className="about-layout__copy">
+        <div className="about-layout__copy reveal delay-2" ref={register}>
           <ul className="checklist">
             <li>Premium cream and gold palette inspired by the reference theme</li>
             <li>Responsive sections that stay balanced across screen sizes</li>

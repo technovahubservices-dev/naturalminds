@@ -13,6 +13,7 @@
   border-radius: 24px;
   background: #f9f4ea;
   box-shadow: 0 20px 60px rgba(50, 35, 15, 0.08);
+  animation: cardLift 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .brand-content {
@@ -49,6 +50,15 @@
   display: flex;
   align-items: center;
   gap: 24px;
+  animation: originRise 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.origin-item:nth-child(2) {
+  animation-delay: 90ms;
+}
+
+.origin-item:nth-child(3) {
+  animation-delay: 180ms;
 }
 
 .origin-icon {
@@ -74,6 +84,7 @@
   font-size: 34px;
   color: white;
   flex-shrink: 0;
+  animation: originBob 5.5s ease-in-out infinite;
 }
 
 .origin-text h3 {
@@ -104,6 +115,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 500ms ease;
+}
+
+.brand-image:hover img {
+  transform: scale(1.04);
 }
 
 /* Tablet */
@@ -179,4 +195,24 @@
 .app-shell[data-theme="dark"] .brand-description,
 .app-shell[data-theme="dark"] .origin-text p {
   color: #e7d3bf;
+}
+
+@keyframes originRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes originBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }

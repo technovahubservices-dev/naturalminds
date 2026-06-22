@@ -55,6 +55,7 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 
   transition: all 0.3s ease;
+  animation: buttonPop 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .arrow-btn:hover {
@@ -81,6 +82,7 @@
   transition: all 0.5s ease;
 
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  animation: cardLift 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .card-1 {
@@ -182,6 +184,7 @@
 
   font-size: 120px;
   opacity: 0.15;
+  animation: quoteFloat 8s ease-in-out infinite;
 }
 
 .dots {
@@ -203,12 +206,48 @@
   cursor: pointer;
 
   transition: all 0.3s ease;
+  animation: dotPop 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .active-dot {
   width: 35px;
   border-radius: 50px;
   background: #f59e0b;
+}
+
+.arrow-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+}
+
+@keyframes buttonPop {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes quoteFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes dotPop {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 768px) {

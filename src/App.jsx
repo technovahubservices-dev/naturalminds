@@ -39,6 +39,7 @@ const SUCCESS_PAGE = "success";
 function App() {
   const { register } = useReveal();
   const [page, setPage] = useState(HOME_PAGE);
+  const [activeNav, setActiveNav] = useState(HOME_PAGE);
   const [theme, setTheme] = useState(() => {
     if (typeof window === "undefined") {
       return "light";
@@ -106,11 +107,13 @@ function App() {
   const navigate = (nextPage) => {
     if (nextPage === PRODUCT_DETAIL_PAGE) {
       setPage(nextPage);
+      setActiveNav(PRODUCTS_PAGE);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (nextPage === "contact") {
+      setActiveNav("contact");
       setPage(HOME_PAGE);
 
       window.requestAnimationFrame(() => {
@@ -121,6 +124,7 @@ function App() {
       return;
     }
 
+    setActiveNav(nextPage);
     setPage(nextPage);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -132,12 +136,14 @@ function App() {
   const openProductDetail = (product) => {
     setSelectedProduct(product);
     setProductDetailSourcePage(page);
+    setActiveNav(PRODUCTS_PAGE);
     setPage(PRODUCT_DETAIL_PAGE);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const closeProductDetail = () => {
     setPage(productDetailSourcePage || PRODUCTS_PAGE);
+    setActiveNav(productDetailSourcePage || PRODUCTS_PAGE);
     setSelectedProduct(null);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -234,6 +240,7 @@ function App() {
     setOrderHistory((current) => [historyEntry, ...current].slice(0, 8));
     setSuccessOrder(data);
     setCart({ items: [], totalQuantity: 0, totalAmount: 0 });
+    setActiveNav(CART_PAGE);
     setPage(SUCCESS_PAGE);
 
     try {
@@ -253,6 +260,7 @@ function App() {
         onNavigate={navigate}
         cartCount={cart.totalQuantity}
         orderHistory={orderHistory}
+        activePage={activeNav}
       />
       <main>
         {page === HOME_PAGE && (
@@ -270,20 +278,20 @@ function App() {
               onNavigate={navigate}
               onSelectProduct={openProductDetail}
             />
-            <FoodCards />
+            <FoodCards register={register} />
             <Stats register={register} />
             <Gallery register={register} items={gallery} />
-            <BenefitsSection register={register} items={''}/>
+            <BenefitsSection register={register} />
             <Testimonials register={register} items={testimonials} />
             <Contact register={register} />
           </>
         )}
 
-        {page === ABOUT_PAGE && <AboutPage onNavigate={navigate} />}
+        {page === ABOUT_PAGE && <AboutPage onNavigate={navigate} register={register} />}
 
-        {page === PRIVACY_POLICY_PAGE && <PrivacyPolicyPage onNavigate={navigate} />}
+        {page === PRIVACY_POLICY_PAGE && <PrivacyPolicyPage onNavigate={navigate} register={register} />}
 
-        {page === TERMS_CONDITIONS_PAGE && <TermsConditionsPage onNavigate={navigate} />}
+        {page === TERMS_CONDITIONS_PAGE && <TermsConditionsPage onNavigate={navigate} register={register} />}
 
         {page === PRODUCTS_PAGE && (
           <Products

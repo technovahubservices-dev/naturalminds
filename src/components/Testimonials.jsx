@@ -62,7 +62,7 @@ const gradients = [
   "card-6",
 ];
 
-export default function Testimonials() {
+export default function Testimonials({ register }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -81,7 +81,7 @@ export default function Testimonials() {
 
   return (
     <section className="testimonials-section">
-      <div className="section-heading">
+      <div className="section-heading reveal" ref={register}>
         <span className="eyebrow">CUSTOMER LOVE</span>
         <h2>What Customers Are Saying</h2>
       </div>
@@ -92,7 +92,8 @@ export default function Testimonials() {
         </button>
 
         <article
-          className={`testimonial-card ${gradients[currentIndex]}`}
+          className={`testimonial-card ${gradients[currentIndex]} reveal delay-1`}
+          ref={register}
         >
           <div className="testimonial-header">
             <div className="avatar">
@@ -121,7 +122,7 @@ export default function Testimonials() {
         </button>
       </div>
 
-      <div className="dots">
+      <div className="dots reveal delay-2" ref={register}>
         {testimonials.map((_, index) => (
           <button
             key={index}

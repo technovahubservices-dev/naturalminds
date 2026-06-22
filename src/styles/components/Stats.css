@@ -11,6 +11,7 @@
   text-align: center;
   max-width: 850px;
   margin: auto;
+  animation: cardLift 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .promise-card {
@@ -82,6 +83,7 @@
 
 .quality-image {
   position: relative;
+  animation: cardLift 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .quality-image img {
@@ -90,6 +92,7 @@
   display: block;
   transition: 0.5s;
   box-shadow: 0 25px 60px rgba(0,0,0,.12);
+  animation: imageFloat 7s ease-in-out infinite;
 }
 
 .quality-image:hover img {
@@ -136,10 +139,17 @@
   border-radius: 22px;
   transition: .35s;
   border: 1px solid rgba(200,150,58,.15);
+  animation: cardLift 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+.promise-card:nth-child(2) { animation-delay: 90ms; }
+.promise-card:nth-child(3) { animation-delay: 180ms; }
+.promise-card:nth-child(4) { animation-delay: 270ms; }
+.promise-card:nth-child(5) { animation-delay: 360ms; }
+.promise-card:nth-child(6) { animation-delay: 450ms; }
+
 .promise-card:hover {
-  transform: translateX(10px);
+  transform: translateX(10px) translateY(-3px);
   box-shadow: 0 20px 40px rgba(200,150,58,.15);
 }
 
@@ -241,4 +251,13 @@
   color: #f8f2ea;
   border: 1px solid rgba(255, 233, 202, 0.12);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+}
+
+@keyframes imageFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }

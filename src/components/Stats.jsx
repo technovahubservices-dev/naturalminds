@@ -43,12 +43,12 @@ const promises = [
   },
 ];
 
-export default function QualityPromise() {
+export default function QualityPromise({ register }) {
   const [activeCard, setActiveCard] = useState(0);
 
   return (
     <section className="quality">
-      <div className="quality-header">
+      <div className="quality-header reveal" ref={register}>
         <span>QUALITY PROMISE</span>
 
         <h2>Clean Ingredients. Honest Baking.</h2>
@@ -60,7 +60,7 @@ export default function QualityPromise() {
       </div>
 
       <div className="quality-grid">
-        <div className="quality-image">
+        <div className="quality-image reveal delay-1" ref={register}>
           <img
             src="/images/tuni-quality.svg"
             alt="Tuni Bread"
@@ -83,9 +83,10 @@ export default function QualityPromise() {
           {promises.map((item, index) => (
             <div
               key={index}
-              className={`promise-card ${
+              className={`promise-card reveal delay-${(index % 4) + 1} ${
                 activeCard === index ? "active" : ""
               }`}
+              ref={register}
               onClick={() => setActiveCard(index)}
             >
               <div className="promise-icon">
