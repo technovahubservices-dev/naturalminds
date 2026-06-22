@@ -99,7 +99,7 @@ export default function Footer({ onNavigate }) {
           </div>
 
           <div className="contact-item">
-            info@mahimyfoods.com
+            mahimyfoodsin@gmail.com
           </div>
         </div>
 
