@@ -240,13 +240,7 @@ export default function Products({ register, onCartChange, onNavigate, onSelectP
       </div>
 
       <div className="page-banner reveal">
-        <div>
-          <strong> product listing</strong>
-          <p>
-            Each card shows image, name, description, price, rating, and category from
-            <code>GET /products</code>.
-          </p>
-        </div>
+        
         <div className="page-banner__actions">
           <button type="button" className="button button--ghost" onClick={() => onNavigate?.("home")}>
             Back Home
