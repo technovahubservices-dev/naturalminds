@@ -40,11 +40,13 @@ export default function Navbar({
           aria-label="mahimy foods home"
           aria-current={activePage === "home" ? "page" : undefined}
         >
-          <img
-            className="brand-logo"
-            src={logo}
-            alt=""
-          />
+          <span className="brand-logo-shell" aria-hidden="true">
+            <img
+              className="brand-logo"
+              src={logo}
+              alt=""
+            />
+          </span>
           <span className="brand-text">mahimy foods</span>
         </button>
 
