@@ -53,7 +53,7 @@ export default function Hero({
             </div>
 
             <div>
-              <h3>20+</h3>
+              <h3>4</h3>
               <span>Bread Varieties</span>
             </div>
 
