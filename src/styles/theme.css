@@ -185,12 +185,12 @@ main > section:not(.site-header)::before {
   z-index: 50;
   backdrop-filter: blur(18px);
   background: rgba(248, 240, 226, 0.82);
-  border-bottom: 1px solid rgba(34, 25, 19, 0.08);
+  border-bottom: 0;
 }
 
 .app-shell[data-theme="dark"] .site-header {
   background: rgba(22, 17, 13, 0.85);
-  border-bottom-color: rgba(255, 233, 202, 0.08);
+  border-bottom: 0;
 }
 
 .announcement-bar {

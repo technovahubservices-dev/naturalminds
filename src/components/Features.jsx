@@ -1,97 +1,235 @@
 import "../styles/components/Features.css";
-
+import right from '../asset/wheatr.png';
+import left from '../asset/wheatr.png';
 import {
-  Wheat,
+  Award,
   Calendar,
-  Droplets,
   Candy,
+  Droplets,
+  Heart,
+  Leaf,
   Sandwich,
+  ShieldCheck,
+  Sprout,
+  Users,
+  Wheat,
+  Sparkles,
 } from "lucide-react";
 
-const ingredients = [
+const leftCards = [
   {
-    icon: <Calendar size={28} />,
-    title: "Dates",
-    desc: "Natural energy & sweetness",
+    icon: Wheat,
+    title: "100% Whole Wheat",
+    desc: "Made with whole grain goodness for better health.",
   },
   {
-    icon: <Droplets size={28} />,
-    title: "Coconut Milk",
-    desc: "Creamy dairy-free richness",
+    icon: ShieldCheck,
+    title: "No Preservatives",
+    desc: "Absolutely no artificial preservatives or additives.",
   },
   {
-    icon: <Candy size={28} />,
-    title: "Honey",
-    desc: "Golden antioxidant sweetness",
-  },
-  {
-    icon: <Wheat size={28} />,
-    title: "Wheat",
-    desc: "Fiber-rich nutritional base",
-  },
-  {
-    icon: <Sandwich size={28} />,
-    title: "Butter",
-    desc: "Smooth texture & flavor",
+    icon: Sprout,
+    title: "High in Fiber",
+    desc: "Supports digestion and helps you stay fuller longer.",
   },
 ];
 
-export default function Ingredients({ register }) {
-  return (
-    <section className="ingredients">
-      <div className="ingredients-header reveal" ref={register}>
-        <span>OUR INGREDIENTS</span>
+const rightCards = [
+  {
+    icon: Heart,
+    title: "Heart Healthy",
+    desc: "Ingredients that support a healthy heart.",
+  },
+  {
+    icon: Droplets,
+    title: "Coconut Milk Rich",
+    desc: "Goodness of coconut milk for better nutrition.",
+  },
+  {
+    icon: Sparkles,
+    title: "Natural Sweetness",
+    desc: "Sweetened naturally with dates and honey.",
+  },
+];
 
-        <h2>Where Nutrition Meets Indulgence</h2>
+const centerIngredients = [
+  {
+    icon: Calendar,
+    title: "Dates",
+    desc: "Natural energy & sweetness",
+    className: "ingredient-card--top",
+  },
+  {
+    icon: Sandwich,
+    title: "Butter",
+    desc: "Smooth texture & flavor",
+    className: "ingredient-card--left",
+  },
+  {
+    icon: Droplets,
+    title: "Coconut Milk",
+    desc: "Creamy dairy-free richness",
+    className: "ingredient-card--right",
+  },
+  {
+    icon: Wheat,
+    title: "Wheat",
+    desc: "Fiber-rich nutritional base",
+    className: "ingredient-card--bottom-left",
+  },
+  {
+    icon: Candy,
+    title: "Honey",
+    desc: "Golden antioxidant sweetness",
+    className: "ingredient-card--bottom-right",
+  },
+];
+
+const stats = [
+  {
+    icon: Users,
+    value: "50K+",
+    label: "Happy Customers",
+  },
+  {
+    icon: Leaf,
+    value: "5",
+    label: "Premium Ingredients",
+  },
+  {
+    icon: ShieldCheck,
+    value: "100%",
+    label: "Natural & Wholesome",
+  },
+  {
+    icon: Award,
+    value: "10+",
+    label: "Years of Trust",
+  },
+];
+
+export default function Features({ register }) {
+  return (
+    <section className="features">
+      <div className="features-background" aria-hidden="true">
+        <span
+          className="features-bg features-bg--left"
+          style={{ backgroundImage: `url(${left})` }}
+        />
+        <span
+          className="features-bg features-bg--right"
+         style={{ backgroundImage: `url(${right})` }}
+        />
+        <span className="features-float features-float--1">🌾</span>
+        <span className="features-float features-float--2">🍞</span>
+        <span className="features-float features-float--3">🌾</span>
+        <span className="features-float features-float--4">🍞</span>
+      </div>
+
+      <div className="features-header reveal" ref={register}>
+        <span className="features-kicker">OUR INGREDIENTS</span>
+
+        <h2>
+          Where Nutrition Meets
+          <br />
+          Indulgence
+        </h2>
 
         <p>
           Tuni Breads combines traditional nourishment with modern healthy
-          eating — five purposeful ingredients, one remarkable loaf.
+          eating - five purposeful ingredients, one remarkable loaf.
         </p>
       </div>
 
-      <div className="ingredient-layout">
-        <div className="ingredient-center reveal delay-1" ref={register}>
-          <div className="center-glow"></div>
+      <div className="features-grid">
+        <div className="feature-stack feature-stack--left reveal delay-1" ref={register}>
+          {leftCards.map((item) => {
+            const Icon = item.icon;
 
-          <div className="orbit-track" aria-hidden="true">
-            <span className="orbit-ring orbit-ring--outer"></span>
-            <span className="orbit-ring orbit-ring--inner"></span>
-
-            {/* Rotating Orbit */}
-            <div className="orbit-container">
-              {ingredients.map((item, index) => (
-                <div
-                  key={index}
-                  className="orbit-card"
-                  style={{
-                    "--orbit-angle": `${(index * 360) / ingredients.length}deg`,
-                    "--orbit-delay": `${index * -4}s`,
-                  }}
-                >
-                  <div className="orbit-card-inner">
-                    <div className="orbit-icon">
-                      {item.icon}
-                    </div>
-
-                    <h4>{item.title}</h4>
-
-                    <p>{item.desc}</p>
-                  </div>
+            return (
+              <article key={item.title} className="feature-pill">
+                <div className="feature-pill__icon">
+                  <Icon size={21} />
                 </div>
-              ))}
-            </div>
+
+                <div className="feature-pill__content">
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="ingredient-scene reveal delay-1" ref={register}>
+          <div className="ingredient-rings" aria-hidden="true">
+            <span className="ingredient-ring ingredient-ring--outer" />
+            <span className="ingredient-ring ingredient-ring--inner" />
           </div>
 
-          {/* Center Circle */}
-          <div className="center-circle">
-            <Sandwich size={50} />
+          <div className="ingredient-center">
+            <div className="ingredient-center__icon" aria-hidden="true">
+              <Sandwich size={34} />
+            </div>
 
             <h3>Tuni Breads</h3>
-
             <p>The Heart Of Every Slice</p>
           </div>
+
+          {centerIngredients.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <article
+                key={item.title}
+                className={`ingredient-card ${item.className}`}
+              >
+                <div className="ingredient-icon">
+                  <Icon size={22} />
+                </div>
+
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </article>
+            );
+          })}
         </div>
+
+        <div className="feature-stack feature-stack--right reveal delay-1" ref={register}>
+          {rightCards.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <article key={item.title} className="feature-pill">
+                <div className="feature-pill__icon">
+                  <Icon size={21} />
+                </div>
+
+                <div className="feature-pill__content">
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="features-stats reveal delay-2" ref={register}>
+        {stats.map((item) => {
+          const Icon = item.icon;
+
+          return (
+            <div key={item.label} className="feature-stat">
+              <div className="feature-stat__icon" aria-hidden="true">
+                <Icon size={24} />
+              </div>
+
+              <div className="feature-stat__value">{item.value}</div>
+              <div className="feature-stat__label">{item.label}</div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
