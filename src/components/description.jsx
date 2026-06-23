@@ -34,7 +34,7 @@ const data = [
     id: 3,
     title: 'Bread',
     image:
-      'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500',
+      'https://thefoodist.com.sg/wp-content/uploads/2025/01/whole-wheat-bread-recipe-1736179129.jpg',
     description:
       'Bread is a staple food made from flour, water, and yeast. It is a major source of carbohydrates and energy.',
     uses: [
