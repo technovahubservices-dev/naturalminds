@@ -158,13 +158,11 @@ export default function Navbar({
           Products
         </button>
 
-        <button className={activePage === "testimonials" ? "is-active" : ""} onClick={() => handleNavigate("testimonials")} aria-current={activePage === "testimonials" ? "page" : undefined}>
+        <button className={activePage === "tesstimonials" ? "is-active" : ""} onClick={() => handleNavigate("testimonials")} aria-current={activePage === "testimonials" ? "page" : undefined}>
           Testimonials
         </button>
 
-        <button className={activePage === "orders" ? "is-active" : ""} onClick={() => handleNavigate("orders")} aria-current={activePage === "orders" ? "page" : undefined}>
-          Order History
-        </button>
+      
 
         <button className={activePage === "contact" ? "is-active" : ""} onClick={() => handleNavigate("contact")} aria-current={activePage === "contact" ? "page" : undefined}>
           Contact
