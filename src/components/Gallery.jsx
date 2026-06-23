@@ -1,5 +1,5 @@
 import "../styles/components/Gallery.css";
-import stat   from '../asset/stats.png';
+import stat   from '../asset/stat.png';
 import { Zap, Wheat, Dumbbell, Heart, Candy, Droplets } from "lucide-react";
 
 const stats = [
