@@ -164,6 +164,7 @@ export default function Features({ register }) {
         <div className="ingredient-scene reveal delay-1" ref={register}>
           <div className="ingredient-rings" aria-hidden="true">
             <span className="ingredient-ring ingredient-ring--outer" />
+            <span className="ingredient-ring ingredient-ring--middle" />
             <span className="ingredient-ring ingredient-ring--inner" />
           </div>
 
