@@ -32,13 +32,7 @@ export default function Hero({
               Shop Now
             </button>
 
-            <button
-              className="button button--ghost"
-              type="button"
-              onClick={onExploreClick}
-            >
-              Explore Breads
-            </button>
+           
           </div>
 
           <div className="hero__chips">
