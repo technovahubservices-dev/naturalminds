@@ -103,25 +103,20 @@ export default function Footer({ onNavigate }) {
           </div>
         </div>
 
-        {/* Newsletter */}
+        {/* Our Promise */}
         <div className="footer-column">
-          <h3>Newsletter</h3>
+          <h3>Our Promise</h3>
 
-          <p className="newsletter-text">
-            Subscribe for product launches, special offers and healthy bakery
-            tips.
+          <p className="footer-promise-text">
+            Every batch is made with care, quality ingredients, and a focus on
+            fresh, wholesome flavor.
           </p>
 
-          <form className="newsletter">
-            <input
-              type="email"
-              placeholder="Enter your email"
-            />
-
-            <button type="submit">
-              Subscribe
-            </button>
-          </form>
+          <div className="promise-list">
+            <div className="promise-item">Freshly baked with premium ingredients</div>
+            <div className="promise-item">Made with coconut milk inspired recipes</div>
+            <div className="promise-item">Perfect for family sharing and gifting</div>
+          </div>
         </div>
       </div>
 
