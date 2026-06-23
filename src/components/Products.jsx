@@ -5,6 +5,7 @@ import {
   buildImageSrc,
   buildProductPayload,
   formatCartSummary,
+  getProductName,
 } from "../lib/api";
 
 function ProductCard({ item, index, onAddToCart, onSelect, busyProductId, register }) {
@@ -23,7 +24,7 @@ function ProductCard({ item, index, onAddToCart, onSelect, busyProductId, regist
       ref={register}
       role="button"
       tabIndex={0}
-      aria-label={`View details for ${item.name || item.title || "product"}`}
+      aria-label={`View details for ${getProductName(item)}`}
       onClick={() => onSelect(item)}
       onKeyDown={(event) => {
         if (event.key === "Enter" || event.key === " ") {
@@ -33,7 +34,7 @@ function ProductCard({ item, index, onAddToCart, onSelect, busyProductId, regist
       }}
     >
       <div className="product-card__imageWrap">
-        <img src={buildImageSrc(item.image)} alt={item.name || item.title || "Product"} />
+        <img src={buildImageSrc(item.image)} alt={getProductName(item)} />
       </div>
 
       <div className="product-card__body">
@@ -43,7 +44,7 @@ function ProductCard({ item, index, onAddToCart, onSelect, busyProductId, regist
             <span className="product-card__rating">Rating {item.rating}</span>
           )}
         </div>
-        <h3 className="product-card__title">{item.name || item.title}</h3>
+        <h3 className="product-card__title">{getProductName(item)}</h3>
         <div className="product-card__footer">
           <strong>Rs. {item.price ?? "N/A"}</strong>
           <button
@@ -99,7 +100,7 @@ export function ProductDetailsPage({ item, onBack, onAddToCart, busyProductId, r
         <div className="product-detail-hero__media">
           <img
             src={buildImageSrc(item.image)}
-            alt={item.name || item.title || "Product"}
+            alt={getProductName(item)}
           />
           <div className="product-detail-hero__floating">
             <span>Starting at</span>
@@ -110,7 +111,7 @@ export function ProductDetailsPage({ item, onBack, onAddToCart, busyProductId, r
 
         <div className="product-detail-hero__content">
           <p className="eyebrow">Product Details</p>
-          <h2>{item.name || item.title}</h2>
+          <h2>{getProductName(item)}</h2>
           <p className="product-detail__description">
             {item.description || "No description available for this product yet."}
           </p>
@@ -224,7 +225,7 @@ export default function Products({ register, onCartChange, onNavigate, onSelectP
 
       const cartData = await apiRequest("/cart");
       onCartChange(formatCartSummary(cartData?.cart));
-      setMessage(`${item.name || item.title || "Item"} added to cart.`);
+      setMessage(`${getProductName(item)} added to cart.`);
     } catch (requestError) {
       setMessage(requestError.message || "Unable to add the item to cart.");
     } finally {
@@ -263,7 +264,7 @@ export default function Products({ register, onCartChange, onNavigate, onSelectP
         ) : (
           items.map((item, index) => (
             <ProductCard
-              key={item._id || item.id || item.productId || item.name || index}
+              key={item._id || item.id || item.productId || getProductName(item) || index}
               item={item}
               index={index}
               onAddToCart={addToCart}

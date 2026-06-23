@@ -1,5 +1,5 @@
 import "../styles/components/OrderHistoryPage.css";
-import { buildImageSrc } from "../lib/api";
+import { buildImageSrc, getProductName } from "../lib/api";
 
 export default function OrderHistoryPage({ orderHistory = [], onNavigate }) {
   return (
@@ -33,10 +33,10 @@ export default function OrderHistoryPage({ orderHistory = [], onNavigate }) {
         <div className="order-history-page-grid">
           {orderHistory.map((order) => (
             <article className="order-history-page-card" key={order.id}>
-              <img src={buildImageSrc(order.image)} alt={order.name || "Order"} />
+              <img src={buildImageSrc(order.image)} alt={getProductName(order)} />
               <div className="order-history-page-card__body">
                 <p className="eyebrow">Order</p>
-                <h3>{order.name}</h3>
+                <h3>{getProductName(order)}</h3>
                 <div className="order-history-page-card__meta">
                   <span>Amount</span>
                   <strong>Rs. {order.totalAmount}</strong>

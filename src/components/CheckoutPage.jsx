@@ -1,5 +1,6 @@
 import "../styles/components/CheckoutPage.css";
 import { useState } from "react";
+import { getProductName } from "../lib/api";
 
 const initialForm = {
   customerName: "",
@@ -138,7 +139,7 @@ export default function CheckoutPage({
             <ul className="checkout-summary-list">
               {cart.items.map((item) => (
                 <li key={item.productId || item._id || item.id}>
-                  {item.name} x {item.quantity}
+                  {getProductName(item)} x {item.quantity}
                 </li>
               ))}
             </ul>

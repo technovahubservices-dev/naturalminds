@@ -1,5 +1,5 @@
 import "../styles/components/CartPage.css";
-import { buildImageSrc } from "../lib/api";
+import { buildImageSrc, getProductName } from "../lib/api";
 
 export default function CartPage({
   cart,
@@ -56,11 +56,11 @@ export default function CartPage({
 
               return (
                 <article className="cart-item" key={productId}>
-                  <img src={buildImageSrc(item.image)} alt={item.name || "Cart item"} />
+                  <img src={buildImageSrc(item.image)} alt={getProductName(item)} />
                   <div className="cart-item__content">
                     <div className="cart-item__top">
                       <div>
-                        <h3>{item.name}</h3>
+                        <h3>{getProductName(item)}</h3>
                         <p>{item.category || "Uncategorized"}</p>
                       </div>
                       <strong>Rs. {price}</strong>

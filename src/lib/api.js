@@ -38,10 +38,14 @@ export function buildImageSrc(image) {
   return `data:image/jpeg;base64,${image}`;
 }
 
+export function getProductName(product) {
+  return product?.productName || product?.name || product?.title || "Unnamed product";
+}
+
 export function buildProductPayload(product, quantity = 1) {
   return {
     productId: product._id || product.id || product.productId,
-    name: product.name || product.title || "Unnamed product",
+    name: getProductName(product),
     description: product.description || "",
     price: Number(product.price) || 0,
     rating: product.rating != null ? Number(product.rating) : 0,

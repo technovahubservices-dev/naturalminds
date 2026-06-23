@@ -22,7 +22,12 @@ import CheckoutPage from "./components/CheckoutPage";
 import OrderHistoryPage from "./components/OrderHistoryPage";
 import SuccessPage from "./components/SuccessPage";
 import { ProductDetailsPage } from "./components/Products";
-import { apiRequest, buildProductPayload, formatCartSummary } from "./lib/api";
+import {
+  apiRequest,
+  buildProductPayload,
+  formatCartSummary,
+  getProductName,
+} from "./lib/api";
 import BenefitsSection from "./components/flow";
 
 const HOME_PAGE = "home";
@@ -243,7 +248,7 @@ function App() {
     const historyEntry = {
       id: placedOrder._id || `${Date.now()}`,
       image: firstItem?.image || "",
-      name: firstItem?.name || placedOrder.customerName || "Order",
+      name: getProductName(firstItem) || placedOrder.customerName || "Order",
       price: Number(firstItem?.price) || 0,
       totalAmount: placedOrder.totalAmount ?? 0,
       totalQuantity: placedOrder.totalQuantity ?? 0,
