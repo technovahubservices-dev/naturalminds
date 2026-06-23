@@ -1,5 +1,5 @@
 import "../styles/components/Categories.css";
-import category from '../asset/category.png';
+import category from '../asset/wh.png';
 const features = [
   {
     title: "Coconut",
