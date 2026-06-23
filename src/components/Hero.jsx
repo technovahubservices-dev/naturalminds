@@ -1,6 +1,6 @@
 import "../styles/components/Hero.css";
 
-import heroImage from "../asset/tuni.png";
+import heroImage from "../asset/hero.png";
 
 export default function Hero({
   register,
@@ -10,20 +10,27 @@ export default function Hero({
   return (
     <section className="hero section" id="top">
       <div className="container hero__content">
-        <div className="hero__copy reveal" ref={register}>
-          <p className="eyebrow">TUNI BREADS</p>
-          <p className="eyebrow">100% Fresh • Healthy • Nutritious</p>
-
-          <h1>
-            Far From
-            <span> Ordinary Bread</span>
-          </h1>
-
-          <p className="lead">
-            Inspired by Traditional Nutrition. Crafted for Modern Living.
+        <div className="hero__copy">
+          <p className="eyebrow reveal delay-1" ref={register}>
+            TUNI BREADS
+          </p>
+          <p className="eyebrow eyebrow--sub reveal delay-2" ref={register}>
+            100% Fresh &bull; Healthy &bull; Nutritious
           </p>
 
-          <div className="button-row">
+          <h1 className="hero__title reveal delay-3" ref={register}>
+            Far From
+            <span>Ordinary Bread</span>
+          </h1>
+
+          <strong>
+
+          <p className="lead reveal delay-4" ref={register}>
+            Inspired by Traditional Nutrition. Crafted for Modern Living.
+          </p>
+          </strong>
+
+          <div className="button-row reveal delay-4" ref={register}>
             <button
               className="button button--solid"
               type="button"
@@ -31,17 +38,15 @@ export default function Hero({
             >
               Shop Now
             </button>
-
-           
           </div>
 
-          <div className="hero__chips">
+          <div className="hero__chips reveal delay-4" ref={register}>
             <span className="hero__chip">Fresh Daily</span>
             <span className="hero__chip">Healthy Ingredients</span>
             <span className="hero__chip">Premium Quality</span>
           </div>
-
-          <div className="hero-stats">
+<strong>
+          <div className="hero-stats reveal delay-4" ref={register}>
             <div>
               <h3>5000+</h3>
               <span>Happy Customers</span>
@@ -57,19 +62,14 @@ export default function Hero({
               <span>Fresh Quality</span>
             </div>
           </div>
+          </strong>
         </div>
 
         <div className="hero__panel">
           <div className="hero__mediaCard reveal delay-1" ref={register}>
             <img src={heroImage} alt="Tuni Breads wheat bread pack" />
 
-            <div className="hero__floating hero__floating--top">
-              Premium Quality
-            </div>
-
-            <div className="hero__floating hero__floating--bottom">
-              Freshly Baked Daily
-            </div>
+          
           </div>
         </div>
       </div>

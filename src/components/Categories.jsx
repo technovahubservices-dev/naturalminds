@@ -1,5 +1,5 @@
 import "../styles/components/Categories.css";
-
+import category from '../asset/category.png';
 const features = [
   {
     title: "Coconut",
@@ -55,7 +55,7 @@ export default function BrandOrigin({ register }) {
 
         <div className="brand-image reveal delay-1" ref={register}>
           <img
-            src="/images/coconut-dates.svg"
+            src={category}
             alt="Coconut and Dates"
           />
         </div>

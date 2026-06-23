@@ -1,5 +1,5 @@
 import "../styles/components/Gallery.css";
-
+import stat   from '../asset/stats.png';
 import { Zap, Wheat, Dumbbell, Heart, Candy, Droplets } from "lucide-react";
 
 const stats = [
@@ -61,7 +61,7 @@ export default function Nutrition({ register }) {
           <div className="product-glow"></div>
 
           <img
-            src="/images/tuni-pack.svg"
+            src={stat}
             alt="Tuni Bread"
           />
 
