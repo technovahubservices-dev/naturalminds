@@ -47,7 +47,15 @@ const data = [
 ];
 
 export default function FoodCards({ register }) {
-  const [activeCard, setActiveCard] = useState(null);
+  const [clickedCard, setClickedCard] = useState(null);
+
+  const triggerCardAnimation = (id) => {
+    setClickedCard(id);
+    window.clearTimeout(triggerCardAnimation._timer);
+    triggerCardAnimation._timer = window.setTimeout(() => {
+      setClickedCard(null);
+    }, 520);
+  };
 
   return (
     <section className="section food-guide">
@@ -60,17 +68,17 @@ export default function FoodCards({ register }) {
         <div className="food-cards">
           {data.map((item) => (
             <article
-              className={`food-card reveal ${activeCard === item.id ? "is-active" : ""}`}
+              className={`food-card reveal ${clickedCard === item.id ? "is-clicked" : ""}`}
               key={item.id}
               ref={register}
               role="button"
               tabIndex={0}
-              aria-pressed={activeCard === item.id}
-              onClick={() => setActiveCard(item.id)}
+              aria-pressed="false"
+              onClick={() => triggerCardAnimation(item.id)}
               onKeyDown={(event) => {
                 if (event.key === "Enter" || event.key === " ") {
                   event.preventDefault();
-                  setActiveCard(item.id);
+                  triggerCardAnimation(item.id);
                 }
               }}
             >

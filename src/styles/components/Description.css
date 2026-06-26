@@ -48,19 +48,19 @@
 }
 
 .food-card:hover .food-card__image,
-.food-card.is-active .food-card__image {
+.food-card.is-clicked .food-card__image {
   transform: scale(1.06);
   filter: saturate(1.05) contrast(1.02);
 }
 
-.food-card.is-active {
+.food-card.is-clicked {
   transform: translateY(-10px) scale(1.02);
   animation: foodCardPress 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
   box-shadow: 0 34px 70px rgba(84, 56, 18, 0.18);
   border-color: rgba(214, 162, 79, 0.3);
 }
 
-.food-card.is-active::after {
+.food-card.is-clicked::after {
   opacity: 1;
 }
 
@@ -72,12 +72,12 @@
 }
 
 .food-card:hover .food-card__body h3,
-.food-card.is-active .food-card__body h3 {
+.food-card.is-clicked .food-card__body h3 {
   transform: translateY(-1px);
 }
 
 .food-card:hover .food-card__body p,
-.food-card.is-active .food-card__body p {
+.food-card.is-clicked .food-card__body p {
   color: var(--ink);
 }
 
