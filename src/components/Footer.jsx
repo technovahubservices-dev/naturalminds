@@ -125,6 +125,12 @@ export default function Footer({ onNavigate }) {
           © 2026 Mahimy Foods. All Rights Reserved.
         </p>
       </div>
+
+      <div className="footer-bottom">
+        <p>
+          © Powered by <a href="https://www.technovahub.in">Technova Hub</a>
+        </p>
+      </div>
     </footer>
   );
 }
