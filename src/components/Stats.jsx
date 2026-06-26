@@ -9,6 +9,7 @@ import {
   Wheat,
   HeartHandshake,
   Ban,
+  Eye,
 } from "lucide-react";
 
 const promises = [
@@ -16,6 +17,11 @@ const promises = [
     icon: <Ban />,
     title: "No Vanaspati",
     desc: "Only wholesome ingredients chosen for better nutrition.",
+  },
+  {
+    icon: <Eye />,
+    title: "100% Transparent",
+    desc: "Clear ingredient details with nothing hidden in the recipe.",
   },
   {
     icon: <ShieldCheck />,

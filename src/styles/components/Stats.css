@@ -147,6 +147,7 @@
 .promise-card:nth-child(4) { animation-delay: 270ms; }
 .promise-card:nth-child(5) { animation-delay: 360ms; }
 .promise-card:nth-child(6) { animation-delay: 450ms; }
+.promise-card:nth-child(7) { animation-delay: 540ms; }
 
 .promise-card:hover {
   transform: translateX(10px) translateY(-3px);
