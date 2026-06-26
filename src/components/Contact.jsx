@@ -1,7 +1,9 @@
 import "../styles/components/Contact.css";
+import { useState } from "react";
 
 export default function Contact({ register }) {
   const whatsappNumber = "919443311007";
+  const [formError, setFormError] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -12,11 +14,17 @@ export default function Contact({ register }) {
     const email = (formData.get("email") || "").toString().trim();
     const message = (formData.get("message") || "").toString().trim();
 
+    if (!firstName || !lastName || !email || !message) {
+      setFormError("Please fill in all fields before sending your message.");
+      return;
+    }
+
     const fullName = [firstName, lastName].filter(Boolean).join(" ") || "Customer";
     const whatsappMessage = encodeURIComponent(
       `Hello mahimy foods,\n\nName: ${fullName}\nEmail: ${email || "Not provided"}\nMessage: ${message || "No message entered"}`
     );
 
+    setFormError("");
     window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank", "noopener,noreferrer");
     event.currentTarget.reset();
   };
@@ -57,6 +65,7 @@ export default function Contact({ register }) {
         </div>
 
         <form className="contact-form reveal" ref={register} onSubmit={handleSubmit}>
+          {formError && <p className="status-message error-message">{formError}</p>}
           <div className="form-row">
             <label>
               First Name
