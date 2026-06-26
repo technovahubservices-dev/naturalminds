@@ -50,8 +50,7 @@ export default function Contact({ register }) {
             <div>
               <span className="contact-label-highlight">Address</span>
               <strong>No 75 76 77 78 SRI BAKKIYAPERUMAL NAGAR PERIYAKAATUPALAYAM Reddichavadi</strong>
-                 <strong>Cuddalore, Tamil Nadu,607403.</strong>
-                 
+              <strong>Cuddalore, Tamil Nadu,607403.</strong>   
             </div>
           </div>
         </div>

@@ -1,1 +1,94 @@
 @import "../theme.css";
+
+.food-card {
+  position: relative;
+  cursor: pointer;
+  transform: translateY(0) scale(1);
+  transition:
+    transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 260ms ease,
+    background-color 260ms ease;
+  will-change: transform, box-shadow;
+}
+
+.food-card:hover,
+.food-card:focus-visible {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 30px 64px rgba(84, 56, 18, 0.16);
+  border-color: rgba(214, 162, 79, 0.24);
+}
+
+.food-card:focus-visible {
+  outline: 2px solid rgba(214, 162, 79, 0.38);
+  outline-offset: 3px;
+}
+
+.food-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle at top center, rgba(255, 255, 255, 0.35), transparent 35%),
+    linear-gradient(135deg, rgba(214, 162, 79, 0.14), rgba(125, 91, 55, 0.08));
+  transition: opacity 220ms ease;
+}
+
+.food-card:hover::after {
+  opacity: 1;
+}
+
+.food-card__image {
+  transition:
+    transform 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 380ms ease;
+}
+
+.food-card:hover .food-card__image,
+.food-card.is-active .food-card__image {
+  transform: scale(1.06);
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.food-card.is-active {
+  transform: translateY(-10px) scale(1.02);
+  animation: foodCardPress 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  box-shadow: 0 34px 70px rgba(84, 56, 18, 0.18);
+  border-color: rgba(214, 162, 79, 0.3);
+}
+
+.food-card.is-active::after {
+  opacity: 1;
+}
+
+.food-card__body h3,
+.food-card__body p,
+.food-card__body h4,
+.food-card__list li {
+  transition: transform 220ms ease, color 220ms ease;
+}
+
+.food-card:hover .food-card__body h3,
+.food-card.is-active .food-card__body h3 {
+  transform: translateY(-1px);
+}
+
+.food-card:hover .food-card__body p,
+.food-card.is-active .food-card__body p {
+  color: var(--ink);
+}
+
+@keyframes foodCardPress {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  45% {
+    transform: translateY(-12px) scale(1.04);
+  }
+  100% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
