@@ -49,8 +49,8 @@ export default function Contact({ register }) {
             </div>
             <div>
               <span className="contact-label-highlight">Address</span>
-              <strong>9A,BASHIYAM STREET,MANJAKUPPAM VILLAGE,</strong>
-                 <strong>Cuddalore, Tamil Nadu,605007.</strong>
+              <strong>No 75 76 77 78 SRI BAKKIYAPERUMAL NAGAR PERIYAKAATUPALAYAM Reddichavadi</strong>
+                 <strong>Cuddalore, Tamil Nadu,607403.</strong>
                  
             </div>
           </div>
