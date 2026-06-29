@@ -37,7 +37,7 @@ export default function Navbar({
         <button
           className={activePage === "home" ? "brand-button is-active" : "brand-button"}
           onClick={() => handleNavigate("home")}
-          aria-label="Mahima bread home"
+          aria-label="Mahimy foods home"
           aria-current={activePage === "home" ? "page" : undefined}
         >
           <span className="brand-logo-shell" aria-hidden="true">
@@ -47,7 +47,7 @@ export default function Navbar({
               alt=""
             />
           </span>
-          <span className="brand-text">Mahimy foods</span>
+          <span className="brand-text">Mahimy Foods</span>
         </button>
 
         {/* Desktop Menu */}
