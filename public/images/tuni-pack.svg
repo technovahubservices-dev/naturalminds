@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 760" role="img" aria-labelledby="title desc">
-  <title id="title">Mahimy bread pack</title>
-  <desc id="desc">A premium bread pack with slices and ingredient accents.</desc>
+  <title id="title">Mahimy Foods bread pack</title>
+  <desc id="desc">A Mahimy Foods bread pack with slices and ingredient accents.</desc>
   <defs>
     <linearGradient id="pack" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0" stop-color="#ffffff"/>
@@ -19,7 +19,7 @@
   <g filter="url(#shadow)">
     <path d="M223 112h312c36 0 66 30 66 66v430c0 36-30 66-66 66H223c-36 0-66-30-66-66V178c0-36 30-66 66-66Z" fill="url(#pack)"/>
     <path d="M157 236h444v102H157z" fill="url(#label)"/>
-    <text x="379" y="293" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" fill="#fff">Mahimy</text>
+    <text x="379" y="293" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" fill="#fff">Mahimy Foods</text>
     <text x="379" y="330" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#f9d77e">COCONUT MILK BREAD</text>
     <rect x="208" y="391" width="342" height="190" rx="34" fill="#fff9e9" stroke="#e1ad4d" stroke-width="6"/>
     <path d="M276 529c14-72 61-116 133-116 74 0 119 43 135 116 6 25-8 42-34 42H310c-27 0-39-17-34-42Z" fill="#d58a32"/>

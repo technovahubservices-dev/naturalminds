@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../styles/components/Stats.css";
-import tuni from '../asset/bread.png';
+import mahimyBreadPack from '../asset/bread.png';
 
 import {
   ShieldCheck,
@@ -67,10 +67,10 @@ export default function QualityPromise({ register }) {
       </div>
 
       <div className="quality-grid">
-        <div className="quality-image reveal delay-1" ref={register}>
+      <div className="quality-image reveal delay-1" ref={register}>
             <img
-      src={tuni}
-      alt="Tuni Bread"
+      src={mahimyBreadPack}
+      alt="Mahimy Foods bread pack"
     />
 
           <div className="floating-card wheat">

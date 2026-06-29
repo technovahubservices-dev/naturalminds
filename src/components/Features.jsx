@@ -136,7 +136,7 @@ export default function Features({ register }) {
         </h2>
 
         <p>
-          Tuni Breads combines traditional nourishment with modern healthy
+          Mahimy Foods combines traditional nourishment with modern healthy
           eating - five purposeful ingredients, one remarkable loaf.
         </p>
       </div>
@@ -173,8 +173,8 @@ export default function Features({ register }) {
               <Sandwich size={34} />
             </div>
 
-            <h3>Tuni Breads</h3>
-            <p>The Heart Of Every Slice</p>
+            <h3>Mahimy Foods</h3>
+            <p>The heart of every slice</p>
           </div>
 
           {centerIngredients.map((item) => {

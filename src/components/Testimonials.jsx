@@ -9,7 +9,7 @@ const testimonials = [
     initials: "SK",
     rating: 5,
     quote:
-      "Your Tuni white bread and wheat bread were great in softness, aroma and flavour.",
+      "Your Mahimy Foods white bread and wheat bread were great in softness, aroma and flavour.",
   },
   {
     name: "Babu Venkatachalapathy",

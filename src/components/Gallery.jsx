@@ -62,7 +62,7 @@ export default function Nutrition({ register }) {
 
           <img
             src={stat}
-            alt="Tuni Bread"
+            alt="Mahimy Foods bread display"
           />
 
           <div className="floating-badge badge-1">
