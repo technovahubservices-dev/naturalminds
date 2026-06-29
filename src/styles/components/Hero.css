@@ -71,7 +71,7 @@
 
 .hero .hero__title {
   margin: 0;
-  max-width: 9ch;
+  max-width: 14ch;
   font-size: clamp(3.7rem, 8.2vw, 6.6rem);
   line-height: 0.92;
   letter-spacing: -0.08em;

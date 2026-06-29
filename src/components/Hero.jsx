@@ -12,15 +12,15 @@ export default function Hero({
       <div className="container hero__content">
         <div className="hero__copy">
           <p className="eyebrow reveal delay-1" ref={register}>
-            TUNI BREADS
+            MAHIMY FOODS
           </p>
           <p className="eyebrow eyebrow--sub reveal delay-2" ref={register}>
             100% Fresh &bull; Healthy &bull; Nutritious
           </p>
 
           <h1 className="hero__title reveal delay-3" ref={register}>
-            Far From
-            <span>Ordinary Bread</span>
+            Mahimy Foods
+            <span>Fresh Bread, Crafted with Care</span>
           </h1>
 
           <strong>
@@ -67,7 +67,7 @@ export default function Hero({
 
         <div className="hero__panel">
           <div className="hero__mediaCard reveal delay-1" ref={register}>
-            <img src={heroImage} alt="Tuni Breads wheat bread pack" />
+            <img src={heroImage} alt="Mahimy Foods bread pack with wheat bread" />
 
           
           </div>
