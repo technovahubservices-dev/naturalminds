@@ -1,6 +1,7 @@
 import "../styles/components/Hero.css";
+import { Wheat } from "lucide-react";
 
-import heroImage from "../asset/hero.png";
+import heroImage from "../asset/hero-v2.png";
 
 export default function Hero({
   register,
@@ -66,6 +67,11 @@ export default function Hero({
         </div>
 
         <div className="hero__panel">
+          <div className="hero__qualityBadge">
+            <Wheat size={22} aria-hidden="true" />
+            <span>Premium Quality</span>
+          </div>
+
           <div className="hero__mediaCard reveal delay-1" ref={register}>
             <img src={heroImage} alt="TUNI BREADS bread pack with wheat bread" />
 

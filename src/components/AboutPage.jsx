@@ -13,7 +13,7 @@ export default function AboutPage({ onNavigate, register }) {
           <strong>Our story</strong>
           <p>
             mahimy foods is designed to echo the elegant bakery storefront style:
-            soft cream surfaces, golden highlights, rounded cards, and a layout
+            soft cream surfaces, golden highlights, rounded cards and a layout
             that stays beautiful from large desktop screens to compact phones.
           </p>
         </div>
@@ -35,10 +35,10 @@ export default function AboutPage({ onNavigate, register }) {
           <ul className="checklist">
             <li>Premium cream and gold palette inspired by the reference theme</li>
             <li>Responsive sections that stay balanced across screen sizes</li>
-            <li>Soft shadows, rounded panels, and polished storefront spacing</li>
+            <li>Soft shadows, rounded panels and polished storefront spacing</li>
           </ul>
           <p>
-            The goal is a storefront that feels inviting, modern, and easy to
+            The goal is a storefront that feels inviting, modern and easy to
             browse while still keeping a handcrafted bakery look.
           </p>
         </div>

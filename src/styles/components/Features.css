@@ -1,7 +1,7 @@
 .features {
   position: relative;
   overflow: hidden;
-  padding: 44px 20px 74px;
+  padding: 40px 20px 56px;
   background:
     radial-gradient(circle at 50% 24%, rgba(255, 246, 231, 0.92), transparent 34%),
     linear-gradient(180deg, #f8f2e7 0%, #fcf8f0 100%);
@@ -39,11 +39,11 @@
 
 .features-bg--left {
   left: -84px;
-  bottom: -6px;
-  width: 620px;
-  height: 540px;
+  bottom: -18px;
+  width: 560px;
+  height: 500px;
   background-position: left bottom;
-  z-index: 4;
+  z-index: 0;
   opacity: 1;
 }
 
@@ -125,15 +125,15 @@
   position: relative;
   z-index: 1;
   width: min(100%, 1500px);
-  margin: 46px auto 0;
-  min-height: 620px;
+  margin: 32px auto 0;
+  min-height: 540px;
 }
 
 .feature-stack {
   position: absolute;
   display: grid;
-  gap: 22px;
-  top: 120px;
+  gap: 14px;
+  top: 18px;
   width: min(100%, 304px);
 }
 
@@ -149,12 +149,12 @@
 
 .feature-pill {
   width: min(100%, 290px);
-  min-height: 112px;
+  min-height: 96px;
   display: grid;
   grid-template-columns: 56px 1fr;
   gap: 16px;
   align-items: center;
-  padding: 18px 20px;
+  padding: 14px 18px;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.78);
@@ -362,12 +362,12 @@
 
 .features-stats {
   position: relative;
-  z-index: 1;
-  width: min(100%, 1120px);
+  z-index: 5;
+  width: min(calc(100% - 2rem), 700px);
   margin: 24px auto 0;
   padding: 24px 18px;
   border-radius: 22px;
-  background: rgba(255, 251, 245, 0.84);
+  background: #fffbf5;
   border: 1px solid rgba(255, 255, 255, 0.8);
   box-shadow: 0 22px 44px rgba(74, 52, 24, 0.08);
   display: grid;
@@ -415,6 +415,10 @@
 }
 
 @media (max-width: 1240px) {
+  .features-stats {
+    left: 0;
+  }
+
   .features-grid {
     min-height: auto;
   }
@@ -486,6 +490,7 @@
   }
 
   .features-stats {
+    width: min(100%, 560px);
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px 0;
   }
@@ -549,7 +554,7 @@
 .app-shell[data-theme="dark"] .feature-pill,
 .app-shell[data-theme="dark"] .ingredient-card,
 .app-shell[data-theme="dark"] .features-stats {
-  background: rgba(36, 29, 23, 0.9);
+  background: #241d17;
   border-color: rgba(255, 238, 211, 0.1);
 }
 

@@ -1,5 +1,5 @@
 .nutrition {
-  padding: 120px 8%;
+  padding: 76px 8%;
   background: #f8f3e8;
 }
 
@@ -32,10 +32,10 @@
 }
 
 .nutrition-grid {
-  margin-top: 80px;
+  margin-top: 48px;
   display: grid;
   grid-template-columns: 500px 1fr;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
 }
 
@@ -86,17 +86,17 @@
 
 .badge-1 {
   top: 50px;
-  right: -20px;
+  right: 20px;
 }
 
 .badge-2 {
   bottom: 120px;
-  right: -30px;
+  right: 20px;
 }
 
 .badge-3 {
   bottom: 50px;
-  left: -20px;
+  left: 20px;
 }
 
 /* BENTO GRID */
@@ -159,7 +159,7 @@
 /* BOTTOM TAGS */
 
 .nutrition-bottom {
-  margin-top: 60px;
+  margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 15px;

@@ -44,7 +44,7 @@ export default function Footer({ onNavigate }) {
 
           <p>
             Freshly baked goodness crafted with premium ingredients,
-            coconut milk inspiration, and wholesome nutrition for every
+            coconut milk inspiration and wholesome nutrition for every
             family. Experience the perfect blend of taste, health and
             tradition.
           </p>
@@ -108,7 +108,7 @@ export default function Footer({ onNavigate }) {
           <h3>Our Promise</h3>
 
           <p className="footer-promise-text">
-            Every batch is made with care, quality ingredients, and a focus on
+            Every batch is made with care, quality ingredients and a focus on
             fresh, wholesome flavor.
           </p>
 

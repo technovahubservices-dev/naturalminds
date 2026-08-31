@@ -74,6 +74,11 @@ img {
   width: 100%;
 }
 
+main img {
+  animation: siteImageFloat 6s ease-in-out infinite;
+  will-change: transform;
+}
+
 button,
 input,
 textarea {
@@ -113,7 +118,7 @@ main {
 }
 
 .section {
-  padding: 5.75rem 0;
+  padding: 4rem 0;
 }
 
 main > section.section,
@@ -649,6 +654,7 @@ main > section:not(.site-header)::before {
   object-fit: cover;
   object-position: center;
   transform: scale(1.03);
+  animation: none;
 }
 
 .hero__floating {
@@ -1114,6 +1120,12 @@ main > section:not(.site-header)::before {
 .product-detail-hero__media img {
   height: 100%;
   object-fit: cover;
+  scale: 1;
+  transition: scale 350ms ease;
+}
+
+.product-detail-hero__media:hover img {
+  scale: 1.1;
 }
 
 .product-detail-hero__media::after {
@@ -1134,8 +1146,9 @@ main > section:not(.site-header)::before {
   padding: 0.95rem 1rem;
   min-width: 160px;
   border-radius: 20px;
-  background: rgba(20, 15, 9, 0.82);
-  color: #fff7eb;
+  background: linear-gradient(135deg, #ff7a00, #ff9f43);
+  color: #fff;
+  box-shadow: 0 16px 26px rgba(255, 122, 0, 0.24);
   backdrop-filter: blur(12px);
 }
 
@@ -1145,7 +1158,7 @@ main > section:not(.site-header)::before {
   font-size: 0.76rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 244, 224, 0.82);
+  color: #fff;
 }
 
 .product-detail-hero__floating strong {
@@ -1222,6 +1235,22 @@ main > section:not(.site-header)::before {
 .product-detail__fact strong {
   font-size: 1.05rem;
   color: var(--ink);
+}
+
+.app-shell[data-theme="dark"] .product-detail-hero {
+  background: linear-gradient(135deg, #2b221b, #211914);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+.app-shell[data-theme="dark"] .product-detail__fact {
+  background: #2e241c;
+  border-color: var(--border);
+}
+
+.app-shell[data-theme="dark"] .product-detail__badges span {
+  background: rgba(240, 191, 110, 0.12);
+  border-color: rgba(240, 191, 110, 0.22);
 }
 
 .product-detail-grid {
@@ -2015,6 +2044,15 @@ main > section:not(.site-header)::before {
   }
   50% {
     transform: translate3d(18px, 10px, 0) scale(1.05);
+  }
+}
+
+@keyframes siteImageFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
   }
 }
 

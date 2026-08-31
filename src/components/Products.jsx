@@ -153,10 +153,10 @@ export function ProductDetailsPage({ item, onBack, onAddToCart, busyProductId, r
           <h3>Designed for confident browsing</h3>
           <p>
             This full-page layout keeps the product front and center with a richer image
-            treatment, clearer price callout, and stronger data hierarchy than a popup.
+            treatment, clearer price callout and stronger data hierarchy than a popup.
           </p>
           <ul className="product-detail-points">
-            <li>Image, title, and description stay easy to scan.</li>
+            <li>Image, title and description stay easy to scan.</li>
             <li>Pricing and category stay visible while you decide.</li>
             <li>One tap adds the item to cart without leaving the page.</li>
           </ul>
@@ -236,20 +236,7 @@ export default function Products({ register, onCartChange, onNavigate, onSelectP
   return (
     <section className="section container" id="products">
       <div className="section-heading reveal" ref={register}>
-        <p className="eyebrow">Products</p>
         <h2>Products</h2>
-      </div>
-
-      <div className="page-banner reveal">
-        
-        <div className="page-banner__actions">
-          <button type="button" className="button button--ghost" onClick={() => onNavigate?.("home")}>
-            Back Home
-          </button>
-          <button type="button" className="button button--solid" onClick={() => onNavigate?.("cart")}>
-            Go to Cart
-          </button>
-        </div>
       </div>
 
       {message && <p className="status-message reveal">{message}</p>}

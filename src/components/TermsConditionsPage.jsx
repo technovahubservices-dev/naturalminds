@@ -28,7 +28,7 @@ export default function TermsConditionsPage({ onNavigate, register }) {
           <h3>Orders and payments</h3>
           <p>
             All orders are subject to availability and confirmation. Prices,
-            promotions, and product availability may change without notice.
+            promotions and product availability may change without notice.
             Payment must be completed using the methods made available at
             checkout.
           </p>

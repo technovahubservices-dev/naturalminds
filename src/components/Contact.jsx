@@ -37,7 +37,7 @@ export default function Contact({ register }) {
           <h2>Have questions about our breads and natural ingredients?</h2>
           <p>
             Reach out anytime. We&apos;re happy to help with product details,
-            ingredient choices like honey, coconut milk, and butter, or any
+            ingredient choices like honey, coconut milk and butter or any
             order and support questions.
           </p>
 

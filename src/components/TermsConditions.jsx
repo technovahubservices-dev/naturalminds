@@ -18,7 +18,7 @@ export default function TermsConditions({ register }) {
             <h3>Orders and payments</h3>
             <p>
               All orders are subject to availability and confirmation. Prices,
-              promotions, and product availability may change without notice.
+              promotions and product availability may change without notice.
               Payment must be completed using the methods made available at
               checkout.
             </p>
@@ -28,8 +28,8 @@ export default function TermsConditions({ register }) {
             <h3>Delivery and freshness</h3>
             <p>
               We aim to deliver within the time windows shown at checkout, but
-              delays can occur because of weather, traffic, or supply issues.
-              If a product arrives damaged or incorrect, contact us promptly so
+              delays can occur because of weather, traffic or supply issues.
+              If a product arrives damaged or incorrect contact us promptly so
               we can help.
             </p>
           </article>
@@ -39,7 +39,7 @@ export default function TermsConditions({ register }) {
             <p>
               Because we sell perishable goods, return eligibility may be
               limited. Where a refund is approved, it will be processed to the
-              original payment method or as store credit, depending on the
+              original payment method or as store credit depending on the
               situation.
             </p>
           </article>
@@ -47,7 +47,7 @@ export default function TermsConditions({ register }) {
           <article className="legal-card reveal" ref={register}>
             <h3>Content and use</h3>
             <p>
-              The website content, product descriptions, images, and branding
+              The website content, product descriptions, images and branding
               belong to Nature&apos;s Fresh or its licensors. Please do not reuse
               them without permission. Using the site for unlawful activity is
               not allowed.

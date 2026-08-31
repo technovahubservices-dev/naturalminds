@@ -1,5 +1,5 @@
 .section--contact {
-  padding: 100px 0;
+  padding: 68px 0;
   background: linear-gradient(
     135deg,
     #fff7ed,
@@ -11,7 +11,7 @@
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 36px;
   align-items: center;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .contact-list {
-  margin-top: 40px;
+  margin-top: 28px;
 }
 
 .contact-list div {
@@ -149,6 +149,10 @@
 }
 
 @media (max-width: 768px) {
+  .section--contact {
+    padding: 52px 0;
+  }
+
   .contact-layout {
     grid-template-columns: 1fr;
   }

@@ -84,10 +84,10 @@ export function ProductDetailsPage({ item, onBack, onAddToCart, busyProductId, r
           <h3>Designed for confident browsing</h3>
           <p>
             This full-page layout keeps the product front and center with a richer image
-            treatment, clearer price callout, and stronger data hierarchy than a popup.
+            treatment, clearer price callout and stronger data hierarchy than a popup.
           </p>
           <ul className="product-detail-points">
-            <li>Image, title, and description stay easy to scan.</li>
+            <li>Image, title and description stay easy to scan.</li>
             <li>Pricing and category stay visible while you decide.</li>
             <li>One tap adds the item to cart without leaving the page.</li>
           </ul>

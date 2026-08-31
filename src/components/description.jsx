@@ -36,7 +36,7 @@ const data = [
     title: "Butter",
     image: butterImage,
     description:
-      "Butter is a rich dairy product made from cream. It adds flavor, softness, and a smooth finish to both sweet and savory foods.",
+      "Butter is a rich dairy product made from cream. It adds flavor, softness and a smooth finish to both sweet and savory foods.",
     uses: [
       "Spreading on bread",
       "Cooking and sauteing",

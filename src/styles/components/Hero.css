@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 90vh;
+  min-height: 78vh;
   display: flex;
   align-items: center;
   background:
@@ -43,7 +43,7 @@
 .hero__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
 }
 
@@ -158,6 +158,26 @@
 
 .hero__panel {
   position: relative;
+  padding-top: 42px;
+}
+
+.hero__qualityBadge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 22px;
+  border: 1px solid rgba(214, 162, 79, 0.3);
+  border-radius: 999px;
+  background: #2b251f;
+  color: #f0bf6e;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+  font-weight: 800;
+  white-space: nowrap;
+  transform: translateX(-50%);
 }
 
 .hero__mediaCard {
@@ -180,7 +200,7 @@
 
 .hero__mediaCard img {
   width: 100%;
-  min-height: 620px;
+  min-height: 540px;
   object-fit: cover;
   transform: scale(1.01);
 }

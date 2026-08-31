@@ -15,7 +15,6 @@ export default function CartPage({
   return (
     <section className="section container">
       <div className="section-heading">
-        <p className="eyebrow">Cart</p>
         <h2>Your cart</h2>
       </div>
 
@@ -28,7 +27,7 @@ export default function CartPage({
           <button type="button" className="button button--ghost" onClick={() => onNavigate("products")}>
             Continue Shopping
           </button>
-          <button type="button" className="button button--solid" onClick={() => onNavigate("checkout")}>
+          <button type="button" className="button button--ghost" onClick={() => onNavigate("checkout")}>
             Checkout
           </button>
         </div>

@@ -15,7 +15,7 @@ export default function About({ register }) {
           <h2>Nurturing a premium bakery look and feel</h2>
           <p>
             mahimy foods brings the warm bakery reference style into a responsive
-            storefront system with creamy backgrounds, soft gold accents, and
+            storefront system with creamy backgrounds, soft gold accents and
             polished spacing that scales to every screen size.
           </p>
           <ul className="checklist">

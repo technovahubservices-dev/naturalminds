@@ -9,7 +9,7 @@ export default function PrivacyPolicy({ register }) {
           <h2>How we handle your information</h2>
           <p className="legal-intro">
             We only collect the information needed to process orders, improve
-            service, and keep your account secure.
+            service and keep your account secure.
           </p>
         </div>
 
@@ -18,9 +18,9 @@ export default function PrivacyPolicy({ register }) {
             <h3>Information we collect</h3>
             <p>
               When you place an order or contact us, we may collect your name,
-              phone number, email address, delivery details, and order history.
+              phone number, email address, delivery details and order history.
               We also collect basic technical information such as browser type,
-              device, and pages visited to help us understand how the site is
+              device and pages visited to help us understand how the site is
               being used.
             </p>
           </article>
@@ -29,7 +29,7 @@ export default function PrivacyPolicy({ register }) {
             <h3>How we use it</h3>
             <p>
               We use your information to process purchases, respond to support
-              requests, arrange delivery, improve product quality, and share
+              requests, arrange delivery, improve product quality and share
               updates about your orders. We do not sell your personal
               information.
             </p>
@@ -48,7 +48,7 @@ export default function PrivacyPolicy({ register }) {
           <article className="legal-card reveal" ref={register}>
             <h3>Your choices</h3>
             <p>
-              You can request access, correction, or deletion of your
+              You can request access, correction or deletion of your
               information by contacting us. You can also opt out of marketing
               messages at any time.
             </p>

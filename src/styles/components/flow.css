@@ -9,7 +9,7 @@
 .benefits {
   position: relative;
   overflow: hidden;
-  padding: 120px 8%;
+  padding: 76px 8%;
   background: linear-gradient(
     135deg,
     #eef8f3 0%,
@@ -39,7 +39,7 @@
   font-size: 4rem;
   font-weight: 700;
   color: #182033;
-  margin-bottom: 60px;
+  margin-bottom: 38px;
   line-height: 1.1;
 }
 
@@ -56,13 +56,13 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 30px;
+  gap: 22px;
 }
 
 .card {
   position: relative;
   overflow: hidden;
-  padding: 40px;
+  padding: 30px;
   border-radius: 28px;
 
   background: rgba(255,255,255,0.55);
@@ -190,6 +190,10 @@
 }
 
 @media (max-width: 768px) {
+  .benefits {
+    padding: 52px 20px;
+  }
+
   .title {
     font-size: 2.5rem;
   }

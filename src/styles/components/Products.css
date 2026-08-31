@@ -2,10 +2,11 @@
 
 #products .section-heading {
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-#products .page-banner {
-  align-items: center;
+#products.section {
+  padding-top: 2.75rem;
 }
 
 #products .product-grid {

@@ -1,6 +1,6 @@
 .brand-origin {
   background: #f6f0e4;
-  padding: 90px 0;
+  padding: 64px 0;
 }
 
 .brand-container {
@@ -17,7 +17,7 @@
 }
 
 .brand-content {
-  padding: 70px;
+  padding: 48px;
 }
 
 .brand-tag {
@@ -36,14 +36,14 @@
   font-size: 64px;
   line-height: 1.1;
   color: #2f1f12;
-  margin-bottom: 50px;
+  margin-bottom: 32px;
   font-weight: 700;
 }
 
 .origin-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
 }
 
 .origin-item {
@@ -100,7 +100,7 @@
 }
 
 .brand-description {
-  margin-top: 50px;
+  margin-top: 32px;
   font-size: 22px;
   color: #5f564d;
   line-height: 1.8;
@@ -108,7 +108,7 @@
 
 .brand-image {
   height: 100%;
-  min-height: 640px;
+  min-height: 520px;
   overflow: hidden;
 }
 
@@ -132,11 +132,11 @@
   }
 
   .brand-image {
-    min-height: 500px;
+    min-height: 400px;
   }
 
   .brand-content {
-    padding: 50px;
+    padding: 40px;
   }
 
   .brand-content h2 {
@@ -148,6 +148,10 @@
 @media (max-width: 768px) {
   .brand-content {
     padding: 30px 20px;
+  }
+
+  .brand-origin {
+    padding: 44px 0;
   }
 
   .brand-content h2 {

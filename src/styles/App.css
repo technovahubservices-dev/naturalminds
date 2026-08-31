@@ -93,3 +93,77 @@
     font-size: 1.8rem;
   }
 }
+
+/* Keep the landing page compact and avoid large empty bands between sections. */
+.app-shell main > .section,
+.app-shell main > .brand-origin,
+.app-shell main > .features,
+.app-shell main > .quality,
+.app-shell main > .nutrition,
+.app-shell main > .benefits,
+.app-shell main > .testimonials-section {
+  padding-top: clamp(2.75rem, 5vw, 4.5rem);
+  padding-bottom: clamp(2.75rem, 5vw, 4.5rem);
+}
+
+.app-shell main .section-heading,
+.app-shell main .features-header {
+  margin-bottom: 1.75rem;
+}
+
+.app-shell main .quality-grid,
+.app-shell main .nutrition-grid {
+  margin-top: 2rem;
+}
+
+.app-shell main .nutrition-bottom,
+.app-shell main .features-stats {
+  margin-top: 2rem;
+}
+
+.app-shell main .features-grid {
+  margin-top: 1.75rem;
+  min-height: 520px;
+}
+
+.app-shell main .brand-content {
+  padding: clamp(2rem, 4vw, 3rem);
+}
+
+.app-shell main .brand-content h2 {
+  margin-bottom: 1.75rem;
+}
+
+.app-shell main .brand-description {
+  margin-top: 1.75rem;
+}
+
+.app-shell main .brand-image {
+  min-height: 460px;
+}
+
+.app-shell main .title {
+  margin-bottom: 2rem;
+}
+
+.app-shell main .contact-list {
+  margin-top: 1.75rem;
+}
+
+@media (max-width: 768px) {
+  .app-shell main > .section,
+  .app-shell main > .brand-origin,
+  .app-shell main > .features,
+  .app-shell main > .quality,
+  .app-shell main > .nutrition,
+  .app-shell main > .benefits,
+  .app-shell main > .testimonials-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .app-shell main .features-grid,
+  .app-shell main .brand-image {
+    min-height: 340px;
+  }
+}
