@@ -49,9 +49,13 @@
 
 #products .product-card__description {
   margin: -0.35rem 0 1.25rem;
-  color: var(--text-muted);
+  color: var(--muted-ink);
   font-size: 0.95rem;
   line-height: 1.55;
+}
+
+.app-shell[data-theme="dark"] #products .product-card__description {
+  color: #f3e1cd;
 }
 
 #products .product-card__footer {
