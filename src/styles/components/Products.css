@@ -47,6 +47,13 @@
   min-height: 2.9rem;
 }
 
+#products .product-card__description {
+  margin: -0.35rem 0 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
 #products .product-card__footer {
   margin-top: auto;
   display: grid;

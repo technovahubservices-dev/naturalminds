@@ -11,6 +11,7 @@ import {
 function ProductCard({ item, index, onAddToCart, onSelect, busyProductId, register }) {
   const productId = item._id || item.id || item.productId;
   const isBusy = busyProductId === productId;
+  const productName = getProductName(item);
   const rawCategory = item.category || "Uncategorized";
   const categoryWords = String(rawCategory).trim().split(/\s+/).filter(Boolean);
   const cardCategory =
@@ -24,7 +25,7 @@ function ProductCard({ item, index, onAddToCart, onSelect, busyProductId, regist
       ref={register}
       role="button"
       tabIndex={0}
-      aria-label={`View details for ${getProductName(item)}`}
+      aria-label={`View details for ${productName}`}
       onClick={() => onSelect(item)}
       onKeyDown={(event) => {
         if (event.key === "Enter" || event.key === " ") {
@@ -34,7 +35,7 @@ function ProductCard({ item, index, onAddToCart, onSelect, busyProductId, regist
       }}
     >
       <div className="product-card__imageWrap">
-        <img src={buildImageSrc(item.image)} alt={getProductName(item)} />
+        <img src={buildImageSrc(item.image)} alt={productName} />
       </div>
 
       <div className="product-card__body">
@@ -44,7 +45,21 @@ function ProductCard({ item, index, onAddToCart, onSelect, busyProductId, regist
             <span className="product-card__rating">Rating {item.rating}</span>
           )}
         </div>
-        <h3 className="product-card__title">{getProductName(item)}</h3>
+        <h3 className="product-card__title">{productName}</h3>
+        {productName.trim().toLowerCase() === "wheat bread" && (
+          <p className="product-card__description">
+            Wholesome wheat bread made with{" "}
+            <strong>wheat, dates, coconut milk, butter, and honey</strong> for a naturally
+            sweet, fiber-rich and nourishing bite.
+          </p>
+        )}
+        {productName.trim().toLowerCase() === "white bread" && (
+          <p className="product-card__description">
+            Soft and fluffy white bread made with{" "}
+            <strong>refined wheat flour, milk, butter, sugar, and yeast</strong>, offering a
+            light texture and classic everyday taste.
+          </p>
+        )}
         <div className="product-card__footer">
           <strong>Rs. {item.price ?? "N/A"}</strong>
           <button
