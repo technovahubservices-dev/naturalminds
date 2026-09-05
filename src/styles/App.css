@@ -94,6 +94,11 @@
   }
 }
 
+/* Unified site typography */
+.app-shell,.app-shell button,.app-shell input,.app-shell textarea,.app-shell select{font-family:'Outfit',Arial,sans-serif}
+.app-shell h1,.app-shell h2,.app-shell h3,.app-shell h4,.app-shell h5,.app-shell h6{font-family:'Cormorant Garamond','Times New Roman',serif}
+.app-shell .brand-button,.app-shell .footer-wordmark{font-family:'Cormorant Garamond','Times New Roman',serif}
+
 /* Keep the landing page compact and avoid large empty bands between sections. */
 .app-shell main > .section,
 .app-shell main > .brand-origin,

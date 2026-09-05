@@ -1,188 +1,41 @@
-
-import "../styles/components/Navbar.css";
 import { useState } from "react";
-import {
-  ShoppingCart,
-  Sun,
-  Moon,
-  Menu,
-  X,
-} from "lucide-react";
-import logo from "../asset/logo.png";
+import { Menu, Moon, Search, ShoppingBag, Sun, X } from "lucide-react";
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import "../styles/components/Navbar.css";
 
-export default function Navbar({
-  theme,
-  onToggleTheme,
-  onNavigate,
-  cartCount = 0,
-  activePage = "home",
-}) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleNavigate = (page) => {
-    onNavigate(page);
-    setIsOpen(false);
+export default function Navbar({ onNavigate, cartCount = 0, activePage = "home", theme = "light", onToggleTheme }) {
+  const [open, setOpen] = useState(false);
+  const links = [["home","Home"],["about","About Us"],["products","Our Breads"],["quality","Quality"],["contact","Contact"]];
+  const navigate = (page) => { onNavigate(page); setOpen(false); };
+  const handle = (page) => {
+    if (page === "quality") {
+      navigate("home");
+      requestAnimationFrame(() => document.getElementById("quality")?.scrollIntoView({ behavior: "smooth" }));
+    } else navigate(page);
   };
-
   return (
     <header className="site-header">
-
-      {/* Announcement Bar */}
-      
-
-      {/* Navbar */}
-      <nav className="site-nav">
-
-        {/* Logo */}
-        <button
-          className={activePage === "home" ? "brand-button is-active" : "brand-button"}
-          onClick={() => handleNavigate("home")}
-          aria-label="Mahimy Foods home"
-          aria-current={activePage === "home" ? "page" : undefined}
-        >
-          <span className="brand-logo-shell" aria-hidden="true">
-            <img
-              className="brand-logo"
-              src={logo}
-              alt=""
-            />
-          </span>
-          <span className="brand-text">Mahimy Foods</span>
-        </button>
-
-        {/* Desktop Menu */}
-        <div className="nav-links">
-          <button
-            className={activePage === "home" ? "is-active" : ""}
-            onClick={() => handleNavigate("home")}
-            aria-current={activePage === "home" ? "page" : undefined}
-          >
-            Home
-          </button>
-          <button
-            className={activePage === "about" ? "is-active" : ""}
-            onClick={() => handleNavigate("about")}
-            aria-current={activePage === "about" ? "page" : undefined}
-          >
-            About Us
-          </button>
-          <button
-            className={activePage === "products" ? "is-active" : ""}
-            onClick={() => handleNavigate("products")}
-            aria-current={activePage === "products" ? "page" : undefined}
-          >
-            Products
-          </button>
-
-          <button
-            className={activePage === "testimonials" ? "is-active" : ""}
-            onClick={() => handleNavigate("testimonials")}
-            aria-current={activePage === "testimonials" ? "page" : undefined}
-          >
-            Testimonials
-          </button>
-          
-          <button
-            className={activePage === "contact" ? "is-active" : ""}
-            onClick={() => handleNavigate("contact")}
-            aria-current={activePage === "contact" ? "page" : undefined}
-          >
-            Contact
-          </button>
+      <div className="announcement">
+        <span>Inspired by Traditional Nutrition. Crafted for Modern Living.</span>
+        <div className="announcement__right">
+          <a href="https://www.mahimyfoods.in" target="_blank" rel="noreferrer">Find a Store</a>
+          <a href="https://www.instagram.com/mahimy_foods" aria-label="Instagram"><FaInstagram/></a>
+          <a href="https://www.facebook.com" aria-label="Facebook"><FaFacebookF/></a>
+          <a href="https://www.youtube.com" aria-label="YouTube"><FaYoutube/></a>
         </div>
-
-        {/* Actions */}
+      </div>
+      <nav className="site-nav">
+        <button className="brand-button" onClick={() => handle("home")} aria-label="Mahimy Foods home">Mahimy Foods</button>
+        <div className="nav-links">{links.map(([page,label]) => <button className={activePage===page?"is-active":""} key={page} onClick={() => handle(page)}>{label}</button>)}</div>
         <div className="nav-actions">
-
-          <button
-            className="theme-toggle"
-            type="button"
-            aria-pressed={theme === "dark"}
-            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-            onClick={onToggleTheme}
-          >
-            {theme === "light" ? (
-              <Moon size={18} />
-            ) : (
-              <Sun size={18} />
-            )}
-            <span className="theme-toggle__label">
-              {theme === "light" ? "Dark" : "Light"}
-            </span>
-            <span className="theme-toggle__track" aria-hidden="true">
-              <span className="theme-toggle__thumb" />
-            </span>
-          </button>
-
-          {/* Cart */}
-          <button
-            className={activePage === "cart" ? "nav-cart is-active" : "nav-cart"}
-            onClick={() => handleNavigate("cart")}
-          >
-            <ShoppingCart size={22} />
-
-            {cartCount > 0 && (
-              <span className="nav-cart__badge">
-                {cartCount}
-              </span>
-            )}
-          </button>
-
-          {/* Mobile menu button */}
-          <button
-            className="nav-toggle"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? (
-              <X size={24} />
-            ) : (
-              <Menu size={24} />
-            )}
-          </button>
-
+          <button className="nav-search" onClick={() => handle("products")} aria-label="Search our breads"><Search size={18}/></button>
+          <button className="nav-cart" onClick={() => navigate("cart")} aria-label="Shopping cart"><ShoppingBag size={18}/>{cartCount>0&&<span>{cartCount}</span>}</button>
+          <button className="site-theme-toggle" type="button" onClick={onToggleTheme} aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`} title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`} aria-pressed={theme === "dark"}>{theme === "dark" ? <Sun size={18}/> : <Moon size={18}/>}</button>
+          <button className="header-cta" onClick={() => handle("contact")}>Get in Touch</button>
+          <button className="nav-toggle" onClick={() => setOpen(!open)} aria-label="Toggle menu">{open?<X/>:<Menu/>}</button>
         </div>
       </nav>
-
-      {/* Mobile Sidebar */}
-      <div className={`mobile-menu ${isOpen ? "mobile-menu--open" : ""}`}>
-
-        <button className={activePage === "home" ? "is-active" : ""} onClick={() => handleNavigate("home")} aria-current={activePage === "home" ? "page" : undefined}>
-          Home
-        </button>
-
-        <button className={activePage === "about" ? "is-active" : ""} onClick={() => handleNavigate("about")} aria-current={activePage === "about" ? "page" : undefined}>
-          About Us
-        </button>
-
-        <button className={activePage === "products" ? "is-active" : ""} onClick={() => handleNavigate("products")} aria-current={activePage === "products" ? "page" : undefined}>
-          Products
-        </button>
-
-        <button className={activePage === "tesstimonials" ? "is-active" : ""} onClick={() => handleNavigate("testimonials")} aria-current={activePage === "testimonials" ? "page" : undefined}>
-          Testimonials
-        </button>
-
-      
-
-        <button className={activePage === "contact" ? "is-active" : ""} onClick={() => handleNavigate("contact")} aria-current={activePage === "contact" ? "page" : undefined}>
-          Contact
-        </button>
-
-        <button
-          className="shop-btn"
-          onClick={() => handleNavigate("products")}
-        >
-          Shop Now
-        </button>
-
-      </div>
-
-      {isOpen && (
-        <div
-          className="nav-backdrop"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
+      <div className={`mobile-menu ${open?"mobile-menu--open":""}`}>{links.map(([page,label])=><button key={page} onClick={()=>handle(page)}>{label}</button>)}<button onClick={()=>navigate("cart")}>Cart {cartCount ? `(${cartCount})` : ""}</button><button className="mobile-theme-toggle" type="button" onClick={onToggleTheme}>{theme === "dark" ? <Sun size={18}/> : <Moon size={18}/>} {theme === "dark" ? "Light mode" : "Dark mode"}</button><button className="header-cta" onClick={()=>handle("contact")}>Get in Touch</button></div>
     </header>
   );
 }

@@ -1,18 +1,9 @@
 import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import "./styles/App.css";
-import { categories, features, gallery, testimonials } from "./data/siteContent";
 import { useReveal } from "./hooks/useReveal";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Categories from "./components/Categories";
-import Features from "./components/Features";
 import Products from "./components/Products";
-import FoodCards from "./components/description";
-import Stats from "./components/Stats";
-import Gallery from "./components/Gallery";
-import Testimonials from "./components/Testimonials";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import AboutPage from "./components/AboutPage";
 import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
@@ -28,7 +19,7 @@ import {
   formatCartSummary,
   getProductName,
 } from "./lib/api";
-import BenefitsSection from "./components/flow";
+import TuniHome from "./components/TuniHome";
 
 const HOME_PAGE = "home";
 const ABOUT_PAGE = "about";
@@ -76,6 +67,7 @@ function App() {
   useEffect(() => {
     window.localStorage.setItem("naturalminds-theme", theme);
     document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
   }, [theme]);
 
   useEffect(() => {
@@ -282,27 +274,7 @@ function App() {
       />
       <main>
         {page === HOME_PAGE && (
-          <>
-            <Hero
-              register={register}
-              onOfferClick={() => navigate("products")}
-              onExploreClick={() => navigate("products")}
-            />
-            <Categories register={register} items={categories} />
-            <Features register={register} items={features} />
-            <Products
-              register={register}
-              onCartChange={setCart}
-              onNavigate={navigate}
-              onSelectProduct={openProductDetail}
-            />
-            <FoodCards register={register} />
-            <Stats register={register} />
-            <Gallery register={register} items={gallery} />
-            <BenefitsSection register={register} />
-            <Testimonials register={register} items={testimonials} />
-            <Contact register={register} />
-          </>
+          <TuniHome register={register} onNavigate={navigate} />
         )}
 
         {page === ABOUT_PAGE && <AboutPage onNavigate={navigate} register={register} />}

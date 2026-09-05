@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Outfit:wght@400;500;600;700&display=swap');
+:root{--forest:#123f31;--forest2:#0b3327;--cream:#f7f3e9;--mint:#e8f2ec;--gold:#c99a4b;--ink:#17382f;--muted:#64716a}.tuni-home{background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;overflow:hidden}.tuni-home h1,.tuni-home h2,.tuni-home h3{font-family:'Playfair Display',serif;margin:0;line-height:1.03}.tuni-home h2{font-size:clamp(2.15rem,4vw,4rem)}.tuni-home p{line-height:1.7}.tuni-wrap{width:min(1180px,calc(100% - 48px));margin:auto}.eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:.24em;font-size:.72rem;font-weight:700;color:#477364;margin-bottom:20px}.eyebrow--light{color:#d8b46e}.tuni-btn{border:1px solid var(--forest);background:var(--forest);color:white;border-radius:6px;padding:14px 20px;display:inline-flex;align-items:center;gap:18px;font-weight:600;cursor:pointer}.tuni-btn--outline{background:transparent;border-color:#d9e4dc}.section-heading{text-align:center;padding:0 24px}.section-heading p{color:var(--muted)}.section-heading--left{text-align:left;padding:0}
+.tuni-hero{min-height:710px;position:relative;background:radial-gradient(circle at 76% 44%,#fff 0 7%,transparent 40%),linear-gradient(110deg,#f8f4ea 0%,#f8f4ea 54%,#e7ded0 100%)}.tuni-hero__grain{position:absolute;inset:0;opacity:.18;background-image:radial-gradient(#af9875 .7px,transparent .7px);background-size:7px 7px;mask-image:linear-gradient(to right,transparent,#000)}.tuni-hero__grid{min-height:710px;display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;position:relative}.tuni-hero__copy{z-index:2;padding:60px 0}.tuni-hero h1{font-size:clamp(3.6rem,6vw,6.25rem);letter-spacing:-.045em}.tuni-hero__copy>p{font-size:1.16rem;margin:24px 0 30px}.trust-row{display:flex;gap:36px;margin-top:55px}.trust-item{display:flex;align-items:center;gap:10px;max-width:125px}.trust-item span{width:42px;height:42px;border:1px solid #84a396;border-radius:50%;display:grid;place-items:center}.trust-item small{font-weight:600}.tuni-hero__visual{height:710px;position:relative;display:flex;justify-content:center;align-items:flex-end}.tuni-hero__visual img{position:relative;z-index:2;width:68%;height:91%;object-fit:cover;object-position:50% 10%;clip-path:polygon(9% 0,100% 0,100% 100%,0 100%,0 14%)}.sun-disc{position:absolute;width:460px;height:460px;border-radius:50%;background:#ebdfc9;top:110px}.hero-note{position:absolute;z-index:3;right:0;top:160px;font-family:'Playfair Display',serif;font-size:1.55rem;transform:rotate(-7deg)}.hero-note em{font-size:1.15rem}
+.origin{display:grid;grid-template-columns:1fr 1fr;background:#eaf3ee;min-height:610px}.origin__image img{width:100%;height:100%;object-fit:cover}.origin__copy{padding:80px clamp(38px,7vw,110px);display:flex;flex-direction:column;justify-content:center}.origin__copy>p{color:var(--muted);max-width:550px}.origin-list{display:grid;gap:14px;margin-top:22px}.origin-list>div{display:flex;align-items:center;gap:16px}.origin-list img{width:52px;height:52px;border-radius:4px;object-fit:cover}.origin-list span{display:grid}.origin-list small{color:var(--muted);margin-top:3px}
+.breads-section{padding:110px 0;background:#f9f6ee}.breads-grid{display:grid;grid-template-columns:.8fr 1fr 1fr;gap:24px;align-items:stretch}.breads-intro{padding:40px 15px 20px 0;display:flex;align-items:flex-start;flex-direction:column}.breads-intro p{color:var(--muted);margin:24px 0 28px}.bread-card{background:white;border:1px solid #eee8dc;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(35,62,50,.05)}.bread-card__image{height:275px;background:#f0eee6;overflow:hidden}.bread-card__image img{width:100%;height:100%;object-fit:cover}.bread-card__image--wheat img{object-fit:contain;padding:14px}.bread-card>div:last-child{padding:26px}.bread-number{font-size:.7rem;color:var(--gold);letter-spacing:.2em}.bread-card h3{font-size:1.75rem;margin:6px 0 10px}.bread-card p{color:var(--muted);font-size:.9rem;min-height:78px}.bread-card button{border:0;background:none;color:var(--forest);font-weight:700;padding:0;display:flex;gap:10px;align-items:center;cursor:pointer}
+.ingredient-section{padding:100px 0 125px;background:#f2f8f4}.ingredient-layout{height:430px;position:relative;display:flex;justify-content:center;align-items:center}.ingredient-photo{position:absolute;border-radius:50%;object-fit:cover;opacity:.9}.ingredient-photo--left{width:180px;height:180px;left:-60px;bottom:20px}.ingredient-photo--right{width:160px;height:160px;right:-45px;top:25px}.ingredient-wheel{position:relative;width:600px;height:360px}.ingredient-wheel__center{position:absolute;left:245px;top:115px;width:115px;height:115px;border-radius:50%;background:var(--forest);color:white;display:grid;place-items:center;text-align:center;z-index:2}.ingredient-wheel__center svg{width:22px}.ingredient-node{position:absolute;width:155px;text-align:center;display:grid;gap:4px}.ingredient-node span{margin:auto;width:56px;height:56px;border-radius:50%;background:#d8ebe0;display:grid;place-items:center;color:var(--forest);font-size:1.25rem}.ingredient-node small{color:var(--muted)}.ingredient-node--1{left:10px;top:35px}.ingredient-node--2{left:222px;top:-15px}.ingredient-node--3{right:8px;top:40px}.ingredient-node--4{right:70px;bottom:5px}.ingredient-node--5{left:82px;bottom:0}.ingredient-node:after{content:"";position:absolute;height:1px;background:#b7cfc2;width:75px;top:28px}.ingredient-node--1:after,.ingredient-node--5:after{right:-55px;transform:rotate(20deg)}.ingredient-node--2:after{display:none}.ingredient-node--3:after,.ingredient-node--4:after{left:-55px;transform:rotate(-20deg)}
+.quality-section{display:grid;grid-template-columns:.9fr 1.1fr;min-height:460px}.quality-photo{position:relative}.quality-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,28,21,.2),rgba(12,28,21,.78))}.quality-photo img{width:100%;height:100%;object-fit:cover}.quality-photo>div{position:absolute;right:50px;top:50%;transform:translateY(-50%);z-index:2;color:white;text-align:right}.quality-photo h2{font-size:clamp(2.2rem,3.5vw,3.5rem)}.quality-photo em{font-weight:400;color:#e9c57d}.quality-copy{background:#eaf3ee;padding:70px clamp(30px,6vw,90px);display:flex;flex-direction:column;justify-content:center}.quality-list{display:grid;grid-template-columns:1fr 1fr;gap:28px}.quality-list>div{display:flex;gap:12px;align-items:center;border-bottom:1px solid #c8dbd0;padding-bottom:18px}.quality-list span{width:44px;height:44px;display:grid;place-items:center;border:1px solid #88a89a;border-radius:50%}.quality-list p{font-size:.87rem;line-height:1.35;margin:0;font-weight:600}.quality-caption{text-align:center;font-size:.8rem;color:var(--muted);margin-top:32px}
+.nutrition-section{padding:90px 0;background:#faf8f2}.nutrition-grid{display:grid;grid-template-columns:repeat(8,1fr);margin:36px 0 25px;border-top:1px solid #dbd9ce;border-bottom:1px solid #dbd9ce}.nutrition-grid>div{padding:22px 13px;border-right:1px solid #dbd9ce;display:grid;gap:7px}.nutrition-grid>div:last-child{border:0}.nutrition-grid span{font-size:.72rem;color:var(--muted)}.nutrition-grid strong{font-size:.85rem}.nutrition-benefits{display:flex;justify-content:space-around;gap:25px;flex-wrap:wrap}.nutrition-benefits span{display:flex;align-items:center;gap:9px;font-weight:600;font-size:.85rem}.nutrition-benefits svg{color:#4d7e6b}
+.lifestyle-section{padding:85px 0;background:#eff3e6}.lifestyle-layout{display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:60px}.lifestyle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 18px;margin-top:38px}.lifestyle-grid>div{display:grid;grid-template-columns:42px 1fr;column-gap:10px;align-items:center}.lifestyle-grid>div>span{grid-row:1/3;width:40px;height:40px;border-radius:50%;background:#f6e9bb;display:grid;place-items:center}.lifestyle-grid small{color:var(--muted);line-height:1.35}.lifestyle-layout>img{width:100%;height:380px;object-fit:cover;border-radius:180px 180px 12px 12px}
+.factory-section{padding:100px 0;background:#f9f6ee}.factory-card{height:480px;position:relative;border-radius:14px;overflow:hidden}.factory-card:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,31,23,.9),rgba(6,31,23,.22))}.factory-card img{width:100%;height:100%;object-fit:cover}.factory-card>div{position:absolute;z-index:2;left:8%;top:50%;transform:translateY(-50%);color:white;max-width:450px}.factory-card p{color:#e7eee9}.factory-card a{display:inline-flex;gap:10px;align-items:center;color:white;font-weight:700;text-decoration:none;border-bottom:1px solid #d8b46e;padding-bottom:5px}
+.final-cta{background:var(--forest);color:white;padding:78px 0;position:relative}.final-cta:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 40%,rgba(205,172,99,.16),transparent 35%)}.final-cta__inner{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center}.final-cta h2{font-size:clamp(2.7rem,5vw,4.5rem)}.final-cta p{color:#d7e2dc}.final-cta__actions{min-width:350px}.final-cta__actions .tuni-btn{margin-right:10px;background:#f8f3e7;color:#123f31;border-color:#f8f3e7}.final-cta__actions .tuni-btn--outline{background:transparent;color:white;border-color:#8aa499}
+@media(max-width:900px){.tuni-hero,.tuni-hero__grid{min-height:620px}.tuni-hero__grid{grid-template-columns:1fr 1fr}.tuni-hero__visual{height:620px}.hero-note{display:none}.trust-row{gap:15px}.breads-grid{grid-template-columns:1fr 1fr}.breads-intro{grid-column:1/-1;text-align:center;align-items:center}.quality-section{grid-template-columns:1fr}.quality-photo{height:430px}.nutrition-grid{grid-template-columns:repeat(4,1fr)}.lifestyle-layout{grid-template-columns:1fr}.lifestyle-layout>img{display:none}}
+@media(max-width:640px){.tuni-wrap{width:min(100% - 30px,1180px)}.tuni-hero{min-height:auto}.tuni-hero__grid{grid-template-columns:1fr;padding-top:30px}.tuni-hero__copy{text-align:center;padding:40px 0 0}.tuni-hero h1{font-size:3.25rem}.trust-row{justify-content:center;margin-top:35px}.trust-item{display:grid;justify-items:center;gap:6px}.tuni-hero__visual{height:420px}.tuni-hero__visual img{width:82%;height:100%}.sun-disc{width:300px;height:300px;top:65px}.origin{grid-template-columns:1fr}.origin__image{height:330px}.origin__copy{padding:55px 25px}.breads-section,.ingredient-section,.factory-section{padding:70px 0}.breads-grid{grid-template-columns:1fr}.bread-card__image{height:245px}.ingredient-layout{height:650px}.ingredient-photo{display:none}.ingredient-wheel{width:100%;height:600px}.ingredient-wheel__center{left:50%;top:245px;transform:translateX(-50%)}.ingredient-node{width:130px}.ingredient-node--1{left:2%;top:30px}.ingredient-node--2{right:2%;left:auto;top:30px}.ingredient-node--3{right:0;top:215px}.ingredient-node--4{right:4%;bottom:20px}.ingredient-node--5{left:4%;bottom:20px}.ingredient-node:after{display:none}.quality-photo>div{right:25px}.quality-copy{padding:50px 22px}.quality-list{gap:20px 10px}.nutrition-section{padding:65px 0}.nutrition-grid{grid-template-columns:repeat(2,1fr)}.lifestyle-grid{grid-template-columns:1fr 1fr}.factory-card{height:480px}.factory-card>div{left:25px;right:25px}.final-cta__inner{display:block}.final-cta__actions{min-width:0;margin-top:36px}.final-cta__actions .tuni-btn{margin-bottom:10px}.section-heading br{display:none}}
+
+/* Reference-matched hero composition: product pack, wheat loaf and hand-lettered note. */
+.tuni-hero__visual{display:block}
+.tuni-hero__visual .hero-box{position:absolute;z-index:3;left:10%;bottom:0;width:55%;height:91%;object-fit:cover;object-position:50% 10%;clip-path:polygon(9% 0,100% 0,100% 100%,0 100%,0 14%)}
+.tuni-hero__visual .hero-bread{position:absolute;z-index:4;right:-14%;bottom:0;width:60%;height:auto;object-fit:contain;clip-path:none;filter:drop-shadow(0 18px 18px rgba(44,28,9,.2))}
+.tuni-hero__visual .sun-disc{left:5%}
+.tuni-hero__visual .hero-note{z-index:5;top:135px}
+@media(max-width:640px){.tuni-hero__visual .hero-box{left:7%;width:66%;height:100%}.tuni-hero__visual .hero-bread{right:-12%;width:62%;height:auto}.tuni-hero__visual .sun-disc{left:8%}}
+
+/* Compact desktop rhythm and proportions follow the supplied artboard. */
+@media(min-width:901px){
+  .breads-grid{width:min(1320px,calc(100% - 48px))}
+  .tuni-home h2{font-size:clamp(2rem,3vw,3.25rem)}
+  .tuni-hero,.tuni-hero__grid{min-height:540px}
+  .tuni-hero__visual{height:540px}
+  .tuni-hero__copy{padding:38px 0}
+  .tuni-hero h1{font-size:clamp(3.5rem,5.2vw,5.25rem)}
+  .tuni-hero__copy>p{margin:18px 0 22px;font-size:1rem;line-height:1.45}
+  .trust-row{margin-top:34px}
+  .tuni-hero__visual .hero-box{height:92%;width:52%;left:13%}
+  .tuni-hero__visual .hero-bread{width:55%;right:-8%}
+  .sun-disc{width:370px;height:370px;top:85px}
+  .hero-note{top:95px}
+  .origin{min-height:470px}
+  .origin__copy{padding:50px clamp(38px,6vw,90px)}
+  .origin__copy>p{margin:14px 0}
+  .origin-list{gap:9px;margin-top:12px}
+  .origin-list img{width:44px;height:44px}
+  .breads-section{padding:62px 0}
+  .breads-intro{padding-top:24px}
+  .bread-card__image{height:220px}
+  .bread-card>div:last-child{padding:20px}
+  .bread-card h3{font-size:1.5rem}
+  .bread-card p{font-size:.82rem;min-height:65px;line-height:1.45}
+  .ingredient-section{padding:58px 0 45px}
+  .ingredient-layout{height:340px}
+  .ingredient-wheel{height:320px}
+  .ingredient-wheel__center{top:105px}
+  .quality-section{min-height:300px}
+  .quality-copy{padding:35px clamp(30px,5vw,70px)}
+  .quality-list{gap:18px}
+  .quality-list>div{padding-bottom:12px}
+  .quality-caption{margin-top:18px;line-height:1.45}
+  .nutrition-section{padding:52px 0}
+  .nutrition-grid{margin:24px 0 18px}
+  .nutrition-grid>div{padding:16px 10px}
+  .lifestyle-section{padding:52px 0}
+  .lifestyle-grid{margin-top:25px;gap:18px 14px}
+  .lifestyle-layout>img{height:265px}
+  .final-cta{padding:50px 0}
+  .final-cta h2{font-size:clamp(2.4rem,4vw,3.7rem)}
+}
+
+.origin__copy{position:relative;overflow:hidden}.origin-list i{width:46px;height:46px;background:#d9b36c;color:#fff;display:grid;place-items:center;clip-path:polygon(0 0,78% 0,100% 50%,78% 100%,0 100%);font-style:normal}.origin-list img{display:none}.origin-script{position:absolute;right:8%;bottom:12%;font-family:'Playfair Display',serif;font-style:italic;font-size:1.3rem;line-height:1.05;transform:rotate(-7deg);color:#315e50}.origin-script em{font-size:.9rem}.origin__copy:after{content:'';position:absolute;width:210px;height:280px;right:-80px;top:20px;border:1px solid rgba(76,125,105,.13);border-radius:80% 0 80% 20%;transform:rotate(-25deg)}
+.quality-list{grid-template-columns:repeat(4,1fr);gap:10px}.quality-list>div{display:grid;justify-items:center;text-align:center;border-bottom:1px solid #c8dbd0;gap:10px}.quality-list p{font-size:.9rem;line-height:1.4}.quality-caption{font-size:1rem;line-height:1.6}.quality-caption strong{color:#17382f;font-size:1.05rem}.nutrition-note{text-align:center;color:#718078;font-size:.68rem;margin:14px 0 0}.lifestyle-visual{position:relative}.lifestyle-visual>img{width:100%;height:265px;object-fit:cover;border-radius:150px 0 0 150px}.lifestyle-visual>span{position:absolute;z-index:2;left:-12px;top:-28px;font-family:'Playfair Display',serif;font-size:1.15rem;font-style:italic;transform:rotate(-5deg)}.lifestyle-visual em{font-size:.9rem}
+@media(max-width:900px){.quality-list{grid-template-columns:repeat(2,1fr)}.lifestyle-visual{display:none}.origin-script{display:none}}
+
+/* Client-supplied redesign artwork */
+.tuni-hero__visual .hero-composite{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;clip-path:none;z-index:2}
+.ingredient-photo--left{width:285px;height:100%;left:-92px;bottom:0;border-radius:0;object-fit:cover;object-position:left center}
+.ingredient-milk{position:absolute;right:-95px;top:60px;width:225px;height:225px;border-radius:48% 52% 65% 35%;background:radial-gradient(circle at 44% 40%,#fff 0 30%,#eef4ef 31% 48%,rgba(255,255,255,.25) 49% 62%,transparent 63%);transform:rotate(18deg);opacity:.75}
+.quality-photo{overflow:hidden}.quality-photo>img{height:115%;object-position:center top}.quality-photo:after{background:linear-gradient(90deg,rgba(12,28,21,.08),rgba(12,28,21,0))}.lifestyle-visual{height:265px;overflow:hidden}.lifestyle-visual>img{height:100%;border-radius:0;object-position:center}
+@media(max-width:640px){.tuni-hero__visual .hero-composite{width:100%;height:100%;object-fit:cover}.ingredient-photo--left,.ingredient-milk{display:none}}
+.bread-card__image--wheat img{object-fit:cover;padding:0}
+.ingredient-photo--left{width:300px}
+
+/* Ingredient Story — isolated premium editorial redesign */
+.ingredient-story-v2{position:relative;min-height:850px;padding:56px 0 24px!important;overflow:hidden;background:#fbfaf4;isolation:isolate}
+.ingredient-story-v2:before,.ingredient-story-v2:after{content:none;display:none}
+.ingredient-story-heading{position:relative;z-index:4;text-align:center;padding:0 20px}.ingredient-story-heading .eyebrow{display:inline-flex;align-items:center;gap:18px;margin-bottom:18px}.ingredient-story-heading .eyebrow i{display:block;width:55px;height:1px;background:#82a994}.ingredient-story-heading h2{font-size:clamp(3.2rem,4.8vw,5rem);line-height:.94;color:#0b4d3c}.ingredient-story-heading p{margin:22px auto 0;max-width:720px;color:#65736c;font-size:.95rem;line-height:1.55}
+.ingredient-scene{position:absolute;z-index:1;bottom:82px;width:34%;height:66%;object-fit:contain}.ingredient-scene--left{left:0;object-position:left bottom}.ingredient-scene--right{right:0;object-position:right bottom}
+.radial-story{position:relative;z-index:3;width:500px;height:390px;margin:18px auto 80px}.radial-core{position:absolute;z-index:3;left:195px;top:145px;width:110px;height:110px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:#0b5d46;color:#fff;text-align:center;box-shadow:0 0 0 22px rgba(213,229,216,.34)}.radial-core strong{font-size:1.1rem;line-height:1.05}
+.radial-item{position:absolute;z-index:3;width:150px;text-align:center;display:grid;justify-items:center;gap:4px}.radial-item span{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#e4efe1;border:1px solid #c8d9c4;color:#0b5d46}.radial-item strong{font-size:1rem}.radial-item small{color:#586b62;font-size:.76rem}.radial-item--1{left:175px;top:0}.radial-item--2{left:0;top:92px}.radial-item--3{right:0;top:92px}.radial-item--4{left:55px;bottom:0}.radial-item--5{right:55px;bottom:0}
+.radial-lines{position:absolute;inset:0;width:100%;height:100%;z-index:1;overflow:visible}.radial-lines path{fill:none;stroke:#aac9b4;stroke-width:1.5;stroke-linecap:round}
+.ingredient-benefit-bar{position:absolute;z-index:5;left:5%;right:5%;bottom:18px;min-height:82px;padding:14px 0;background:rgba(239,244,232,.96);border-radius:42px;box-shadow:0 10px 30px rgba(41,77,59,.05);display:grid;grid-template-columns:repeat(4,1fr);align-items:center}.ingredient-benefit-bar>div{min-height:52px;padding:0 28px;display:flex;align-items:center;gap:14px;border-right:1px solid #bfd0c3}.ingredient-benefit-bar>div:last-child{border:0}.ingredient-benefit-bar>div>span{flex:0 0 44px;width:44px;height:44px;border-radius:50%;border:1px solid #3c725e;display:grid;place-items:center;color:#0b5d46}.ingredient-benefit-bar p{margin:0;display:grid;line-height:1.25}.ingredient-benefit-bar strong{font-size:.82rem}.ingredient-benefit-bar small{color:#748078;font-size:.7rem;margin-top:4px}
+@media(max-width:1050px){.ingredient-scene{width:31%;opacity:.82}.radial-story{transform:scale(.9);margin-top:5px}.ingredient-benefit-bar>div{padding:0 14px}.ingredient-benefit-bar strong{font-size:.72rem}}
+@media(max-width:760px){.ingredient-story-v2{min-height:auto;padding:52px 0 24px!important;display:flex;flex-direction:column}.ingredient-story-heading h2{font-size:2.65rem}.ingredient-story-heading p br{display:none}.radial-story{order:2;transform:scale(.82);margin:12px auto 0}.ingredient-scene--left{display:none}.ingredient-scene--right{order:3;position:relative;right:auto;bottom:auto;width:100%;height:330px;object-position:center bottom;margin-top:-28px}.ingredient-benefit-bar{order:4;position:relative;left:auto;right:auto;bottom:auto;width:calc(100% - 30px);margin:0 auto;grid-template-columns:1fr 1fr;border-radius:20px;padding:8px}.ingredient-benefit-bar>div{border-right:0;border-bottom:1px solid #c9d7cc;padding:12px}.ingredient-benefit-bar>div:nth-child(odd){border-right:1px solid #c9d7cc}.ingredient-benefit-bar>div:nth-child(n+3){border-bottom:0}}
+@media(max-width:520px){.ingredient-story-heading .eyebrow i{width:24px}.ingredient-story-heading h2{font-size:2.25rem}.radial-story{width:500px;align-self:center;transform:scale(.66);margin:-20px auto -35px}.ingredient-scene--right{height:270px}.ingredient-benefit-bar{grid-template-columns:1fr}.ingredient-benefit-bar>div,.ingredient-benefit-bar>div:nth-child(odd){border-right:0;border-bottom:1px solid #c9d7cc}.ingredient-benefit-bar>div:last-child{border-bottom:0}}
+
+/* Match the reference hero's full-width 42/58 split. */
+@media(min-width:901px){
+  .tuni-hero__grid{width:100%;max-width:none;margin:0;padding-left:max(50px,calc((100vw - 1650px)/2));grid-template-columns:42% 58%}
+  .tuni-hero__copy{max-width:610px;padding-right:44px}
+  .tuni-hero h1{font-size:clamp(3.6rem,4.3vw,4.65rem);line-height:1.02}
+  .tuni-hero__visual{width:100%}
+  .tuni-hero__visual .hero-composite{inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+  .trust-row{justify-content:space-between;max-width:500px}
+}
+
+.tuni-hero h1{font-family:'Cormorant Garamond','Times New Roman',serif;font-weight:700;letter-spacing:-.035em}
+.tuni-hero__copy>.eyebrow{font-size:.88rem;letter-spacing:.27em;font-weight:700}
+
+.tuni-home{font-family:'Outfit',Arial,sans-serif}
+.tuni-home h1,.tuni-home h2,.tuni-home h3{font-family:'Cormorant Garamond','Times New Roman',serif}
+.ingredient-story-v2 .ingredient-scene--left{clip-path:inset(0 13% 0 0)}
+
+/* Larger nutrition table labels and values for easier scanning. */
+.nutrition-section .eyebrow{font-size:.9rem}
+.nutrition-section .section-heading h2{font-size:clamp(3rem,4vw,4.25rem)}
+.nutrition-grid span{font-size:1rem}
+.nutrition-grid strong{font-size:1.2rem}
+.nutrition-benefits span{font-size:1.05rem}
+.nutrition-note{font-size:.85rem;line-height:1.6}
+
+/* Complete landing-page dark theme. */
+.app-shell[data-theme="dark"] .tuni-btn:not(.tuni-btn--outline){color:#123f31}
+.app-shell[data-theme="dark"] .tuni-home{--forest:#e7f2eb;--forest2:#dbe9e0;--cream:#111d19;--mint:#20352d;--ink:#edf5f0;--muted:#b7c7c0;background:#111d19;color:#edf5f0}
+.app-shell[data-theme="dark"] .tuni-hero{background:radial-gradient(circle at 76% 44%,#30463d 0 7%,transparent 40%),linear-gradient(110deg,#15241e 0%,#15241e 54%,#2b3027 100%)}
+.app-shell[data-theme="dark"] .origin,.app-shell[data-theme="dark"] .quality-copy{background:#1b3028}
+.app-shell[data-theme="dark"] .breads-section,.app-shell[data-theme="dark"] .nutrition-section,.app-shell[data-theme="dark"] .factory-section{background:#111d19}
+.app-shell[data-theme="dark"] .bread-card{background:#1b2b25;border-color:#354940;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.app-shell[data-theme="dark"] .bread-card__image{background:#263a32}.app-shell[data-theme="dark"] .bread-card p,.app-shell[data-theme="dark"] .breads-intro p,.app-shell[data-theme="dark"] .nutrition-grid span,.app-shell[data-theme="dark"] .nutrition-note{color:#b7c7c0}
+.app-shell[data-theme="dark"] .ingredient-story-v2{background:#16251f}.app-shell[data-theme="dark"] .ingredient-story-heading h2,.app-shell[data-theme="dark"] .radial-item strong{color:#edf5f0}.app-shell[data-theme="dark"] .ingredient-story-heading p,.app-shell[data-theme="dark"] .radial-item small{color:#b7c7c0}.app-shell[data-theme="dark"] .radial-item span{background:#284238;border-color:#496358;color:#b8dbbd}.app-shell[data-theme="dark"] .ingredient-benefit-bar{background:rgba(35,55,46,.97)}
+.app-shell[data-theme="dark"] .quality-list>div,.app-shell[data-theme="dark"] .nutrition-grid,.app-shell[data-theme="dark"] .nutrition-grid>div{border-color:#40544b}.app-shell[data-theme="dark"] .quality-caption strong{color:#edf5f0}
+.app-shell[data-theme="dark"] .lifestyle-section{background:#1a2b24}.app-shell[data-theme="dark"] .lifestyle-grid small{color:#b7c7c0}.app-shell[data-theme="dark"] .lifestyle-grid>div>span{background:#4a4226}.app-shell[data-theme="dark"] .final-cta{background:#071a14}

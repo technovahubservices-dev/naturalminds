@@ -1,9 +1,11 @@
-import { Heart, Sandwich, ShieldCheck, Sparkles, Sprout } from "lucide-react";
+import { Heart, Leaf, Sandwich, ShieldCheck, Sparkles, Sprout } from "lucide-react";
+import strengthImage from "../asset/01_bread_loaf_slices.png";
+import storyImage from "../asset/02_wheat_bowl_stalks.png";
 import "../styles/components/AboutPage.css";
 
 const strengths = [
   { icon: Sprout, text: <>At <strong>Tuni Breads</strong>, we believe that delicious food should also nourish your body.</> },
-  { icon: Heart, text: <>We don&apos;t just make bread—we create a <strong>healthier and tastier</strong> experience for every family.</> },
+  { icon: Heart, text: <>We don&apos;t just make bread — we create a <strong>healthier and tastier</strong> experience for every family.</> },
   { icon: ShieldCheck, text: <>Healthy Ingredients.<br />Great Taste. Premium Quality.</> },
 ];
 
@@ -13,8 +15,10 @@ const values = [
   { icon: Sparkles, label: <>Premium<br />Quality</> },
   { icon: ShieldCheck, label: <>Hygienic<br />Production</> },
   { icon: Heart, label: <>Customer<br />Trust</> },
-  { icon: Sprout, label: <>Consistent<br />Freshness</> },
+  { icon: Leaf, label: <>Consistent<br />Freshness</> },
 ];
+
+const SectionLabel = ({ children }) => <div className="about-section-label"><span />{children}<span /></div>;
 
 export default function AboutPage({ register }) {
   return (
@@ -30,25 +34,34 @@ export default function AboutPage({ register }) {
         </div>
       </div>
 
-      <div className="container about-details">
-        <article className="about-detail-panel reveal" ref={register}>
-          <h2>Our Strength</h2><span className="title-rule" />
-          <div className="about-strength-list">
-            {strengths.map(({ icon: Icon, text }, index) => <div className="about-strength-item" key={index}><span className="round-icon"><Icon /></span><p>{text}</p></div>)}
+      <div className="about-lower">
+        <section className="strength-section reveal" ref={register}>
+          <div className="strength-copy">
+            <SectionLabel>Our Strength</SectionLabel>
+            <h2>Nourishing<br />Lives, Every Day</h2>
+            <div className="strength-list">
+              {strengths.map(({ icon: Icon, text }, index) => <div className="strength-item" key={index}><span className="about-round-icon"><Icon /></span><p>{text}</p></div>)}
+            </div>
           </div>
-        </article>
-        <article className="about-detail-panel reveal delay-1" ref={register}>
-          <h2>Core Values</h2><span className="title-rule" />
-          <div className="about-value-grid">
-            {values.map(({ icon: Icon, label }, index) => <div className="about-value-item" key={index}><span className="round-icon"><Icon /></span><p>{label}</p></div>)}
+          <div className="strength-image"><img src={strengthImage} alt="Fresh sliced Tuni bread with wheat" /><span>Goodness<br />in Every Slice</span></div>
+        </section>
+
+        <section className="values-section reveal" ref={register}>
+          <SectionLabel>Core Values</SectionLabel>
+          <h2>What We Stand For</h2>
+          <div className="values-grid">
+            {values.map(({ icon: Icon, label }, index) => <div className="value-item" key={index}><span className="about-round-icon"><Icon /></span><p>{label}</p></div>)}
           </div>
-        </article>
-        <blockquote className="about-statement reveal delay-2" ref={register}>
-          <span className="quote-mark quote-mark--open">“</span>
-          <p>Quality food builds<br />healthy people, and<br />healthy people build<br />a stronger nation.</p>
-          <div className="about-flourish" aria-hidden="true"><span /><Sprout /><span /></div>
-          <span className="quote-mark quote-mark--close">”</span>
-        </blockquote>
+        </section>
+
+        <section className="brand-story reveal" ref={register}>
+          <div className="brand-story-copy">
+            <blockquote><span className="story-quote story-quote-open">“</span>Quality food builds<br />healthy people, and healthy people<br />build a stronger nation.<span className="story-quote story-quote-close">”</span></blockquote>
+            <div className="about-flourish" aria-hidden="true"><span /><Sprout /><span /></div>
+            <p>At Tuni Breads, we are proud to contribute to a healthier,<br />stronger and happier tomorrow.</p>
+          </div>
+          <div className="brand-story-image"><img src={storyImage} alt="Natural wheat grains in a wooden bowl" /><span>Food for<br />a Brighter<br />Tomorrow</span></div>
+        </section>
       </div>
     </section>
   );
