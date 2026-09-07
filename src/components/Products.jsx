@@ -56,7 +56,7 @@ function ProductCard({ item, index, onAddToCart, onSelect, busyProductId, regist
         {productName.trim().toLowerCase() === "white bread" && (
           <p className="product-card__description">
             Soft and fluffy white bread made with{" "}
-            <strong>refined wheat flour, milk, butter, sugar, and yeast</strong>, offering a
+            <strong>refined wheat flour, coconut milk, butter, sugar, and yeast</strong>, offering a
             light texture and classic everyday taste.
           </p>
         )}

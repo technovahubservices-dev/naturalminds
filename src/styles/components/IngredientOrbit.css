@@ -1,0 +1,65 @@
+/* Scoped to the existing homepage Ingredients section. */
+.ingredient-showcase.ingredient-story-v2{display:block;min-height:0;padding:0!important;background:#f5f2e6;overflow:hidden}
+.ingredient-showcase .ingredient-composition{position:relative;display:grid;grid-template-columns:29% 42% 29%;height:640px;isolation:isolate;background:radial-gradient(ellipse at 50% 43%,rgba(255,253,246,.95) 0%,rgba(255,253,246,.6) 30%,transparent 66%),radial-gradient(ellipse at 12% 4%,rgba(173,192,143,.5),transparent 47%),radial-gradient(ellipse at 91% 16%,rgba(166,188,134,.42),transparent 48%),radial-gradient(ellipse at 52% 100%,rgba(218,226,198,.55),transparent 57%),#f5f2e6}
+.ingredient-showcase .ingredient-scene{position:relative;inset:auto;width:100%;height:100%;object-fit:cover;opacity:1;clip-path:none;margin:0;z-index:0}
+.ingredient-showcase .ingredient-scene--left{grid-column:1;grid-row:1;object-position:left center;mask-image:linear-gradient(to right,#000 45%,rgba(0,0,0,.85) 65%,transparent)}
+.ingredient-showcase .ingredient-scene--right{grid-column:3;grid-row:1;object-position:right center;mask-image:linear-gradient(to left,#000 45%,rgba(0,0,0,.85) 65%,transparent)}
+.ingredient-showcase .ingredient-orbit{--orbit-diameter:390px;grid-column:2;grid-row:1;align-self:center;justify-self:center;width:100%;height:620px;margin:0;order:0;transform:none}
+.ingredient-showcase .ingredient-orbit__center{box-sizing:border-box;width:180px;height:180px;background:radial-gradient(circle at 40% 30%,#fffdf8,#f5f0e2);color:#173f32;border:1px solid rgba(201,147,58,.22);box-shadow:0 0 0 12px rgba(236,229,207,.42),0 4px 18px rgba(40,30,15,.04);gap:8px}
+.ingredient-showcase .ingredient-orbit__center h2{margin:0;color:#173f32;font-family:'Cormorant Garamond',Georgia,serif;font-size:2.4rem;line-height:.9;letter-spacing:-.035em}
+.ingredient-showcase .ingredient-orbit__center small{font-size:8px;line-height:1.6;letter-spacing:2px;color:#996622}
+.ingredient-showcase .ingredient-orbit__position{width:144px}
+.ingredient-showcase .ingredient-orbit__item{padding:0;gap:0;color:#173f32}
+.ingredient-showcase .ingredient-orbit__photo{display:block;width:112px;height:112px;border-radius:50%;overflow:hidden;background:rgba(255,253,248,.92);border:1px solid rgba(201,147,58,.18);box-shadow:0 8px 30px rgba(40,30,15,.08)}
+.ingredient-showcase .ingredient-orbit__photo img{display:block;width:100%;height:100%;object-fit:cover}
+.ingredient-showcase .ingredient-orbit__label{position:relative;display:grid;gap:3px;min-width:124px;margin-top:-5px;padding:7px 9px;border-radius:28px;background:rgba(255,253,248,.96)}
+.ingredient-showcase .ingredient-orbit__label strong{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;font-weight:700;color:#173f32}
+.ingredient-showcase .ingredient-orbit__label small{font-size:.7rem;color:#68706a}
+.ingredient-showcase .ingredient-orbit__item:hover,.ingredient-showcase .ingredient-orbit__item:focus-visible{transform:scale(1.05);background:transparent;box-shadow:0 4px 24px rgba(201,147,58,.12)}
+.ingredient-showcase .ingredient-orbit__item:hover .ingredient-orbit__label,.ingredient-showcase .ingredient-orbit__item:focus-visible .ingredient-orbit__label{background:#fbf1dc}
+.ingredient-showcase .ingredient-orbit__rotor,.ingredient-showcase .ingredient-orbit__upright{will-change:transform}
+.ingredient-showcase .ingredient-benefit-bar{position:relative;inset:auto;width:100%;box-sizing:border-box;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0;padding:18px 3%;min-height:98px;border-radius:0;background:#f3f7ee;box-shadow:none;order:0}
+.ingredient-showcase .ingredient-benefit-bar>div{padding:0 20px;min-height:54px;border:0;border-right:1px solid #cddac7;color:#173f32}
+.ingredient-showcase .ingredient-benefit-bar>div:last-child{border:0}
+.ingredient-showcase .ingredient-benefit-bar strong{font-size:.8rem}
+.ingredient-showcase .ingredient-benefit-bar small{font-size:.7rem}
+@media(min-width:761px) and (max-width:1100px){
+  .ingredient-showcase .ingredient-composition{grid-template-columns:24% 52% 24%;height:580px}
+  .ingredient-showcase .ingredient-orbit{--orbit-diameter:310px;height:550px}
+  .ingredient-showcase .ingredient-orbit__center{width:150px;height:150px}
+  .ingredient-showcase .ingredient-orbit__center h2{font-size:2rem}
+  .ingredient-showcase .ingredient-orbit__photo{width:88px;height:88px}
+  .ingredient-showcase .ingredient-orbit__position{width:126px}
+  .ingredient-showcase .ingredient-benefit-bar>div{padding:0 10px;gap:8px}
+}
+@media(max-width:760px){
+  .ingredient-showcase .ingredient-composition{grid-template-columns:1fr 1fr;height:auto}
+  .ingredient-showcase .ingredient-orbit{--orbit-diameter:330px;grid-column:1 / -1;grid-row:1;height:550px;width:100%}
+  .ingredient-showcase .ingredient-orbit__center{width:150px;height:150px}
+  .ingredient-showcase .ingredient-orbit__center h2{font-size:2rem}
+  .ingredient-showcase .ingredient-orbit__photo{width:92px;height:92px}
+  .ingredient-showcase .ingredient-scene{display:block;grid-row:2;height:180px;mask-image:linear-gradient(to bottom,transparent,#000 35%);object-position:center}
+  .ingredient-showcase .ingredient-scene--left{grid-column:1}
+  .ingredient-showcase .ingredient-scene--right{grid-column:2}
+  .ingredient-showcase .ingredient-benefit-bar{grid-template-columns:repeat(2,minmax(0,1fr));padding:10px 12px}
+  .ingredient-showcase .ingredient-benefit-bar>div{padding:14px 8px;gap:8px;border:0;border-bottom:1px solid #cddac7}
+  .ingredient-showcase .ingredient-benefit-bar>div:nth-child(odd){border-right:1px solid #cddac7}
+  .ingredient-showcase .ingredient-benefit-bar>div:nth-child(n+3){border-bottom:0}
+  .ingredient-showcase .ingredient-benefit-bar>div>span{width:34px;height:34px;flex-basis:34px}
+}
+@media(max-width:480px){
+  .ingredient-showcase .ingredient-orbit{--orbit-diameter:210px;height:380px}
+  .ingredient-showcase .ingredient-orbit__center{width:94px;height:94px;gap:4px;box-shadow:0 0 0 6px rgba(236,229,207,.42)}
+  .ingredient-showcase .ingredient-orbit__center h2{font-size:1.4rem}
+  .ingredient-showcase .ingredient-orbit__center svg{width:22px;height:22px}
+  .ingredient-showcase .ingredient-orbit__center small{font-size:5px;letter-spacing:.9px}
+  .ingredient-showcase .ingredient-orbit__position{width:94px}
+  .ingredient-showcase .ingredient-orbit__photo{width:62px;height:62px}
+  .ingredient-showcase .ingredient-orbit__label{min-width:0;width:94px;box-sizing:border-box;padding:5px 2px}
+  .ingredient-showcase .ingredient-orbit__label strong{font-size:.85rem}
+  .ingredient-showcase .ingredient-orbit__label small{font-size:.58rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .ingredient-showcase .ingredient-orbit__rotor,.ingredient-showcase .ingredient-orbit__upright{animation:none;will-change:auto}
+  .ingredient-showcase .ingredient-orbit__item:hover,.ingredient-showcase .ingredient-orbit__item:focus-visible{transform:none}
+}

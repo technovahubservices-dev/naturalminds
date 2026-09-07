@@ -15,7 +15,7 @@ export default function Footer({ onNavigate }) {
         <div className="footer-column"><h3>Our Breads</h3><button onClick={()=>onNavigate("products")}>Tuni Wheat Bread</button><button onClick={()=>onNavigate("products")}>Tuni White Bread</button></div>
         <div className="footer-column"><h3>Contact Us</h3><a href="https://www.mahimyfoods.in" target="_blank" rel="noreferrer">www.mahimyfoods.in</a><a href="tel:+919443311007">9443311007</a><div className="footer-social"><a href="https://www.instagram.com/mahimy_foods" aria-label="Instagram"><FaInstagram/></a><a href="https://www.facebook.com" aria-label="Facebook"><FaFacebookF/></a><a href="https://wa.me/919443311007" aria-label="WhatsApp"><FaWhatsapp/></a><a href="https://www.youtube.com" aria-label="YouTube"><FaYoutube/></a></div></div>
       </div>
-      <div className="footer-bottom"><span>Copyright © Mahimy Foods</span><span>Crafted with Passion by Mahimy Foods.</span></div>
+      <div className="footer-bottom"><span>Copyright © Mahimy Foods</span><span>Powered by <a href="https://technovahub.in/" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textUnderlineOffset: "3px" }}>Technovahub</a></span></div>
     </footer>
   );
 }

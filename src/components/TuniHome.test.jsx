@@ -1,13 +1,37 @@
-import { act, fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import TuniHome from "./TuniHome";
+import { apiRequest } from "../lib/api";
+
+jest.mock("../lib/api", () => ({ ...jest.requireActual("../lib/api"), apiRequest: jest.fn() }));
 
 let motionChange;
 beforeEach(() => {
+  jest.clearAllMocks();
   window.matchMedia = jest.fn(() => ({
     matches: false,
     addEventListener: jest.fn((event, callback) => { motionChange = callback; }),
     removeEventListener: jest.fn(),
   }));
+});
+
+test.each(["wheat", "white"])("adds the correct %s bread using the existing cart action", async (type) => {
+  const products = [{ _id: "w", productName: "Tuni Wheat Bread", price: 60 }, { _id: "b", productName: "Tuni White Bread", price: 50 }];
+  apiRequest.mockResolvedValue({ products });
+  const onAddToCart = jest.fn().mockResolvedValue(undefined);
+  render(<TuniHome register={() => {}} onNavigate={jest.fn()} onAddToCart={onAddToCart} />);
+  fireEvent.click(screen.getByRole("button", { name: `Add Tuni ${type} bread to cart` }));
+  await waitFor(() => expect(onAddToCart).toHaveBeenCalledWith(products[type === "wheat" ? 0 : 1]));
+  await waitFor(() => expect(screen.getByRole("status")).toHaveTextContent("added to cart."));
+});
+
+test("failed cart requests show an error and allow retry", async () => {
+  apiRequest.mockResolvedValue([{ _id: "w", name: "Wheat Bread" }]);
+  const onAddToCart = jest.fn().mockRejectedValue(new Error("Cart unavailable"));
+  render(<TuniHome register={() => {}} onNavigate={jest.fn()} onAddToCart={onAddToCart} />);
+  const button = screen.getByRole("button", { name: "Add Tuni wheat bread to cart" });
+  fireEvent.click(button);
+  await waitFor(() => expect(screen.getByRole("status")).toHaveTextContent("Cart unavailable"));
+  expect(button).toBeEnabled();
 });
 
 const renderHome = () => {

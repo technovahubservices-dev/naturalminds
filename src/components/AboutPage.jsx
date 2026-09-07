@@ -35,7 +35,7 @@ export default function AboutPage({ register }) {
       </div>
 
       <div className="about-lower">
-        <section className="strength-section reveal" ref={register}>
+        <section className="strength-section reveal" id="about-story" tabIndex={-1} ref={register}>
           <div className="strength-copy">
             <SectionLabel>How It Started</SectionLabel>
             <h2>Rooted in a Simple Idea.</h2>
@@ -47,13 +47,13 @@ export default function AboutPage({ register }) {
           <div className="strength-image"><img src={strengthImage} alt="Fresh sliced Tuni bread with wheat" /><span>Goodness<br />in Every Slice</span></div>
         </section>
 
-        <section className="about-journey reveal" ref={register} aria-labelledby="about-journey-title">
+        <section className="about-journey reveal" id="about-journey" tabIndex={-1} ref={register} aria-labelledby="about-journey-title">
           <SectionLabel>Our Journey</SectionLabel>
           <h2 id="about-journey-title">From an Idea to Tuni Breads.</h2>
           <p className="about-journey__intro">A journey of learning, improving and growing — with your trust.</p>
           <ol className="about-journey__steps">
             {journey.map(({ icon: Icon, title, description }, index) => (
-              <li className="about-journey__step" key={title}>
+              <li className="about-journey__step" key={title} id={index === 2 ? "about-values" : undefined} tabIndex={index === 2 ? -1 : undefined}>
                 <span className="about-journey__icon" aria-hidden="true"><Icon /></span>
                 <span className="about-journey__number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
                 <h3>{title}</h3>
@@ -63,7 +63,7 @@ export default function AboutPage({ register }) {
           </ol>
         </section>
 
-        <section className="brand-story reveal" ref={register}>
+        <section className="brand-story reveal" id="about-mission" tabIndex={-1} ref={register}>
           <div className="brand-story-copy">
             <blockquote><span className="story-quote story-quote-open">“</span>Quality food builds<br />healthy people, and healthy people<br />build a stronger nation.<span className="story-quote story-quote-close">”</span></blockquote>
             <div className="about-flourish" aria-hidden="true"><span /><Sprout /><span /></div>

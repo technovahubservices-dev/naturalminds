@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Products from "./components/Products";
 import Footer from "./components/Footer";
 import AboutPage from "./components/AboutPage";
+import Contact from "./components/Contact";
 import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
 import TermsConditionsPage from "./components/TermsConditionsPage";
 import CartPage from "./components/CartPage";
@@ -102,7 +103,27 @@ function App() {
     }
   }, [page]);
 
-  const navigate = (nextPage) => {
+  const [aboutSection, setAboutSection] = useState(null);
+  useEffect(() => {
+    if (page !== ABOUT_PAGE || !aboutSection) return;
+    const frame = window.requestAnimationFrame(() => {
+      const target = document.getElementById(aboutSection.id);
+      if (target) {
+        target.style.scrollMarginTop = `${(document.querySelector(".site-header")?.getBoundingClientRect().height || 125) + 20}px`;
+        target.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+        target.focus({ preventScroll: true });
+      }
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [page, aboutSection]);
+
+  const navigate = (nextPage, sectionId) => {
+    setAboutSection(nextPage === ABOUT_PAGE && sectionId ? { id: sectionId } : null);
+    if (nextPage === ABOUT_PAGE && sectionId) {
+      setPage(ABOUT_PAGE);
+      setActiveNav(ABOUT_PAGE);
+      return;
+    }
     if (nextPage === PRODUCT_DETAIL_PAGE) {
       setPage(nextPage);
       setActiveNav(PRODUCTS_PAGE);
@@ -110,7 +131,7 @@ function App() {
       return;
     }
 
-    if (["story", "ingredients", "quality", "stores", "contact"].includes(nextPage)) {
+    if (["story", "ingredients", "quality", "stores"].includes(nextPage)) {
       setActiveNav(nextPage);
       setPage(HOME_PAGE);
 
@@ -274,10 +295,11 @@ function App() {
       />
       <main>
         {page === HOME_PAGE && (
-          <TuniHome register={register} onNavigate={navigate} whatsappNumber={whatsappNumber} />
+          <TuniHome register={register} onNavigate={navigate} whatsappNumber={whatsappNumber} onAddToCart={addProductToCart} />
         )}
 
         {page === ABOUT_PAGE && <AboutPage onNavigate={navigate} register={register} />}
+        {page === "contact" && <Contact register={register} />}
 
         {page === PRIVACY_POLICY_PAGE && <PrivacyPolicyPage onNavigate={navigate} register={register} />}
 
