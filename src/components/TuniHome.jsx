@@ -82,7 +82,7 @@ export default function TuniHome({ register, onNavigate, whatsappNumber, onAddTo
         <span className="tuni-film__label">TUNI BREADS</span>
         <h1 id="tuni-film-heading"><span>Traditional Goodness.</span><span>Modern Nutrition.</span></h1>
         <p>Thoughtfully made with familiar ingredients for everyday family moments.</p>
-        <div className="tuni-film__actions"><Button onClick={() => go("products")}>ORDER NOW</Button><Button outline onClick={() => go("stores")}>FIND A STORE</Button></div>
+        <div className="tuni-film__actions"><Button onClick={() => go("products")}>ORDER NOW</Button></div>
       </div>
     </section>
 

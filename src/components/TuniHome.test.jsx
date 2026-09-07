@@ -52,8 +52,6 @@ test("hero uses the local muted background video and existing navigation actions
   expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Traditional Goodness.Modern Nutrition.");
   fireEvent.click(screen.getByRole("button", { name: "ORDER NOW" }));
   expect(onNavigate).toHaveBeenLastCalledWith("products");
-  fireEvent.click(screen.getByRole("button", { name: "FIND A STORE" }));
-  expect(onNavigate).toHaveBeenLastCalledWith("stores");
   fireEvent.click(screen.getByRole("button", { name: "DISCOVER OUR STORY" }));
   expect(onNavigate).toHaveBeenLastCalledWith("about");
   expect(container.querySelector(".tuni-film").nextElementSibling).toHaveClass("tuni-philosophy");
