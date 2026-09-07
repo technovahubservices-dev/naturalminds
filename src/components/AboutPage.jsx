@@ -1,15 +1,21 @@
-import { Heart, Leaf, Sandwich, ShieldCheck, Sparkles, Sprout } from "lucide-react";
+import { ChartNoAxesColumnIncreasing, Lightbulb, Sprout, Wheat } from "lucide-react";
 import strengthImage from "../asset/01_bread_loaf_slices.png";
 import storyImage from "../asset/02_wheat_bowl_stalks.png";
 import "../styles/components/AboutPage.css";
 
-const values = [
-  { icon: Sprout, label: <>Health-Focused<br />Ingredients</> },
-  { icon: Sandwich, label: <>Rich &amp; Delicious<br />Taste</> },
-  { icon: Sparkles, label: <>Premium<br />Quality</> },
-  { icon: ShieldCheck, label: <>Hygienic<br />Production</> },
-  { icon: Heart, label: <>Customer<br />Trust</> },
-  { icon: Leaf, label: <>Consistent<br />Freshness</> },
+const BreadIcon = () => (
+  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M12 31C3 29 4 19 11 15C21 8 43 8 53 15C60 19 61 29 52 31V52H12Z" />
+    <path d="m20 16 6 6m16-7-6 7m11 7-3 4" />
+  </svg>
+);
+
+const journey = [
+  { icon: Lightbulb, title: "The Inspiration", description: "Inspired by traditional food wisdom and simple ingredients." },
+  { icon: Sprout, title: "The Beginning", description: "Mahimy Foods began exploring how traditional inspiration could meet modern everyday food." },
+  { icon: Wheat, title: "Thoughtful Ingredients", description: "Coconut milk, dates, honey and butter became part of the Tuni Breads approach." },
+  { icon: BreadIcon, title: "Tuni Breads", description: "Tuni Wheat Bread and Tuni White Bread were created for everyday family meals." },
+  { icon: ChartNoAxesColumnIncreasing, title: "Growing Together", description: "Today, Mahimy Foods continues to grow with the trust of its customers and a commitment to better everyday food." },
 ];
 
 const SectionLabel = ({ children }) => <div className="about-section-label"><span />{children}<span /></div>;
@@ -41,12 +47,20 @@ export default function AboutPage({ register }) {
           <div className="strength-image"><img src={strengthImage} alt="Fresh sliced Tuni bread with wheat" /><span>Goodness<br />in Every Slice</span></div>
         </section>
 
-        <section className="values-section reveal" ref={register}>
-          <SectionLabel>Core Values</SectionLabel>
-          <h2>What We Stand For</h2>
-          <div className="values-grid">
-            {values.map(({ icon: Icon, label }, index) => <div className="value-item" key={index}><span className="about-round-icon"><Icon /></span><p>{label}</p></div>)}
-          </div>
+        <section className="about-journey reveal" ref={register} aria-labelledby="about-journey-title">
+          <SectionLabel>Our Journey</SectionLabel>
+          <h2 id="about-journey-title">From an Idea to Tuni Breads.</h2>
+          <p className="about-journey__intro">A journey of learning, improving and growing — with your trust.</p>
+          <ol className="about-journey__steps">
+            {journey.map(({ icon: Icon, title, description }, index) => (
+              <li className="about-journey__step" key={title}>
+                <span className="about-journey__icon" aria-hidden="true"><Icon /></span>
+                <span className="about-journey__number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </li>
+            ))}
+          </ol>
         </section>
 
         <section className="brand-story reveal" ref={register}>

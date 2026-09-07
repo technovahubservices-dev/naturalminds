@@ -5,7 +5,7 @@ import "../styles/components/Navbar.css";
 
 export default function Navbar({ onNavigate, cartCount = 0, activePage = "home", theme = "light", onToggleTheme }) {
   const [open, setOpen] = useState(false);
-  const links = [["home","Home"],["about","About Us"],["products","Our Breads"],["ingredients","Ingredients"],["quality","Our Promise"],["stores","Find a Store"],["contact","Contact"]];
+  const links = [["home","Home"],["about","About Us"],["products","Our Breads"],["ingredients","Ingredients"],["quality","Our Promise"],["contact","Contact"]];
   const navigate = (page) => { onNavigate(page); setOpen(false); };
   const handle = (page) => {
     navigate(page);
@@ -15,7 +15,6 @@ export default function Navbar({ onNavigate, cartCount = 0, activePage = "home",
       <div className="announcement">
         <span>Inspired by Traditional Nutrition. Crafted for Modern Living.</span>
         <div className="announcement__right">
-          <a href="#stores" onClick={(event) => { event.preventDefault(); handle("stores"); }}>Find a Store</a>
           <a href="https://www.instagram.com/mahimy_foods" aria-label="Instagram"><FaInstagram/></a>
           <a href="https://www.facebook.com" aria-label="Facebook"><FaFacebookF/></a>
           <a href="https://www.youtube.com" aria-label="YouTube"><FaYoutube/></a>

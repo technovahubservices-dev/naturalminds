@@ -20,3 +20,34 @@
 @media(max-width:950px){.about-page .strength-section{gap:28px;padding:40px 30px}.about-page .strength-image{height:300px}}
 @media(max-width:700px){.about-page .strength-section{grid-template-columns:1fr;padding:32px 24px}.about-page .strength-image{height:280px}}
 .app-shell[data-theme="dark"] .about-origin-text p{color:#f7ead8}
+
+.about-page .brand-story{grid-template-columns:1.2fr 1fr;align-items:center;gap:40px;min-height:0;padding:40px clamp(24px,5vw,80px)}
+.about-page .brand-story-copy{padding:32px 28px}
+.about-page .brand-story-image{width:100%;max-width:500px;height:340px;justify-self:center;border-radius:18px}
+.about-page .brand-story-image>span{font-size:1.8rem}
+@media(max-width:950px){.about-page .brand-story{gap:24px;padding:32px 24px}.about-page .brand-story-image{height:300px}}
+@media(max-width:700px){.about-page .brand-story{grid-template-columns:1fr;gap:16px;padding:24px}.about-page .brand-story-copy{padding:36px 0}.about-page .brand-story-image{height:260px}}
+
+/* Five milestones, matching the supplied Our Journey reference. */
+.about-journey{padding:48px max(28px,calc((100vw - 1320px)/2)) 52px;background:radial-gradient(ellipse at center,#fffdf7 0%,#fbf5e9 100%);text-align:center}
+.about-journey .about-section-label{margin:0 auto 18px;color:#b77b22;letter-spacing:.2em;font-size:.9rem}
+.about-journey .about-section-label span{width:60px;background:#c38d39}
+.about-lower .about-journey h2{color:#123f34;font-size:clamp(2.5rem,4.1vw,3.8rem);font-weight:700;line-height:1.08;letter-spacing:-.025em}
+.about-journey__intro{margin:12px auto 38px;color:#303c3c;font-size:1.12rem;line-height:1.5}
+.about-journey__steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:26px;list-style:none;margin:0;padding:0}
+.about-journey__step{position:relative;min-width:0}
+.about-journey__step:not(:last-child)::after{content:'';position:absolute;top:52px;left:calc(50% + 64px);width:calc(100% - 102px);border-top:2px dashed #c38d39}
+.about-journey__icon{display:grid;place-items:center;width:104px;height:104px;margin:0 auto 17px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#faecd2,#f5e2c2);color:#99651f}
+.about-journey__icon svg{width:55px;height:55px;stroke-width:1.6;filter:drop-shadow(0 2px 0 rgba(255,255,255,.6))}
+.about-journey__step:nth-child(2) svg{fill:#bc8b43;stroke:#99651f}
+.about-journey__step:nth-child(5) svg{stroke-width:5}
+.about-journey__number{display:block;margin-bottom:6px;color:#123f34;font-size:1.05rem;font-weight:600}
+.about-journey__step h3{max-width:220px;margin:0 auto 12px;color:#123f34;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.65rem;line-height:1.02;font-weight:700}
+.about-journey__step p{max-width:220px;margin:0 auto;color:#303c3c;font-size:1rem;line-height:1.35}
+@media(min-width:951px){.about-journey__step:nth-child(3) h3{max-width:160px}}
+@media(max-width:950px){.about-journey{padding:42px 28px}.about-journey__steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 24px}.about-journey__step:nth-child(3)::after{display:none}.about-journey__intro{font-size:1rem}.about-journey__step h3{font-size:1.5rem}}
+@media(max-width:600px){.about-journey{padding:40px 24px}.about-journey .about-section-label{font-size:.75rem;gap:12px}.about-journey .about-section-label span{width:30px}.about-journey__steps{grid-template-columns:1fr;gap:28px;text-align:left;max-width:400px;margin:auto}.about-journey__step{display:grid;grid-template-columns:76px 1fr;column-gap:20px;align-content:start}.about-journey__icon{grid-column:1;grid-row:1/4;width:76px;height:76px;margin:0}.about-journey__icon svg{width:42px;height:42px}.about-journey__number,.about-journey__step h3,.about-journey__step p{grid-column:2;max-width:none;margin-left:0;margin-right:0}.about-journey__step:not(:last-child)::after{display:block;top:88px;bottom:-16px;left:37px;width:0;border-top:0;border-left:1px dashed #c38d39}.about-journey__step p{font-size:.95rem}.about-journey__intro{margin-bottom:30px}}
+.app-shell[data-theme="dark"] .about-journey{background:#192a23}
+.app-shell[data-theme="dark"] .about-journey h2,.app-shell[data-theme="dark"] .about-journey__step h3,.app-shell[data-theme="dark"] .about-journey__number{color:#f7ead8}
+.app-shell[data-theme="dark"] .about-journey__intro,.app-shell[data-theme="dark"] .about-journey__step p{color:#d8ded7}
+.app-shell[data-theme="dark"] .about-journey .about-section-label{color:#d7b36a}

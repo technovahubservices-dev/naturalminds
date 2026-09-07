@@ -138,7 +138,39 @@
 .app-shell[data-theme="dark"] .quality-list>div,.app-shell[data-theme="dark"] .nutrition-grid,.app-shell[data-theme="dark"] .nutrition-grid>div{border-color:#40544b}.app-shell[data-theme="dark"] .quality-caption strong{color:#edf5f0}
 .app-shell[data-theme="dark"] .lifestyle-section{background:#1a2b24}.app-shell[data-theme="dark"] .lifestyle-grid small{color:#b7c7c0}.app-shell[data-theme="dark"] .lifestyle-grid>div>span{background:#4a4226}.app-shell[data-theme="dark"] .final-cta{background:#071a14}
 
-/* Full-width photographic hero with centered, readable content. */
+/* Cinematic homepage hero and editorial introduction. */
+.tuni-film{position:relative;isolation:isolate;overflow:hidden;box-sizing:border-box;min-height:680px;height:calc(100svh - 98px);max-height:900px;display:flex;align-items:center;padding:110px max(6vw,70px) 50px;background:#241e15;color:#fffdf8}
+.tuni-film__media,.tuni-film__overlay{position:absolute;inset:0;pointer-events:none}
+.tuni-film__media{z-index:-2}
+.tuni-film__media video,.tuni-film__media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.tuni-film__overlay{z-index:-1;background:linear-gradient(90deg,rgba(20,16,10,.70) 0%,rgba(20,16,10,.48) 42%,rgba(20,16,10,.18) 72%,rgba(20,16,10,.10) 100%),linear-gradient(rgba(20,16,10,.08),rgba(20,16,10,.08))}
+.tuni-film__copy{width:min(650px,50vw);min-width:0;text-align:left}
+.tuni-film__label{display:block;margin-bottom:24px;font-size:14px;font-weight:600;letter-spacing:4px;color:#d7b36a}
+.tuni-home .tuni-film h1{font-size:clamp(56px,5.5vw,88px);font-weight:600;line-height:1.02;letter-spacing:-.045em;color:#fffdf8;text-shadow:0 2px 20px rgba(0,0,0,.18)}
+.tuni-film h1 span{display:block;white-space:nowrap}
+.tuni-film__copy>p{max-width:520px;margin:26px 0 30px;font-size:18px;line-height:1.6;color:rgba(255,255,255,.88)}
+.tuni-film__actions{display:flex;flex-wrap:wrap;gap:14px}
+.tuni-film__actions .tuni-btn{min-height:50px;padding:15px 22px;background:#fffdf8;border:1px solid #fffdf8;color:#173f32;gap:24px;font-size:14px;transition:transform .2s,background .2s}
+.tuni-film__actions .tuni-btn--outline{background:transparent;color:#fffdf8}
+.tuni-film__actions .tuni-btn:hover{transform:translateY(-2px);background:#efe6d5}
+.tuni-film__actions .tuni-btn--outline:hover{background:rgba(255,253,248,.12)}
+.tuni-film__actions .tuni-btn:focus-visible{outline:2px solid #d7b36a;outline-offset:5px}
+.tuni-philosophy{box-sizing:border-box;min-height:400px;padding:55px 24px;background:#f7f1e7;text-align:center}
+.tuni-philosophy__inner{max-width:900px;margin:auto}
+.tuni-philosophy__label{display:block;margin-bottom:16px;color:#c9933a;font-size:12px;font-weight:600;letter-spacing:3px}
+.tuni-home .tuni-philosophy h2{font-size:clamp(38px,3.5vw,52px);font-weight:600;line-height:1.02;letter-spacing:-.025em;color:#173f32}
+.tuni-philosophy p{max-width:720px;margin:20px auto;color:#55534e;font-size:16px;line-height:1.7}
+.tuni-philosophy__ingredients{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 0;list-style:none;padding:0;margin:24px 0;color:#173f32;font-size:11px;font-weight:500;letter-spacing:2px}
+.tuni-philosophy__ingredients li+li::before{content:'•';display:inline-block;padding:0 18px;color:#c9933a}
+.tuni-philosophy__link{display:inline-flex;align-items:center;gap:14px;padding:8px 0;border:0;border-bottom:1px solid #c9933a;background:transparent;color:#173f32;font:inherit;font-size:12px;font-weight:600;letter-spacing:1.5px;cursor:pointer;transition:color .2s}
+.tuni-philosophy__link:hover{color:#936821}
+.tuni-philosophy__link:focus-visible{outline:2px solid #173f32;outline-offset:5px}
+@media(min-width:901px) and (max-width:1200px){.tuni-home .tuni-film h1{font-size:clamp(56px,5.3vw,64px)}.tuni-film__copy{width:560px}}
+@media(max-width:900px){.tuni-film{height:600px;min-height:600px;padding:100px 6vw 50px}.tuni-film__copy{width:min(600px,100%)}.tuni-home .tuni-film h1{font-size:clamp(48px,7.3vw,66px)}}
+@media(max-width:640px){.tuni-film{height:640px;min-height:620px;max-height:none;align-items:flex-end;padding:70px 24px 48px}.tuni-film__media video,.tuni-film__media img{object-position:60% center}.tuni-film__overlay{background:linear-gradient(0deg,rgba(20,16,10,.82),rgba(20,16,10,.52) 55%,rgba(20,16,10,.12)),linear-gradient(90deg,rgba(20,16,10,.20),transparent)}.tuni-film__copy{width:100%}.tuni-film__label{margin-bottom:20px;font-size:13px}.tuni-home .tuni-film h1{font-size:clamp(36px,9.8vw,54px);letter-spacing:-.05em}.tuni-film__copy>p{font-size:17px;margin:22px 0 26px;max-width:440px}.tuni-film__actions{flex-direction:column;max-width:360px;gap:12px}.tuni-film__actions .tuni-btn{justify-content:space-between;width:100%}.tuni-philosophy{padding:52px 24px}.tuni-philosophy p{font-size:15px}.tuni-philosophy__ingredients{font-size:10px;letter-spacing:1px}.tuni-philosophy__ingredients li+li::before{padding:0 8px}}
+@media(prefers-reduced-motion:reduce){.tuni-film__actions .tuni-btn,.tuni-philosophy__link{transition:none}.tuni-film__actions .tuni-btn:hover{transform:none}}
+
+/* Legacy photographic hero styles. */
 .tuni-hero.tuni-hero--full{min-height:600px;isolation:isolate;background:#17251d;color:#fffdf3}
 .tuni-hero--full .tuni-hero__grain{display:none}
 .tuni-hero--full .tuni-hero__grid{position:static;display:grid;grid-template-columns:1fr;place-items:center;width:100%;max-width:none;min-height:600px;padding:70px 24px;margin:0}

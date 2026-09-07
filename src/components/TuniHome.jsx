@@ -1,12 +1,12 @@
+import { useEffect, useState } from "react";
 import {
-  ArrowRight, Ban, Droplets, Feather, Heart, Leaf,
+  ArrowRight, Ban, Droplets, Heart, Leaf,
   ShieldCheck, Sparkles, Sprout, Sun, Wheat as WheatIcon,
 } from "lucide-react";
 import heroVisual from "../asset/01_hero_product_bread.png";
 import whiteBreadImage from "../asset/03_white_bread.png";
 import wheatBreadImage from "../asset/04_wheat_bread.png";
 import qualityImage from "../asset/06_bread_quality_photo.png";
-import lifestyleImage from "../asset/07_sandwich_lifestyle.png";
 import ingredientLeftVisual from "../asset/07_left_wheat_composition.png";
 import ingredientRightVisual from "../asset/06_right_ingredient_composition.png";
 import "../styles/components/TuniHome.css";
@@ -21,26 +21,47 @@ const Button = ({ children, outline = false, onClick }) => (
 );
 
 export default function TuniHome({ register, onNavigate, whatsappNumber }) {
+  const [reduceMotion, setReduceMotion] = useState(() => window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  const [videoFailed, setVideoFailed] = useState(false);
+  useEffect(() => {
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduceMotion(preference.matches);
+    preference.addEventListener("change", update);
+    return () => preference.removeEventListener("change", update);
+  }, []);
   const go = (page) => onNavigate(page);
   const radialIngredients = [[Droplets, "Coconut Milk", "Creamy richness"], [Sparkles, "Dates", "Natural energy"], [Heart, "Honey", "Golden sweetness"], [WheatIcon, "Wheat", "Fiber-rich nutrition"], [Leaf, "Butter", "Smooth texture"]];
   const ingredientBenefits = [[Leaf,"Wholesome Ingredients","Pure & Natural"],[Heart,"Better Nutrition","For a Healthier You"],[Sprout,"Tradition Meets Modern Living","A Perfect Balance"],[Sun,"Goodness in Every Slice","Everyday, Naturally"]];
   const nutrition = [["Energy", "277 kcal / 100g"], ["Carbohydrate", "58.7g"], ["Protein", "6.8g"], ["Dietary Fiber", "4g"], ["Total Sugar", "10g"], ["Fat", "2g"], ["Sodium", "0.3g"], ["Cholesterol", "0.00g"]];
   const qualities = ["No Vanaspati", "No Artificial Compromise", "No Class 2 & 3 Preservatives", "Carefully Selected Ingredients"];
-  const lifestyles = [[Sun, "Morning Energy", "Start your day nourished."], [Sparkles, "Healthy Snacking", "A wholesome anytime bite."], [Leaf, "Balanced Nutrition", "Purposeful everyday goodness."], [Heart, "Premium Taste", "Rich, memorable flavour."], [Feather, "Soft Texture", "Unmatched softness in every slice."], [Sprout, "Daily Wellness", "A better daily choice."]];
 
   return <div className="tuni-home">
-    <section className="tuni-hero tuni-hero--full" ref={register}>
-      <div className="tuni-hero__grain" aria-hidden="true" />
-      <div className="tuni-wrap tuni-hero__grid">
-        <div className="tuni-hero__copy">
-          <span className="eyebrow">Tuni Breads</span>
-          <h1>Traditional Goodness.<br />Modern Nutrient.</h1>
-          <p>Tuni Breads by Mahimy Foods brings thoughtfully chosen ingredients and everyday goodness together in every loaf.</p>
-          <div className="hero-actions"><Button onClick={() => go("products")}>ORDER NOW</Button><Button outline onClick={() => go("stores")}>FIND A STORE</Button></div>
-        </div>
-        <div className="tuni-hero__visual">
-          <img className="hero-composite" src={heroVisual} alt="Tuni Breads pack with sliced wheat bread, dates and coconut" />
-        </div>
+    <section className="tuni-film" aria-labelledby="tuni-film-heading">
+      <div className="tuni-film__media" aria-hidden="true">
+        {reduceMotion || videoFailed ? (
+          <img src={heroVisual} alt="" />
+        ) : (
+          <video autoPlay muted loop playsInline preload="metadata" poster={heroVisual} onError={() => setVideoFailed(true)} tabIndex={-1}>
+            <source src="/videos/tuni-breads-hero.mp4" type="video/mp4" onError={() => setVideoFailed(true)} />
+          </video>
+        )}
+      </div>
+      <div className="tuni-film__overlay" aria-hidden="true" />
+      <div className="tuni-film__copy">
+        <span className="tuni-film__label">TUNI BREADS</span>
+        <h1 id="tuni-film-heading"><span>Traditional Goodness.</span><span>Modern Nutrition.</span></h1>
+        <p>Thoughtfully made with familiar ingredients for everyday family moments.</p>
+        <div className="tuni-film__actions"><Button onClick={() => go("products")}>ORDER NOW</Button><Button outline onClick={() => go("stores")}>FIND A STORE</Button></div>
+      </div>
+    </section>
+
+    <section className="tuni-philosophy" aria-labelledby="tuni-philosophy-heading">
+      <div className="tuni-philosophy__inner">
+        <span className="tuni-philosophy__label">OUR PHILOSOPHY</span>
+        <h2 id="tuni-philosophy-heading">Traditional Goodness.<br />Modern Nutrition.</h2>
+        <p>At Mahimy Foods, we bring traditional inspiration together with thoughtfully chosen ingredients to create Tuni Breads for today’s everyday meals.</p>
+        <ul className="tuni-philosophy__ingredients" aria-label="Our ingredients">{["COCONUT MILK", "DATES", "HONEY", "BUTTER"].map(ingredient => <li key={ingredient}>{ingredient}</li>)}</ul>
+        <button className="tuni-philosophy__link" onClick={() => go("about")}>DISCOVER OUR STORY <ArrowRight size={16} aria-hidden="true" /></button>
       </div>
     </section>
 
@@ -98,10 +119,6 @@ export default function TuniHome({ register, onNavigate, whatsappNumber }) {
 
     <section className="nutrition-section" ref={register}>
       <div className="tuni-wrap"><div className="section-heading section-heading--left"><span className="eyebrow">Nutrition Facts</span><h2>Balanced Nutrition Profile</h2></div><div className="nutrition-grid">{nutrition.map(([label, value]) => <div key={label}><span>{label}</span><strong>{value}</strong></div>)}</div><div className="nutrition-benefits">{[[Leaf,"Fiber Rich"],[Droplets,"Balanced Energy"],[Heart,"Low Cholesterol"],[Sprout,"Functional Ingredients"]].map(([Icon,t])=><span key={t}><Icon size={20}/>{t}</span>)}</div><p className="nutrition-note">Crafted using Wheat Flour, Milk Powder, Coconut Milk, Honey, Butter and Functional Ingredients.</p></div>
-    </section>
-
-    <section className="lifestyle-section" ref={register}>
-      <div className="tuni-wrap lifestyle-layout"><div><span className="eyebrow">Not Just Bread. A Lifestyle Choice.</span><h2>Goodness For A Healthier You</h2><div className="lifestyle-grid">{lifestyles.map(([Icon,t,d])=><div key={t}><span><Icon size={20}/></span><strong>{t}</strong><small>{d}</small></div>)}</div></div><div className="lifestyle-visual"><span>Make Every<br/><em>Meal Special</em></span><img src={lifestyleImage} alt="A wholesome Tuni bread meal"/></div></div>
     </section>
 
     <WhatsAppOrdering whatsappNumber={whatsappNumber} />
