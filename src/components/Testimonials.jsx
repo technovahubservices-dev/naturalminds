@@ -1,138 +1,32 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Star } from "lucide-react";
 import "../styles/components/Testimonials.css";
 
 const testimonials = [
-  {
-    name: "Sathish Kumar P.",
-    role: "Commercial Insurance",
-    initials: "SK",
-    rating: 5,
-    quote:
-      "Your Mahimy Foods white bread and wheat bread were great in softness, aroma and flavour.",
-  },
-  {
-    name: "Babu Venkatachalapathy",
-    role: "Finance & Insurance",
-    initials: "BV",
-    rating: 5,
-    quote:
-      "Recently bought your bread blended with coconut milk, dates and honey. Excellent taste, freshness and quality.",
-  },
-  {
-    name: "Dinesh C.",
-    role: "Lawyer",
-    initials: "DC",
-    rating: 5,
-    quote:
-      "Quality bread. Fresh, soft and delicious. Highly recommended.",
-  },
-  {
-    name: "Priya Parthiban",
-    role: "Gifts",
-    initials: "PP",
-    rating: 5,
-    quote:
-      "I recently tried Mahimy Foods products and was impressed by the quality, freshness and taste.",
-  },
-  {
-    name: "Priyanka B",
-    role: "Training & Coaching",
-    initials: "PB",
-    rating: 5,
-    quote:
-      "Mahimy Foods delivers exceptional quality and taste consistently. Their products are fresh and hygienically prepared.",
-  },
-  {
-    name: "C. Sridharan",
-    role: "Customer",
-    initials: "CS",
-    rating: 5,
-    quote:
-      "Very tasty and good. Good product and worth eating. This bread can reach many households.",
-  },
+  { name: "Priya S.", initials: "PS", rating: 5, quote: "Tuni Breads has become part of our everyday breakfast. The bread is soft, fresh and perfect for the whole family." },
+  { name: "Arun K.", initials: "AK", rating: 5, quote: "I love the taste and softness. It works perfectly for sandwiches and morning toast." },
+  { name: "Divya M.", initials: "DM", rating: 5, quote: "The wheat bread feels wholesome and tastes really good. My family enjoys it regularly." },
+  { name: "Meena R.", initials: "MR", rating: 5, quote: "Fresh, soft and easy to enjoy every day. Tuni Breads has become a regular choice in our home." },
+  { name: "Karthik P.", initials: "KP", rating: 5, quote: "The flavour is good and the bread stays soft. Great for breakfast and lunchboxes." },
 ];
 
-const gradients = [
-  "card-1",
-  "card-2",
-  "card-3",
-  "card-4",
-  "card-5",
-  "card-6",
-];
-
-export default function Testimonials({ register }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === testimonials.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
-  };
-
-  const testimonial = testimonials[currentIndex];
-
-  return (
-    <section className="testimonials-section" id="testimonials">
-      <div className="section-heading reveal" ref={register}>
-        <span className="eyebrow">CUSTOMER LOVE</span>
-        <h2>What Customers Are Saying</h2>
+export default function Testimonials() {
+  const [interacting, setInteracting] = useState(false);
+  return <section className="family-proof" id="testimonials" aria-labelledby="family-proof-heading">
+    <div className="family-proof__heading">
+      <span className="family-proof__label">THE PROOF</span>
+      <h2 id="family-proof-heading">Loved by Families.</h2>
+      <p>We’re grateful for the trust and kind words shared by families who choose Tuni Breads for their everyday meals.</p>
+    </div>
+    <div className="family-proof__wrapper" onPointerDown={() => setInteracting(true)} onPointerUp={() => setInteracting(false)} onPointerCancel={() => setInteracting(false)} onPointerLeave={() => setInteracting(false)}>
+      <div className="family-proof__track" id="family-proof-track" style={{ animationPlayState: interacting ? "paused" : undefined }}>
+        {[false, true].map(duplicate => <div className="family-proof__group" key={String(duplicate)} aria-hidden={duplicate || undefined} inert={duplicate ? true : undefined}>
+          {testimonials.map(item => <article className="family-proof__card" key={item.name} tabIndex={duplicate ? -1 : 0} aria-label={`Feedback from ${item.name}`}>
+            <blockquote>“{item.quote}”</blockquote>
+            <div className="family-proof__customer"><span className="family-proof__avatar" aria-hidden="true">{item.initials}</span><div><strong>{item.name}</strong><span className="family-proof__stars" aria-label={`${item.rating} out of 5 stars`}>{Array.from({ length: item.rating }, (_, index) => <Star key={index} size={15} fill="currentColor" aria-hidden="true" />)}</span></div></div>
+          </article>)}
+        </div>)}
       </div>
-
-      <div className="testimonial-wrapper">
-        <button className="arrow-btn" onClick={prevSlide}>
-          <ChevronLeft size={28} />
-        </button>
-
-        <article
-          className={`testimonial-card ${gradients[currentIndex]} reveal delay-1`}
-          ref={register}
-        >
-          <div className="testimonial-header">
-            <div className="avatar">
-              {testimonial.initials}
-            </div>
-
-            <div>
-              <h3>{testimonial.name}</h3>
-              <span>{testimonial.role}</span>
-            </div>
-          </div>
-
-          <div className="rating">
-            {"★".repeat(testimonial.rating)}
-          </div>
-
-          <p className="quote">
-            "{testimonial.quote}"
-          </p>
-
-          <div className="quote-icon">❝</div>
-        </article>
-
-        <button className="arrow-btn" onClick={nextSlide}>
-          <ChevronRight size={28} />
-        </button>
-      </div>
-
-      <div className="dots reveal delay-2" ref={register}>
-        {testimonials.map((_, index) => (
-          <button
-            key={index}
-            className={`dot ${
-              currentIndex === index ? "active-dot" : ""
-            }`}
-            onClick={() => setCurrentIndex(index)}
-          />
-        ))}
-      </div>
-    </section>
-  );
+    </div>
+  </section>;
 }

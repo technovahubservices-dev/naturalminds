@@ -3,12 +3,6 @@ import strengthImage from "../asset/01_bread_loaf_slices.png";
 import storyImage from "../asset/02_wheat_bowl_stalks.png";
 import "../styles/components/AboutPage.css";
 
-const strengths = [
-  { icon: Sprout, text: <>At <strong>Tuni Breads</strong>, we believe that delicious food should also nourish your body.</> },
-  { icon: Heart, text: <>We don&apos;t just make bread — we create a <strong>healthier and tastier</strong> experience for every family.</> },
-  { icon: ShieldCheck, text: <>Healthy Ingredients.<br />Great Taste. Premium Quality.</> },
-];
-
 const values = [
   { icon: Sprout, label: <>Health-Focused<br />Ingredients</> },
   { icon: Sandwich, label: <>Rich &amp; Delicious<br />Taste</> },
@@ -37,10 +31,11 @@ export default function AboutPage({ register }) {
       <div className="about-lower">
         <section className="strength-section reveal" ref={register}>
           <div className="strength-copy">
-            <SectionLabel>Our Strength</SectionLabel>
-            <h2>Nourishing<br />Lives, Every Day</h2>
-            <div className="strength-list">
-              {strengths.map(({ icon: Icon, text }, index) => <div className="strength-item" key={index}><span className="about-round-icon"><Icon /></span><p>{text}</p></div>)}
+            <SectionLabel>How It Started</SectionLabel>
+            <h2>Rooted in a Simple Idea.</h2>
+            <div className="about-origin-text">
+              <p>Mahimy Foods began with an appreciation for simple, traditional nourishment. Inspired by the pairing of coconut and pepper, we explored how familiar ingredients could inspire something made for today’s families.</p>
+              <p>This belief eventually led us to create Tuni Breads — bread that brings together wholesome ingredients and everyday convenience.</p>
             </div>
           </div>
           <div className="strength-image"><img src={strengthImage} alt="Fresh sliced Tuni bread with wheat" /><span>Goodness<br />in Every Slice</span></div>
@@ -58,7 +53,7 @@ export default function AboutPage({ register }) {
           <div className="brand-story-copy">
             <blockquote><span className="story-quote story-quote-open">“</span>Quality food builds<br />healthy people, and healthy people<br />build a stronger nation.<span className="story-quote story-quote-close">”</span></blockquote>
             <div className="about-flourish" aria-hidden="true"><span /><Sprout /><span /></div>
-            <p>At Tuni Breads, we are proud to contribute to a healthier,<br />stronger and happier tomorrow.</p>
+            <p>At Mahimy Foods, we are proud to contribute to a healthier,<br />stronger and happier tomorrow.</p>
           </div>
           <div className="brand-story-image"><img src={storyImage} alt="Natural wheat grains in a wooden bowl" /><span>Food for<br />a Brighter<br />Tomorrow</span></div>
         </section>

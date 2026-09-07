@@ -110,12 +110,12 @@ function App() {
       return;
     }
 
-    if (nextPage === "contact") {
-      setActiveNav("contact");
+    if (["story", "ingredients", "quality", "stores", "contact"].includes(nextPage)) {
+      setActiveNav(nextPage);
       setPage(HOME_PAGE);
 
       window.requestAnimationFrame(() => {
-        const section = document.getElementById("contact");
+        const section = document.getElementById(nextPage === "story" ? "brand-story" : nextPage === "stores" ? "contact" : nextPage);
         section?.scrollIntoView({ behavior: "smooth", block: "start" });
       });
 
@@ -274,7 +274,7 @@ function App() {
       />
       <main>
         {page === HOME_PAGE && (
-          <TuniHome register={register} onNavigate={navigate} />
+          <TuniHome register={register} onNavigate={navigate} whatsappNumber={whatsappNumber} />
         )}
 
         {page === ABOUT_PAGE && <AboutPage onNavigate={navigate} register={register} />}

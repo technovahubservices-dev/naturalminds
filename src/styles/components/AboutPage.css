@@ -11,3 +11,12 @@
 @media(max-width:950px){.strength-section{grid-template-columns:1fr 1fr;height:auto;min-height:400px}.strength-copy{padding:40px 30px}.values-grid{grid-template-columns:repeat(3,1fr)}.value-item:nth-child(3n){border-right:0}.value-item:nth-child(-n+3){border-bottom:1px solid #dedfd4}.brand-story-copy{padding:40px 28px}.brand-story blockquote{font-size:2rem}}
 @media(max-width:700px){.about-lower{padding-top:20px}.about-photo-hero,.about-photo-hero__inner{min-height:540px}.about-photo-hero{background-position:68% center}.about-photo-hero__inner{align-items:flex-end}.about-photo-hero__copy{width:100%;margin-bottom:1rem;padding:1.4rem;border-radius:18px;background:rgba(255,251,244,.9);backdrop-filter:blur(8px)}.strength-section,.brand-story{grid-template-columns:1fr}.strength-copy{padding:40px 24px}.strength-image{height:280px}.values-section{padding:45px 18px}.values-grid{grid-template-columns:repeat(2,1fr)}.value-item,.value-item:nth-child(3n){border-right:1px solid #dedfd4;border-bottom:1px solid #dedfd4}.value-item:nth-child(2n){border-right:0}.value-item:nth-last-child(-n+2){border-bottom:0}.brand-story{margin:0 15px 25px;border-radius:24px}.brand-story-copy{padding:60px 28px}.brand-story-image{height:330px}.story-quote-open{left:-18px;top:-42px}.story-quote-close{right:-8px}.brand-story-copy>p br{display:none}}
 @media(max-width:430px){.about-lower h2{font-size:2.65rem}.strength-item{grid-template-columns:58px 1fr}.about-round-icon{width:54px;height:54px}.strength-item p{font-size:.9rem}.value-item p{font-size:.86rem}}
+
+.about-origin-text p{margin:0;color:#273c38;font-size:1rem;line-height:1.65}
+.about-origin-text p+p{margin-top:20px}
+.about-page .strength-section{height:auto;min-height:0;grid-template-columns:1.2fr 1fr;align-items:center;gap:40px;padding:48px clamp(24px,6vw,105px)}
+.about-page .strength-copy{padding:0}
+.about-page .strength-image{width:100%;max-width:500px;height:340px;justify-self:center;border-radius:18px}
+@media(max-width:950px){.about-page .strength-section{gap:28px;padding:40px 30px}.about-page .strength-image{height:300px}}
+@media(max-width:700px){.about-page .strength-section{grid-template-columns:1fr;padding:32px 24px}.about-page .strength-image{height:280px}}
+.app-shell[data-theme="dark"] .about-origin-text p{color:#f7ead8}

@@ -1,0 +1,21 @@
+.whatsapp-ordering{display:grid;grid-template-columns:48% 52%;background:#f7f1e7;color:#55534e;min-height:580px}
+.whatsapp-ordering__visual{position:relative;min-width:0}
+.whatsapp-ordering__visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.whatsapp-ordering__content{align-self:center;padding:32px clamp(28px,4vw,72px)}
+.whatsapp-ordering__label{display:block;color:#c9933a;font-size:.7rem;font-weight:600;letter-spacing:.2em;margin-bottom:13px}
+.tuni-home .whatsapp-ordering h2{font-size:clamp(2.3rem,3.5vw,3.8rem);line-height:1.02;color:#173f32}
+.whatsapp-ordering__subheading{font-size:1.03rem;line-height:1.4!important;color:#173f32;margin:15px 0}
+.whatsapp-ordering__subheading::after{content:"";display:block;width:58px;height:1px;background:#c9933a;margin-top:13px}
+.whatsapp-ordering__description{font-size:.9rem;line-height:1.6!important;max-width:560px;margin:0 0 15px}
+.whatsapp-ordering ul{list-style:none;display:grid;gap:6px;padding:0;margin:0 0 15px}
+.whatsapp-ordering li{display:flex;align-items:center;gap:10px;font-size:.86rem;line-height:1.4}
+.whatsapp-ordering li svg{flex-shrink:0;color:#8b572a}
+.whatsapp-ordering__note{font-size:.86rem;line-height:1.5!important;margin:0 0 17px}
+.whatsapp-ordering__cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:15px 28px;background:#25d366;color:#fff;border-radius:999px;text-decoration:none;font-weight:700;font-size:.94rem;transition:transform .2s ease,background .2s ease}
+.whatsapp-ordering__cta:hover{background:#1db954;transform:translateY(-2px) scale(1.015);color:#fff}
+.whatsapp-ordering__arrow{transition:transform .2s ease}.whatsapp-ordering__cta:hover .whatsapp-ordering__arrow{transform:translateX(3px)}
+.whatsapp-ordering__cta:focus-visible{outline:2px solid #173f32;outline-offset:4px}
+.whatsapp-ordering__caption{display:block;font-size:.73rem;margin-top:10px;color:#55534e}
+@media(max-width:1000px){.whatsapp-ordering__content{padding:30px 26px}.tuni-home .whatsapp-ordering h2{font-size:2.5rem}}
+@media(max-width:760px){.whatsapp-ordering{grid-template-columns:1fr;min-height:0}.whatsapp-ordering__visual{height:clamp(350px,85vw,420px)}.whatsapp-ordering__content{padding:34px 6%}.tuni-home .whatsapp-ordering h2{font-size:clamp(2.25rem,8vw,3rem)}.whatsapp-ordering__cta{width:100%;box-sizing:border-box;padding:15px 20px}.whatsapp-ordering__caption{text-align:center}}
+@media(prefers-reduced-motion:reduce){.whatsapp-ordering__cta,.whatsapp-ordering__arrow{transition:none}.whatsapp-ordering__cta:hover,.whatsapp-ordering__cta:hover .whatsapp-ordering__arrow{transform:none}}
