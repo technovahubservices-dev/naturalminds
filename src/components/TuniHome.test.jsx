@@ -48,7 +48,10 @@ test("hero uses the local muted background video and existing navigation actions
   expect(video.playsInline).toBe(true);
   expect(video.controls).toBe(false);
   expect(video.preload).toBe("metadata");
-  expect(video.querySelector("source")).toHaveAttribute("src", "/videos/tuni-breads-hero.mp4");
+  expect(video.querySelector("source")).toHaveAttribute("src", "/videos/tuni-breads-hero (2).mp4");
+  fireEvent.click(screen.getByRole("button", { name: "Unmute hero video" }));
+  expect(video.muted).toBe(false);
+  expect(screen.getByRole("button", { name: "Mute hero video" })).toBeInTheDocument();
   expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Traditional Goodness.Modern Nutrition.");
   fireEvent.click(screen.getByRole("button", { name: "ORDER NOW" }));
   expect(onNavigate).toHaveBeenLastCalledWith("products");

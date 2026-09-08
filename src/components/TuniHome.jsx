@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { apiRequest, getProductName } from "../lib/api";
 import {
   ArrowRight, Ban, Droplets, Heart, Leaf, ShoppingCart,
-  ShieldCheck, Sprout, Sun, Wheat as WheatIcon,
+  ShieldCheck, Sprout, Sun, Volume2, VolumeX, Wheat as WheatIcon,
 } from "lucide-react";
 import heroVisual from "../asset/01_hero_product_bread.png";
 import whiteBreadImage from "../asset/03_white_bread.png";
@@ -54,6 +54,8 @@ export default function TuniHome({ register, onNavigate, whatsappNumber, onAddTo
   };
   const [reduceMotion, setReduceMotion] = useState(() => window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   const [videoFailed, setVideoFailed] = useState(false);
+  const [isVideoMuted, setIsVideoMuted] = useState(true);
+  const heroVideo = useRef(null);
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const update = () => setReduceMotion(preference.matches);
@@ -72,12 +74,17 @@ export default function TuniHome({ register, onNavigate, whatsappNumber, onAddTo
         {reduceMotion || videoFailed ? (
           <img src={heroVisual} alt="" />
         ) : (
-          <video autoPlay muted loop playsInline preload="metadata" poster={heroVisual} onError={() => setVideoFailed(true)} tabIndex={-1}>
-            <source src="/videos/tuni-breads-hero.mp4" type="video/mp4" onError={() => setVideoFailed(true)} />
+          <video ref={heroVideo} autoPlay muted={isVideoMuted} loop playsInline preload="metadata" poster={heroVisual} onError={() => setVideoFailed(true)} tabIndex={-1}>
+            <source src="/videos/tuni-breads-hero (2).mp4" type="video/mp4" onError={() => setVideoFailed(true)} />
           </video>
         )}
       </div>
       <div className="tuni-film__overlay" aria-hidden="true" />
+      {!reduceMotion && !videoFailed && <button className="tuni-film__sound" type="button" aria-label={isVideoMuted ? "Unmute hero video" : "Mute hero video"} aria-pressed={!isVideoMuted} onClick={() => {
+        const nextMuted = !isVideoMuted;
+        if (heroVideo.current) heroVideo.current.muted = nextMuted;
+        setIsVideoMuted(nextMuted);
+      }}>{isVideoMuted ? <VolumeX size={20} aria-hidden="true" /> : <Volume2 size={20} aria-hidden="true" />}<span>{isVideoMuted ? "Sound On" : "Sound Off"}</span></button>}
       <div className="tuni-film__copy">
         <span className="tuni-film__label">TUNI BREADS</span>
         <h1 id="tuni-film-heading"><span>Traditional Goodness.</span><span>Modern Nutrition.</span></h1>
