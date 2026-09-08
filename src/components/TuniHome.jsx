@@ -87,8 +87,8 @@ export default function TuniHome({ register, onNavigate, whatsappNumber, onAddTo
       }}>{isVideoMuted ? <VolumeX size={20} aria-hidden="true" /> : <Volume2 size={20} aria-hidden="true" />}<span>{isVideoMuted ? "Sound On" : "Sound Off"}</span></button>}
       <div className="tuni-film__copy">
         <span className="tuni-film__label">TUNI BREADS</span>
-        <h1 id="tuni-film-heading"><span>Traditional Goodness.</span><span>Modern Nutrition.</span></h1>
-        <p>Thoughtfully made with familiar ingredients for everyday family moments.</p>
+        <h1 id="tuni-film-heading"><span>Traditional</span><span>Goodness.</span><span className="tuni-film__accent">Modern</span><span>Nutrition.</span></h1>
+        
         <div className="tuni-film__actions"><Button onClick={() => go("products")}>ORDER NOW</Button></div>
       </div>
     </section>

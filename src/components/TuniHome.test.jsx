@@ -52,7 +52,7 @@ test("hero uses the local muted background video and existing navigation actions
   fireEvent.click(screen.getByRole("button", { name: "Unmute hero video" }));
   expect(video.muted).toBe(false);
   expect(screen.getByRole("button", { name: "Mute hero video" })).toBeInTheDocument();
-  expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Traditional Goodness.Modern Nutrition.");
+  expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("TraditionalGoodness.ModernNutrition.");
   fireEvent.click(screen.getByRole("button", { name: "ORDER NOW" }));
   expect(onNavigate).toHaveBeenLastCalledWith("products");
   fireEvent.click(screen.getByRole("button", { name: "DISCOVER OUR STORY" }));
