@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { apiRequest, getProductName } from "../lib/api";
 import {
-  ArrowRight, Ban, Droplets, Heart, Leaf,
+  ArrowRight, Ban, Droplets, Heart, Leaf, ShoppingCart,
   ShieldCheck, Sprout, Sun, Wheat as WheatIcon,
 } from "lucide-react";
 import heroVisual from "../asset/01_hero_product_bread.png";
@@ -61,7 +61,7 @@ export default function TuniHome({ register, onNavigate, whatsappNumber, onAddTo
     return () => preference.removeEventListener("change", update);
   }, []);
   const go = (page) => onNavigate(page);
-  const radialIngredients = [[coconutIngredient, "Coconut Milk", "Creamy richness"], [honeyIngredient, "Honey", "Golden sweetness"], [butterIngredient, "Butter", "Smooth texture"], [wheatIngredient, "Wheat", "Everyday grain"], [datesIngredient, "Dates", "Natural sweetness"]];
+  const radialIngredients = [[coconutIngredient, "Coconut Milk", "Source of Healthy Fats"], [honeyIngredient, "Honey", "Natural Energy"], [butterIngredient, "Butter", "Source of Vitamin A"], [wheatIngredient, "Wheat", "Rich in Fiber"], [datesIngredient, "Dates", "Rich in Iron"]];
   const ingredientBenefits = [[Leaf,"Wholesome Ingredients","Pure & Natural"],[Heart,"Better Nutrition","For a Healthier You"],[Sprout,"Tradition Meets Modern Living","A Perfect Balance"],[Sun,"Goodness in Every Slice","Everyday, Naturally"]];
   const nutrition = [["Energy", "277 kcal / 100g"], ["Carbohydrate", "58.7g"], ["Protein", "6.8g"], ["Dietary Fiber", "4g"], ["Total Sugar", "10g"], ["Fat", "2g"], ["Sodium", "0.3g"], ["Cholesterol", "0.00g"]];
   const qualities = ["No Vanaspati", "No Artificial Compromise", "No Class 2 & 3 Preservatives", "Carefully Selected Ingredients"];
@@ -111,9 +111,25 @@ export default function TuniHome({ register, onNavigate, whatsappNumber, onAddTo
     <section className="breads-section" id="breads" ref={register}>
       <div className="bread-cart-message" role="status" aria-live="polite">{cartMessage}</div>
       <div className="tuni-wrap breads-grid">
-        <div className="breads-intro"><span className="eyebrow">Our Breads</span><h2>Meet Tuni Breads.</h2><p>Two everyday favourites, baked with care for your family.</p><Button onClick={() => go("products")}>View Our Breads</Button></div>
-        <article className="bread-card"><div className="bread-card__image bread-card__image--wheat"><img src={wheatBreadImage} alt="Fresh sliced Tuni Wheat Bread" /></div><div><span className="bread-number">01</span><h3>Tuni Wheat Bread</h3><p>Wholesome wheat bread made for everyday meals.</p><div className="bread-card__actions"><button onClick={() => go("products")}>Know More <ArrowRight size={14}/></button><button className="bread-card__add" disabled={Boolean(addingBread)} onClick={() => addBread("wheat")} aria-label="Add Tuni wheat bread to cart">{addingBread === "wheat" ? "Adding…" : "Add to Cart"}</button></div></div></article>
-        <article className="bread-card"><div className="bread-card__image"><img src={whiteBreadImage} alt="Fresh sliced Tuni White Bread" /></div><div><span className="bread-number">02</span><h3>Tuni White Bread</h3><p>Soft, fresh bread perfect for toast, sandwiches and family meals.</p><div className="bread-card__actions"><button onClick={() => go("products")}>Know More <ArrowRight size={14}/></button><button className="bread-card__add" disabled={Boolean(addingBread)} onClick={() => addBread("white")} aria-label="Add Tuni white bread to cart">{addingBread === "white" ? "Adding…" : "Add to Cart"}</button></div></div></article>
+        <div className="breads-intro">
+          <span className="eyebrow">Our Breads</span>
+          <h2>Meet<br />Tuni Breads.</h2>
+          <p>Two everyday favourites, baked with care for your family. Wholesome, delicious and thoughtfully made for everyday meals.</p>
+          <div className="breads-intro__values" aria-label="Why families love Tuni Breads">
+            <span><i><Leaf size={21} aria-hidden="true" /></i><small>Soft &amp;<br />Delicious</small></span>
+            <span><i><Heart size={21} aria-hidden="true" /></i><small>Made with Thoughtful<br />Ingredients</small></span>
+            <span><i><WheatIcon size={21} aria-hidden="true" /></i><small>Perfect for<br />Everyday Meals</small></span>
+          </div>
+          <Button onClick={() => go("products")}>View Our Breads</Button>
+        </div>
+        <article className="bread-card">
+          <div className="bread-card__image bread-card__image--wheat"><span className="bread-number">01</span><span className="bread-card__badge"><Leaf size={18} aria-hidden="true" />Wheat<br />Goodness</span><img src={wheatBreadImage} alt="Fresh sliced Tuni Wheat Bread" /></div>
+          <div className="bread-card__content"><h3>Tuni Wheat Bread</h3><p>Wholesome wheat bread made for everyday meals.</p><div className="bread-card__highlights"><span><Leaf size={18} aria-hidden="true" />Wheat Goodness</span><span><Heart size={18} aria-hidden="true" />Wholesome Choice</span><span><WheatIcon size={18} aria-hidden="true" />Everyday Meal Friendly</span></div><div className="bread-card__actions"><button onClick={() => go("products")}>Know More <ArrowRight size={14}/></button><button className="bread-card__add" disabled={Boolean(addingBread)} onClick={() => addBread("wheat")} aria-label="Add Tuni wheat bread to cart"><ShoppingCart size={17} aria-hidden="true" />{addingBread === "wheat" ? "Adding…" : "Add to Cart"}</button></div></div>
+        </article>
+        <article className="bread-card">
+          <div className="bread-card__image"><span className="bread-number">02</span><span className="bread-card__badge"><Heart size={18} aria-hidden="true" />Soft<br />&amp; Fresh</span><img src={whiteBreadImage} alt="Fresh sliced Tuni White Bread" /></div>
+          <div className="bread-card__content"><h3>Tuni White Bread</h3><p>Soft, fresh bread perfect for toast, sandwiches and family meals.</p><div className="bread-card__highlights"><span><Leaf size={18} aria-hidden="true" />Soft Texture</span><span><Heart size={18} aria-hidden="true" />Light &amp; Delicious</span><span><WheatIcon size={18} aria-hidden="true" />Perfect for Everyday Meals</span></div><div className="bread-card__actions"><button onClick={() => go("products")}>Know More <ArrowRight size={14}/></button><button className="bread-card__add" disabled={Boolean(addingBread)} onClick={() => addBread("white")} aria-label="Add Tuni white bread to cart"><ShoppingCart size={17} aria-hidden="true" />{addingBread === "white" ? "Adding…" : "Add to Cart"}</button></div></div>
+        </article>
       </div>
     </section>
 
