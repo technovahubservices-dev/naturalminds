@@ -24,6 +24,7 @@ export default function AboutPage({ register }) {
   return (
     <section className="about-page">
       <div className="about-photo-hero">
+        <img className="about-photo-hero__mobile-image" src={`${process.env.PUBLIC_URL}/images/about-storefront-hero.png`} alt="Mahimy Foods factory exterior" />
         <div className="container about-photo-hero__inner">
           <div className="about-photo-hero__copy reveal" ref={register}>
             <p className="about-kicker">About Us</p>
