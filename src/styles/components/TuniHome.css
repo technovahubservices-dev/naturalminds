@@ -202,7 +202,7 @@
     inset: 0;
     width: 100%;
     box-sizing: border-box;
-    padding: 16px;
+    padding: 6px 6px 4px;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -217,11 +217,11 @@
   .tuni-film__label {
     min-height: 0;
     margin: 0;
-    padding: 8px 14px;
+    padding: 6px 9px;
     background: #fffdf8;
     border: 1px solid #fffdf8;
     color: #173f32;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: .12em;
   }
