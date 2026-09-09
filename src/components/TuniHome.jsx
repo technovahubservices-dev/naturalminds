@@ -5,8 +5,8 @@ import {
   ShieldCheck, Sprout, Sun, Volume2, VolumeX, Wheat as WheatIcon,
 } from "lucide-react";
 import heroVisual from "../asset/01_hero_product_bread.png";
-import whiteBreadImage from "../asset/03_white_bread.png";
-import wheatBreadImage from "../asset/04_wheat_bread.png";
+import whiteBreadImage from "../asset/03_white_bread (2).png";
+import wheatBreadImage from "../asset/04_wheat_bread (2).png";
 import qualityImage from "../asset/06_bread_quality_photo.png";
 import ingredientLeftVisual from "../asset/07_left_wheat_composition.png";
 import ingredientRightVisual from "../asset/06_right_ingredient_composition.png";
