@@ -1,5 +1,6 @@
 import "../styles/components/Contact.css";
 import { useState } from "react";
+import { Clock } from "lucide-react";
 
 export default function Contact({ register }) {
   const whatsappNumber = "919443311007";
@@ -62,10 +63,28 @@ export default function Contact({ register }) {
             </div>
             <div>
               <span className="contact-label-highlight">Address</span>
-              <strong>No 75 76 77 78 SRI BAKKIYAPERUMAL NAGAR PERIYAKAATUPALAYAM Reddichavadi</strong>
-              <strong>Cuddalore, Tamil Nadu,607403.</strong>   
+              <strong>No 76, 77, 78,79, SRI BAKKIYA PERUMAL NAGAR, PERIYAKATTUPALAYAM,</strong>
+              <strong> CUDDALORE,605007.</strong>  
+               
             </div>
           </div>
+          <section className="contact-hours" aria-labelledby="contact-hours-title">
+            <p className="contact-hours-eyebrow">VISIT US</p>
+            <div className="contact-hours-heading">
+              <h2 id="contact-hours-title">Opening Hours</h2>
+              <Clock size={22} strokeWidth={1.5} aria-hidden="true" />
+            </div>
+            <dl className="contact-hours-list">
+              <div>
+                <dt>Monday – Saturday</dt>
+                <dd>5:00 AM – 6:30 PM</dd>
+              </div>
+              <div>
+                <dt>Sunday</dt>
+                <dd className="contact-hours-closed">Closed</dd>
+              </div>
+            </dl>
+          </section>
         </div>
 
         <form className="contact-form reveal" ref={register} onSubmit={handleSubmit}>
