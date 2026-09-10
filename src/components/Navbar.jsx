@@ -42,8 +42,8 @@ export default function Navbar({ onNavigate, cartCount = 0, activePage = "home",
         <span>Inspired by Traditional Nutrition. Crafted for Modern Living.</span>
         <div className="announcement__right">
           <a href="https://www.instagram.com/mahimy_foods" aria-label="Instagram"><FaInstagram/></a>
-          <a href="https://www.facebook.com" aria-label="Facebook"><FaFacebookF/></a>
-          <a href="https://www.youtube.com" aria-label="YouTube"><FaYoutube/></a>
+          <a href="https://www.facebook.com/profile.php?id=61586566737534" aria-label="Facebook"><FaFacebookF/></a>
+          <a href="https://www.youtube.com/channel/UCNhmWkyfDEnlrX9Eh0Yf5XQ" aria-label="YouTube"><FaYoutube/></a>
         </div>
       </div>
       <nav className="site-nav" aria-label="Main navigation">
