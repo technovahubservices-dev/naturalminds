@@ -1,5 +1,5 @@
 export const API_BASE_URL =
-  process.env.REACT_APP_API_BASE_URL?.trim() || "https://mahimabackend.onrender.com/api";
+  process.env.REACT_APP_API_BASE_URL?.trim() || "https://mahimabackend-lyxp.onrender.com/api";
 
 export function getAuthToken() {
   if (typeof window === "undefined") {
